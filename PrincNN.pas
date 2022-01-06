@@ -8,7 +8,7 @@ uses
   Vcl.StdCtrls, Vcl.Buttons, Vcl.WinXPickers,Winapi.wininet, System.Actions,
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
-  Vcl.ImageCollection;
+  Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps;
 
 type
   TProjNN = class(TForm)
@@ -52,6 +52,7 @@ type
     Label2: TLabel;
     AFiletoZip: TAction;
     Button5: TButton;
+    Image3: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -59,7 +60,6 @@ type
     procedure Image1Click(Sender: TObject);
     procedure AVideoExecute(Sender: TObject);
     procedure CalendarView1Click(Sender: TObject);
-    procedure CalendarView1DblClick(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure ATextoExecute(Sender: TObject);
@@ -85,7 +85,7 @@ implementation
 
 {$R *.dfm}
 
-uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip;
+uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub;
 
 procedure TProjNN.FormCreate(Sender: TObject);
 var
@@ -97,11 +97,6 @@ begin
   Ver := Versao(Application.ExeName);
   Label6.Caption := ver;
   BitBtn1Click(Sender)
-end;
-
-procedure TProjNN.CalendarView1DblClick(Sender: TObject);
-begin
- memo1.Lines.Add(#13);
 end;
 
 procedure TProjNN.Image1Click(Sender: TObject);
@@ -271,18 +266,20 @@ begin
  FNav.Show;
 end;
 
+//Hub Dispositivos - Hub Bluetooth / Dispositvos Conectados na Maquina
+procedure TProjNN.AHubExecute(Sender: TObject);
+begin
+ Button4.Enabled := False;
+ FHub := TFHub.Create(Application);
+ FHub.Show;
+end;
+
 //Comprime Arquivos - Bibloteca TZipFile
 procedure TProjNN.AFiletoZipExecute(Sender: TObject);
 begin
  Button5.Enabled := False;
  FFiletoZip := TFFiletoZip.Create(Application);
  FFiletoZip.Show;
-end;
-
-//Hub Dispositivos
-procedure TProjNN.AHubExecute(Sender: TObject);
-begin
- //
 end;
 
 end.

@@ -7,7 +7,8 @@ uses
   Versaoinfo in 'Versaoinfo.pas',
   FormTexto in 'FormTexto.pas' {FTexto},
   FormNav in 'FormNav.pas' {FNav},
-  FormFiletoZip in 'FormFiletoZip.pas' {FFiletoZip};
+  FormFiletoZip in 'FormFiletoZip.pas' {FFiletoZip},
+  FormHub in 'FormHub.pas' {FHub};
 
 {$R *.res}
 
