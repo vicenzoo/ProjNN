@@ -8,7 +8,8 @@ uses
   Vcl.StdCtrls, Vcl.Buttons, Vcl.WinXPickers,Winapi.wininet, System.Actions,
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
-  Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps;
+  Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
+  Vcl.Imaging.pngimage;
 
 type
   TProjNN = class(TForm)
@@ -53,6 +54,14 @@ type
     AFiletoZip: TAction;
     Button5: TButton;
     Image3: TImage;
+    AAlarme: TAction;
+    Button6: TButton;
+    CategoryPanel5: TCategoryPanel;
+    Button8: TButton;
+    AMusicC: TAction;
+    Panel5: TPanel;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -66,6 +75,8 @@ type
     procedure ANavExecute(Sender: TObject);
     procedure AFiletoZipExecute(Sender: TObject);
     procedure AHubExecute(Sender: TObject);
+    procedure AAlarmeExecute(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -85,19 +96,40 @@ implementation
 
 {$R *.dfm}
 
-uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub;
+uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
+  FormAlarme;
 
 procedure TProjNN.FormCreate(Sender: TObject);
 var
-Ver : string;
+Ver,estilo,styles : string;
 begin
   cont := 0;
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
   Ver := Versao(Application.ExeName);
   Label6.Caption := ver;
-  BitBtn1Click(Sender)
+
+
+ with ComboBox1 do
+ begin
+  Items.BeginUpdate;
+  try
+   Items.Clear;
+   for styles in TStyleManager.StyleNames do
+    Items.Add(styles);
+  finally
+   Items.EndUpdate;
+  end;
+ end;
+  BitBtn1Click(Sender);
 end;
+
+procedure TProjNN.ComboBox1Change(Sender: TObject);
+begin
+ if ComboBox1.ItemIndex=-1 then exit;
+ TStyleManager.TrySetStyle(ComboBox1.Items[ComboBox1.ItemIndex]);
+end;
+
 
 procedure TProjNN.Image1Click(Sender: TObject);
 begin
@@ -240,6 +272,7 @@ begin
   else MessageDlg('Impossível Salvar!',mtWarning,[mbYes],0);
 end;
 
+
 //Actions
 
 //Abre Video - Media Player de vídeos
@@ -280,6 +313,14 @@ begin
  Button5.Enabled := False;
  FFiletoZip := TFFiletoZip.Create(Application);
  FFiletoZip.Show;
+end;
+
+//Alarme - Define Alarme
+procedure TProjNN.AAlarmeExecute(Sender: TObject);
+begin
+ Button6.Enabled := False;
+ FAlarme := TFAlarme.Create(Application);
+ FAlarme.Show;
 end;
 
 end.
