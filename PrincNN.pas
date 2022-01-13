@@ -77,6 +77,7 @@ type
     procedure AHubExecute(Sender: TObject);
     procedure AAlarmeExecute(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure AMusicCExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -97,7 +98,7 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme;
+  FormAlarme, FormMusica;
 
 procedure TProjNN.FormCreate(Sender: TObject);
 var
@@ -321,6 +322,14 @@ begin
  Button6.Enabled := False;
  FAlarme := TFAlarme.Create(Application);
  FAlarme.Show;
+end;
+
+
+procedure TProjNN.AMusicCExecute(Sender: TObject);
+begin
+ Button8.Enabled := False;
+ FMusica := TFMusica.Create(Application);
+ FMusica.Show;
 end;
 
 end.

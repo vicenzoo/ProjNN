@@ -10,9 +10,10 @@ uses
   FormFiletoZip in 'FormFiletoZip.pas' {FFiletoZip},
   FormHub in 'FormHub.pas' {FHub},
   FormAlarme in 'FormAlarme.pas' {FAlarme},
-  WMPLib_TLB in 'biblo\WMPLib_TLB.pas',
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  FormSend in 'FormSend.pas' {FSend},
+  FormMusica in 'FormMusica.pas' {FMusica};
 
 {$R *.res}
 

@@ -192,7 +192,6 @@ object FNav: TFNav
         000000000000}
       TabOrder = 2
       OnClick = BitBtn1Click
-      ExplicitLeft = 610
     end
   end
 end

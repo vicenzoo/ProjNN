@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
-  Vcl.OleCtrls, SHDocVw, Vcl.StdCtrls, Vcl.Buttons, WMPLib_TLB;
+  Vcl.OleCtrls, SHDocVw, Vcl.StdCtrls, Vcl.Buttons;
 
 type
   TFNav = class(TForm)

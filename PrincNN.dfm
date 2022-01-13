@@ -61,15 +61,12 @@ object ProjNN: TProjNN
       HeaderFont.Name = 'Tahoma'
       HeaderFont.Style = []
       TabOrder = 0
-      ExplicitHeight = 454
       object CategoryPanel2: TCategoryPanel
         Top = 120
         Height = 30
         Caption = 'Vers'#227'o Info'
         Collapsed = True
         TabOrder = 0
-        ExplicitTop = 800
-        ExplicitWidth = 181
         ExpandedHeight = 71
         object Panel3: TPanel
           Left = 0
@@ -115,8 +112,6 @@ object ProjNN: TProjNN
         Caption = 'Aux'#237'liar'
         Collapsed = True
         TabOrder = 1
-        ExplicitTop = 600
-        ExplicitWidth = 181
         object Button3: TButton
           Left = 0
           Top = 0
@@ -142,8 +137,6 @@ object ProjNN: TProjNN
         Caption = 'Conversores / Facilitadores'
         Collapsed = True
         TabOrder = 2
-        ExplicitTop = 400
-        ExplicitWidth = 181
         object Button5: TButton
           Left = 0
           Top = 0
@@ -160,7 +153,6 @@ object ProjNN: TProjNN
         Caption = 'Online'
         Collapsed = True
         TabOrder = 3
-        ExplicitTop = 200
         object Button8: TButton
           Left = 0
           Top = 0
@@ -169,7 +161,6 @@ object ProjNN: TProjNN
           Action = AMusicC
           Align = alTop
           TabOrder = 0
-          ExplicitTop = 25
         end
       end
       object CategoryPanel1: TCategoryPanel
@@ -345,7 +336,6 @@ object ProjNN: TProjNN
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 1
-      ExplicitHeight = 455
       object Label3: TLabel
         Left = 0
         Top = 227
@@ -675,6 +665,7 @@ object ProjNN: TProjNN
     end
     object AMusicC: TAction
       Caption = 'Musica'
+      OnExecute = AMusicCExecute
     end
   end
   object ImageCollection1: TImageCollection

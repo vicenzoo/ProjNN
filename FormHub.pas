@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.StdCtrls,
-  System.Bluetooth, System.Bluetooth.Components, Vcl.Imaging.pngimage;
+  System.Bluetooth, System.Bluetooth.Components, Vcl.Imaging.pngimage,
+  Vcl.Buttons;
 
 type
   TFHub = class(TForm)
@@ -14,12 +15,13 @@ type
     Button1: TButton;
     Bluetooth1: TBluetooth;
     ListBox1: TListBox;
-    Image2: TImage;
     Button2: TButton;
     Label1: TLabel;
     Label2: TLabel;
     Edit1: TEdit;
     Label3: TLabel;
+    Panel2: TPanel;
+    Image2: TImage;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Image2Click(Sender: TObject);
@@ -72,6 +74,7 @@ end;
 //if (msg.SizeType = SIZENORMAL) then ShowMessage('NORMAL');
 //end;
 
+
 procedure TFHub.Button1Click(Sender: TObject);
 var
  ldevice : TBluetoothDevice;
@@ -112,6 +115,5 @@ begin
     end;
   end;
 end;
-
 
 end.
