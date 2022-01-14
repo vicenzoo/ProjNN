@@ -49,7 +49,7 @@ uses PrincNN;
 procedure TFHub.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNN.Button4.Enabled := True;
+  ProjNONS.Button4.Enabled := True;
 end;
 
 procedure TFHub.FormCreate(Sender: TObject);

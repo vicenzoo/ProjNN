@@ -99,7 +99,7 @@ object FVideo: TFVideo
       object MediaPlayer1: TMediaPlayer
         Left = 1
         Top = 1
-        Width = 196
+        Width = -4
         Height = 29
         Align = alClient
         VisibleButtons = [btPlay, btPause, btStop, btStep, btBack]

@@ -63,7 +63,7 @@ uses PrincNN, FormNav, FormSend;
 procedure TFTexto.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNN.Button2.Enabled := True;
+  ProjNONS.Button2.Enabled := True;
 end;
 
 procedure TFTexto.FormCreate(Sender: TObject);
@@ -160,7 +160,7 @@ end;
 
 procedure TFTexto.Image5Click(Sender: TObject);
 begin
- ProjNN.ANavExecute(sender);
+ ProjNONS.ANavExecute(sender);
 end;
 
 procedure TFTexto.Image2Click(Sender: TObject);

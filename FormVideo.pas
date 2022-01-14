@@ -51,7 +51,7 @@ uses PrincNN;
 procedure TFVideo.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNN.Button1.Enabled := True;
+  ProjNONS.Button1.Enabled := True;
 end;
 
 procedure TFVideo.FormCreate(Sender: TObject);

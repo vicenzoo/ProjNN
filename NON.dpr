@@ -2,7 +2,7 @@ program NON;
 
 uses
   Vcl.Forms,
-  PrincNN in 'PrincNN.pas' {ProjNN},
+  PrincNN in 'PrincNN.pas' {ProjNONS},
   FormVideo in 'FormVideo.pas' {FVideo},
   Versaoinfo in 'Versaoinfo.pas',
   FormTexto in 'FormTexto.pas' {FTexto},
@@ -13,13 +13,14 @@ uses
   Vcl.Themes,
   Vcl.Styles,
   FormSend in 'FormSend.pas' {FSend},
-  FormMusica in 'FormMusica.pas' {FMusica};
+  FormMusica in 'FormMusica.pas' {FMusica},
+  FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TProjNN, ProjNN);
+  Application.CreateForm(TProjNONS, ProjNONS);
   Application.Run;
 end.

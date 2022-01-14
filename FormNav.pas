@@ -9,15 +9,16 @@ uses
 
 type
   TFNav = class(TForm)
-    Image2: TImage;
     WebBrowser1: TWebBrowser;
     Panel1: TPanel;
     Panel2: TPanel;
-    Splitter1: TSplitter;
     Panel3: TPanel;
     BitBtn2: TBitBtn;
     ComboBox1: TComboBox;
+    Image2: TImage;
+    Panel4: TPanel;
     BitBtn1: TBitBtn;
+    Splitter1: TSplitter;
     procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
@@ -45,7 +46,7 @@ uses PrincNN;
 procedure TFNav.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNN.Button3.Enabled := True;
+  ProjNONS.Button3.Enabled := True;
 end;
 
 procedure TFNav.FormCreate(Sender: TObject);

@@ -45,7 +45,7 @@ uses PrincNN;
 procedure TFFiletoZip.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNN.Button5.Enabled := True;
+  ProjNONS.Button5.Enabled := True;
 end;
 
 procedure TFFiletoZip.Image2Click(Sender: TObject);

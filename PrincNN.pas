@@ -12,7 +12,7 @@ uses
   Vcl.Imaging.pngimage;
 
 type
-  TProjNN = class(TForm)
+  TProjNONS = class(TForm)
     SplitView1: TSplitView;
     SplitView2: TSplitView;
     Panel1: TPanel;
@@ -43,7 +43,6 @@ type
     ANav: TAction;
     Button4: TButton;
     CategoryPanel4: TCategoryPanel;
-    Button3: TButton;
     Label7: TLabel;
     Image2: TImage;
     BitBtn1: TBitBtn;
@@ -62,6 +61,9 @@ type
     Panel5: TPanel;
     Label8: TLabel;
     ComboBox1: TComboBox;
+    Button7: TButton;
+    ALoadPDF: TAction;
+    Button3: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -78,6 +80,7 @@ type
     procedure AAlarmeExecute(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure AMusicCExecute(Sender: TObject);
+    procedure ALoadPDFExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -88,7 +91,7 @@ type
   end;
 
 var
-  ProjNN: TProjNN;
+  ProjNONS: TProjNONS;
   F: TSearchRec;
   calendardata : string;
   tabSheet : TTabSheet;
@@ -98,9 +101,9 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme, FormMusica;
+  FormAlarme, FormMusica, FormLoadPDFFile;
 
-procedure TProjNN.FormCreate(Sender: TObject);
+procedure TProjNONS.FormCreate(Sender: TObject);
 var
 Ver,estilo,styles : string;
 begin
@@ -125,14 +128,14 @@ begin
   BitBtn1Click(Sender);
 end;
 
-procedure TProjNN.ComboBox1Change(Sender: TObject);
+procedure TProjNONS.ComboBox1Change(Sender: TObject);
 begin
  if ComboBox1.ItemIndex=-1 then exit;
  TStyleManager.TrySetStyle(ComboBox1.Items[ComboBox1.ItemIndex]);
 end;
 
 
-procedure TProjNN.Image1Click(Sender: TObject);
+procedure TProjNONS.Image1Click(Sender: TObject);
 begin
   if SplitView2.Opened then
   begin
@@ -150,7 +153,7 @@ begin
   end;
 end;
 
-procedure TProjNN.Image2Click(Sender: TObject);
+procedure TProjNONS.Image2Click(Sender: TObject);
 begin
   if SplitView1.Opened then
   begin
@@ -164,13 +167,13 @@ begin
   end;
 end;
 
-procedure TProjNN.Timer1Timer(Sender: TObject);
+procedure TProjNONS.Timer1Timer(Sender: TObject);
 begin
   TimePicker1.Time := time;
 end;
 
 //Verifica se esta conectado;
-procedure TProjNN.BitBtn1Click(Sender: TObject);
+procedure TProjNONS.BitBtn1Click(Sender: TObject);
 var
   i:dword;
 begin
@@ -186,7 +189,7 @@ begin
 
 end;
 
-procedure TProjNN.listararquivos(diretorio: string; sub: boolean);
+procedure TProjNONS.listararquivos(diretorio: string; sub: boolean);
 var
   Ret: Integer;
   TempNome: string;
@@ -226,13 +229,13 @@ begin
 end;
 end;
 
-function TProjNN.TemAtributo(Attr, Val: Integer): Boolean;
+function TProjNONS.TemAtributo(Attr, Val: Integer): Boolean;
 begin
  Result := Attr and Val = Val;
 end;
 
 //Lê Notas Existentes no Diretorio e Exibe
-procedure TProjNN.CalendarView1Click(Sender: TObject);
+procedure TProjNONS.CalendarView1Click(Sender: TObject);
 begin
  Memo1.Lines.Clear;
  Memo1.Lines.Add(DateToStr(CalendarView1.Date));
@@ -240,7 +243,7 @@ begin
 end;
 
 //Botão Exportar Notas
-procedure TProjNN.BitBtn2Click(Sender: TObject);
+procedure TProjNONS.BitBtn2Click(Sender: TObject);
 begin
   if not (Memo1.Text = '') then
   begin
@@ -252,7 +255,7 @@ begin
 end;
 
 //Botão Salvar Notas
-procedure TProjNN.BitBtn3Click(Sender: TObject);
+procedure TProjNONS.BitBtn3Click(Sender: TObject);
 var
 cont : integer;
 begin
@@ -277,7 +280,7 @@ end;
 //Actions
 
 //Abre Video - Media Player de vídeos
-procedure TProjNN.AVideoExecute(Sender: TObject);
+procedure TProjNONS.AVideoExecute(Sender: TObject);
 begin
  Button1.Enabled := False;
  FVideo := TFVideo.Create(Application);
@@ -285,7 +288,7 @@ begin
 end;
 
 //Abre Texto - Editor de Texto Simples
-procedure TProjNN.ATextoExecute(Sender: TObject);
+procedure TProjNONS.ATextoExecute(Sender: TObject);
 begin
  Button2.Enabled := False;
  FTexto := TFTexto.Create(Application);
@@ -293,7 +296,7 @@ begin
 end;
 
 //Abre Navegador - Componente WebBrowser Delphi
-procedure TProjNN.ANavExecute(Sender: TObject);
+procedure TProjNONS.ANavExecute(Sender: TObject);
 begin
  Button3.Enabled := False;
  FNav := TFNav.Create(Application);
@@ -301,7 +304,7 @@ begin
 end;
 
 //Hub Dispositivos - Hub Bluetooth / Dispositvos Conectados na Maquina
-procedure TProjNN.AHubExecute(Sender: TObject);
+procedure TProjNONS.AHubExecute(Sender: TObject);
 begin
  Button4.Enabled := False;
  FHub := TFHub.Create(Application);
@@ -309,7 +312,7 @@ begin
 end;
 
 //Comprime Arquivos - Bibloteca TZipFile
-procedure TProjNN.AFiletoZipExecute(Sender: TObject);
+procedure TProjNONS.AFiletoZipExecute(Sender: TObject);
 begin
  Button5.Enabled := False;
  FFiletoZip := TFFiletoZip.Create(Application);
@@ -317,15 +320,23 @@ begin
 end;
 
 //Alarme - Define Alarme
-procedure TProjNN.AAlarmeExecute(Sender: TObject);
+procedure TProjNONS.AAlarmeExecute(Sender: TObject);
 begin
  Button6.Enabled := False;
  FAlarme := TFAlarme.Create(Application);
  FAlarme.Show;
 end;
 
+//Abrir PDF - Biblioteca ACroPDF (Active X)
+procedure TProjNONS.ALoadPDFExecute(Sender: TObject);
+begin
+ Button7.Enabled := False;
+ FLoadPDFFile := TFLoadPDFFile.Create(Application);
+ FLoadPDFFile.Show;
+end;
 
-procedure TProjNN.AMusicCExecute(Sender: TObject);
+//Musica - Api REST (SPOTIFY)
+procedure TProjNONS.AMusicCExecute(Sender: TObject);
 begin
  Button8.Enabled := False;
  FMusica := TFMusica.Create(Application);
