@@ -88,8 +88,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>NON_Icon1.ico</Icon_MainIcon>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>38</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.1.0.38;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>45</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.1.0.45;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -145,6 +145,10 @@
         </DCCReference>
         <DCCReference Include="FormLoadPDFFile.pas">
             <Form>FLoadPDFFile</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormExplorer.pas">
+            <Form>FExplorer</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

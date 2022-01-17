@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
   Vcl.StdCtrls, Vcl.Buttons, frxClass, frxExportBaseDialog, frxExportPDF,
-  Vcl.WinXCtrls;
+  Vcl.WinXCtrls,System.UITypes;
 
 type
   TFTexto = class(TForm)
@@ -43,6 +43,7 @@ type
     procedure Image11Click(Sender: TObject);
     procedure ReplaceDialog1Replace(Sender: TObject);
     procedure Image12Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -139,6 +140,15 @@ begin
      +'.txt');
      ShowMessage('Salvo em: ' + GetCurrentDir + '\Notes' + '\Anotacao' );
    end;
+end;
+
+procedure TFTexto.Image6Click(Sender: TObject);
+begin
+ TfrxMemoView(frxReport1.FindComponent('Memo1')).Memo.Clear;
+ TfrxMemoView(frxReport1.FindComponent('Memo1')).Memo.Add('Dia: ' + FormatDateTime('dd/mm/yyyy',date));
+ TfrxMemoView(frxReport1.FindComponent('Memo2')).Memo.Clear;
+ TfrxMemoView(frxReport1.FindComponent('memo2')).Memo.Add(memo1.lines.Text);
+ frxReport1.Print;
 end;
 
 procedure TFTexto.Image7Click(Sender: TObject);

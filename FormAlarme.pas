@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.WinXPickers, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.ExtCtrls, System.Notification, Vcl.ComCtrls;
+  Vcl.Buttons, Vcl.ExtCtrls, System.Notification, Vcl.ComCtrls,System.uiTypes;
 
 type
   TFAlarme = class(TForm)

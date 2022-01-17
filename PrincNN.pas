@@ -9,7 +9,7 @@ uses
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage,System.UITypes;
 
 type
   TProjNONS = class(TForm)
@@ -64,6 +64,8 @@ type
     Button7: TButton;
     ALoadPDF: TAction;
     Button3: TButton;
+    AExplorer: TAction;
+    Button9: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -81,6 +83,7 @@ type
     procedure ComboBox1Change(Sender: TObject);
     procedure AMusicCExecute(Sender: TObject);
     procedure ALoadPDFExecute(Sender: TObject);
+    procedure AExplorerExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -101,11 +104,11 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme, FormMusica, FormLoadPDFFile;
+  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 var
-Ver,estilo,styles : string;
+Ver,styles : string;
 begin
   cont := 0;
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
@@ -256,8 +259,6 @@ end;
 
 //Botão Salvar Notas
 procedure TProjNONS.BitBtn3Click(Sender: TObject);
-var
-cont : integer;
 begin
    if not (Memo1.Text = '') then
   begin
@@ -342,5 +343,14 @@ begin
  FMusica := TFMusica.Create(Application);
  FMusica.Show;
 end;
+
+//Explorador - Win 3.1 (Directory e FileListbox)
+procedure TProjNONS.AExplorerExecute(Sender: TObject);
+begin
+ Button9.Enabled := False;
+ FExplorer := TFExplorer.Create(Application);
+ FExplorer.Show;
+end;
+
 
 end.

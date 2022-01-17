@@ -14,7 +14,8 @@ uses
   Vcl.Styles,
   FormSend in 'FormSend.pas' {FSend},
   FormMusica in 'FormMusica.pas' {FMusica},
-  FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile};
+  FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile},
+  FormExplorer in 'FormExplorer.pas' {FExplorer};
 
 {$R *.res}
 

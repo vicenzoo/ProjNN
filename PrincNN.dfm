@@ -120,7 +120,17 @@ object ProjNONS: TProjNONS
           Action = AAlarme
           Align = alTop
           TabOrder = 0
-          ExplicitTop = 25
+        end
+        object Button9: TButton
+          Left = 0
+          Top = 25
+          Width = 196
+          Height = 25
+          Action = AExplorer
+          Align = alTop
+          TabOrder = 1
+          ExplicitLeft = -2
+          ExplicitTop = 80
         end
       end
       object CategoryPanel3: TCategoryPanel
@@ -162,7 +172,6 @@ object ProjNONS: TProjNONS
           Action = AMusicC
           Align = alTop
           TabOrder = 0
-          ExplicitTop = 0
         end
         object Button3: TButton
           Left = 0
@@ -172,7 +181,6 @@ object ProjNONS: TProjNONS
           Action = ANav
           Align = alTop
           TabOrder = 1
-          ExplicitTop = 10
         end
       end
       object CategoryPanel1: TCategoryPanel
@@ -565,6 +573,10 @@ object ProjNONS: TProjNONS
     object ALoadPDF: TAction
       Caption = 'PDF'
       OnExecute = ALoadPDFExecute
+    end
+    object AExplorer: TAction
+      Caption = 'Explorador de Arquivos'
+      OnExecute = AExplorerExecute
     end
   end
   object ImageCollection1: TImageCollection

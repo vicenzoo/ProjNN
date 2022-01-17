@@ -268,7 +268,7 @@ object FTexto: TFTexto
         FEF603F13F2076A68223B0A60B420E380C7580FD4039809A60683B801A95D1F0
         70002525E1D0730036408D06CCE077003E034746758CCF4052C1F07100CDC0A8
         0306DC010097B73A218699B1860000000049454E44AE426082}
-      OnClick = Image7Click
+      OnClick = Image6Click
     end
     object Image1: TImage
       Left = 420
@@ -297,8 +297,6 @@ object FTexto: TFTexto
     Height = 390
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 100
-    ExplicitWidth = 644
   end
   object OpenDialog1: TOpenDialog
     Filter = 'Text|*.txt;'
