@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
   Vcl.StdCtrls, Vcl.Buttons, frxClass, frxExportBaseDialog, frxExportPDF,
-  Vcl.WinXCtrls,System.UITypes;
+  Vcl.WinXCtrls,System.UITypes, frxExportCSV;
 
 type
   TFTexto = class(TForm)
@@ -30,6 +30,7 @@ type
     Image5: TImage;
     Image6: TImage;
     Image1: TImage;
+    frxCSVExport1: TfrxCSVExport;
     procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image4Click(Sender: TObject);

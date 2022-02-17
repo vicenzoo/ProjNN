@@ -30,23 +30,6 @@ object FNav: TFNav
     Align = alBottom
     ExplicitTop = 534
   end
-  object WebBrowser1: TWebBrowser
-    Left = 0
-    Top = 0
-    Width = 758
-    Height = 492
-    Align = alClient
-    TabOrder = 0
-    OnNavigateComplete2 = WebBrowser1NavigateComplete2
-    ExplicitTop = 150
-    ExplicitHeight = 413
-    ControlData = {
-      4C000000574E0000DA3200000000000000000000000000000000000000000000
-      000000004C000000000000000000000001000000E0D057007335CF11AE690800
-      2B2E126208000000000000004C0000000114020000000000C000000000000046
-      8000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000100000000000000000000000000000000000000}
-  end
   object Panel1: TPanel
     Left = 0
     Top = 528
@@ -54,7 +37,7 @@ object FNav: TFNav
     Height = 35
     Align = alBottom
     BevelOuter = bvNone
-    TabOrder = 1
+    TabOrder = 0
     object Image2: TImage
       Left = 719
       Top = 0
@@ -252,7 +235,7 @@ object FNav: TFNav
     Align = alBottom
     AutoSize = True
     BevelOuter = bvNone
-    TabOrder = 2
+    TabOrder = 1
     object ComboBox1: TComboBox
       AlignWithMargins = True
       Left = 3
@@ -264,5 +247,23 @@ object FNav: TFNav
       Text = 'https://google.com.br'
       OnKeyDown = ComboBox1KeyDown
     end
+  end
+  object WebBrowser1: TWebBrowser
+    Left = 0
+    Top = 0
+    Width = 758
+    Height = 492
+    Align = alClient
+    TabOrder = 2
+    ExplicitLeft = 224
+    ExplicitTop = 152
+    ExplicitWidth = 300
+    ExplicitHeight = 150
+    ControlData = {
+      4C000000574E0000DA3200000000000000000000000000000000000000000000
+      000000004C000000000000000000000001000000E0D057007335CF11AE690800
+      2B2E126208000000000000004C0000000114020000000000C000000000000046
+      8000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000100000000000000000000000000000000000000}
   end
 end

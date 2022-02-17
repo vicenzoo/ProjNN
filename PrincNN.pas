@@ -9,7 +9,7 @@ uses
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
-  Vcl.Imaging.pngimage,System.UITypes;
+  Vcl.Imaging.pngimage,System.UITypes, RzBorder;
 
 type
   TProjNONS = class(TForm)
@@ -33,7 +33,6 @@ type
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     Label5: TLabel;
-    Label6: TLabel;
     ImageCollection1: TImageCollection;
     VirtualImageList1: TVirtualImageList;
     Button2: TButton;
@@ -66,6 +65,7 @@ type
     Button3: TButton;
     AExplorer: TAction;
     Button9: TButton;
+    label6: TRzLEDDisplay;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -114,7 +114,7 @@ begin
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
   Ver := Versao(Application.ExeName);
-  Label6.Caption := ver;
+  Label6.Caption := 'Ver.: ' + ver;
 
 
  with ComboBox1 do

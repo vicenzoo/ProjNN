@@ -79,9 +79,9 @@ object ProjNONS: TProjNONS
             Left = 1
             Top = 1
             Width = 194
-            Height = 39
+            Height = 13
             Align = alTop
-            Caption = 'Projeto No Net System (NONS) '#13#13'Ver.:'
+            Caption = 'Projeto No Net System (NONS) '
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clBlack
             Font.Height = -11
@@ -91,18 +91,19 @@ object ProjNONS: TProjNONS
             WordWrap = True
             ExplicitWidth = 172
           end
-          object Label6: TLabel
-            Left = 35
-            Top = 20
-            Width = 50
-            Height = 21
-            Caption = 'Label6'
-            Font.Charset = ANSI_CHARSET
-            Font.Color = 445951
-            Font.Height = -16
-            Font.Name = 'Segoe UI'
-            Font.Style = [fsBold]
-            ParentFont = False
+          object label6: TRzLEDDisplay
+            Left = 1
+            Top = -31
+            Width = 194
+            Align = alBottom
+            Caption = ''
+            SegOnColor = clYellow
+            SegOffColor = clOlive
+            Scrolling = True
+            ScrollDelay = 50
+            ExplicitLeft = 91
+            ExplicitTop = 17
+            ExplicitWidth = 100
           end
         end
       end
@@ -129,8 +130,6 @@ object ProjNONS: TProjNONS
           Action = AExplorer
           Align = alTop
           TabOrder = 1
-          ExplicitLeft = -2
-          ExplicitTop = 80
         end
       end
       object CategoryPanel3: TCategoryPanel

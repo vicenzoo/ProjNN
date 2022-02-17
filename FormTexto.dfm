@@ -421,4 +421,18 @@ object FTexto: TFTexto
     Left = 640
     Top = 110
   end
+  object frxCSVExport1: TfrxCSVExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = True
+    Separator = ';'
+    OEMCodepage = False
+    UTF8 = False
+    OpenAfterExport = False
+    NoSysSymbols = True
+    ForcedQuotes = False
+    Left = 640
+    Top = 200
+  end
 end

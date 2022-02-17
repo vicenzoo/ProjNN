@@ -6,11 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
   Vcl.OleCtrls, SHDocVw, Vcl.StdCtrls, Vcl.Buttons,IniFiles, ShlObj, Vcl.Menus,WinInet,
-  StrUtils, System.UITypes;
+  StrUtils, System.UITypes, Winapi.ActiveX;
 
 type
   TFNav = class(TForm)
-    WebBrowser1: TWebBrowser;
     Panel1: TPanel;
     Image2: TImage;
     Image1: TImage;
@@ -23,6 +22,7 @@ type
     Splitter3: TSplitter;
     Image3: TImage;
     Image4: TImage;
+    WebBrowser1: TWebBrowser;
     procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
