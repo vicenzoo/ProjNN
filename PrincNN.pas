@@ -9,22 +9,17 @@ uses
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
-  Vcl.Imaging.pngimage,System.UITypes, RzBorder;
+  Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel;
 
 type
   TProjNONS = class(TForm)
     SplitView1: TSplitView;
     SplitView2: TSplitView;
     Panel1: TPanel;
-    CategoryPanelGroup1: TCategoryPanelGroup;
-    CategoryPanel1: TCategoryPanel;
     Panel2: TPanel;
     Label1: TLabel;
     Timer1: TTimer;
-    CategoryPanel2: TCategoryPanel;
-    Panel3: TPanel;
     Panel4: TPanel;
-    Button1: TButton;
     ActionList1: TActionList;
     AVideo: TAction;
     CalendarView1: TCalendarView;
@@ -32,16 +27,11 @@ type
     Label3: TLabel;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
-    Label5: TLabel;
     ImageCollection1: TImageCollection;
     VirtualImageList1: TVirtualImageList;
-    Button2: TButton;
     ATexto: TAction;
     AHub: TAction;
-    CategoryPanel3: TCategoryPanel;
     ANav: TAction;
-    Button4: TButton;
-    CategoryPanel4: TCategoryPanel;
     Label7: TLabel;
     Image2: TImage;
     BitBtn1: TBitBtn;
@@ -50,22 +40,45 @@ type
     TimePicker1: TTimePicker;
     Label2: TLabel;
     AFiletoZip: TAction;
-    Button5: TButton;
     Image3: TImage;
     AAlarme: TAction;
-    Button6: TButton;
-    CategoryPanel5: TCategoryPanel;
-    Button8: TButton;
     AMusicC: TAction;
     Panel5: TPanel;
     Label8: TLabel;
     ComboBox1: TComboBox;
-    Button7: TButton;
     ALoadPDF: TAction;
-    Button3: TButton;
     AExplorer: TAction;
-    Button9: TButton;
+    RzToolbar1: TRzToolbar;
+    RzToolButton1: TRzToolButton;
+    RzToolButton2: TRzToolButton;
+    RzToolButton3: TRzToolButton;
+    RzToolButton4: TRzToolButton;
+    RzToolButton5: TRzToolButton;
+    RzToolButton6: TRzToolButton;
+    RzToolButton7: TRzToolButton;
+    RzSpacer1: TRzSpacer;
+    RzSpacer2: TRzSpacer;
+    RzSpacer3: TRzSpacer;
+    RzToolButton8: TRzToolButton;
+    RzToolButton9: TRzToolButton;
+    CategoryPanelGroup1: TCategoryPanelGroup;
+    CategoryPanel2: TCategoryPanel;
+    Panel3: TPanel;
+    Label5: TLabel;
     label6: TRzLEDDisplay;
+    CategoryPanel4: TCategoryPanel;
+    Button6: TButton;
+    Button9: TButton;
+    CategoryPanel3: TCategoryPanel;
+    Button5: TButton;
+    Button7: TButton;
+    CategoryPanel5: TCategoryPanel;
+    Button8: TButton;
+    Button3: TButton;
+    CategoryPanel1: TCategoryPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button4: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
