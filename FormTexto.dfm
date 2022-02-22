@@ -296,6 +296,7 @@ object FTexto: TFTexto
     Width = 744
     Height = 390
     Align = alClient
+    ScrollBars = ssVertical
     TabOrder = 1
   end
   object OpenDialog1: TOpenDialog

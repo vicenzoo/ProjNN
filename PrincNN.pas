@@ -56,16 +56,21 @@ type
     RzToolButton5: TRzToolButton;
     RzToolButton6: TRzToolButton;
     RzToolButton7: TRzToolButton;
-    RzSpacer1: TRzSpacer;
-    RzSpacer2: TRzSpacer;
-    RzSpacer3: TRzSpacer;
     RzToolButton8: TRzToolButton;
     RzToolButton9: TRzToolButton;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    RzSpacer2: TRzSpacer;
+    RzSpacer1: TRzSpacer;
+    RzSpacer3: TRzSpacer;
+    Label5: TLabel;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
-    Label5: TLabel;
-    label6: TRzLEDDisplay;
+    Label6: TLabel;
+    RzLEDDisplay1: TRzLEDDisplay;
     CategoryPanel4: TCategoryPanel;
     Button6: TButton;
     Button9: TButton;
@@ -127,7 +132,7 @@ begin
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
   Ver := Versao(Application.ExeName);
-  Label6.Caption := 'Ver.: ' + ver;
+  RzLEDDisplay1.Caption := 'Ver.: ' + ver;
 
 
  with ComboBox1 do

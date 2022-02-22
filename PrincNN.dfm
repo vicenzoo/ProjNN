@@ -91,119 +91,216 @@ object ProjNONS: TProjNONS
       Width = 71
       Height = 504
       Align = alLeft
-      AutoStyle = False
       Images = VirtualImageList1
-      ButtonWidth = 67
       TextOptions = ttoCustom
-      AutoSize = True
       BorderInner = fsNone
       BorderOuter = fsNone
       BorderSides = [sdLeft]
       BorderWidth = 0
+      FlatColor = clSilver
       GradientColorStart = clMedGray
-      GradientColorStop = clAppWorkSpace
+      GradientColorStop = clMedGray
       TabOrder = 1
       Transparent = True
       VisualStyle = vsGradient
       ExplicitLeft = 3
       ToolbarControls = (
+        RzSpacer1
+        Label5
+        RzSpacer2
+        Label9
         RzToolButton1
         RzToolButton2
         RzToolButton3
-        RzSpacer1
+        Label10
         RzToolButton4
         RzToolButton5
-        RzSpacer2
+        Label11
         RzToolButton6
         RzToolButton7
-        RzSpacer3
+        Label12
         RzToolButton8
-        RzToolButton9)
+        RzToolButton9
+        RzSpacer3)
       object RzToolButton1: TRzToolButton
-        Left = 0
-        Top = 2
+        Left = 4
+        Top = 102
+        Width = 60
+        AllowAllUp = True
         ImageIndex = 10
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AVideo
         Align = alTop
       end
       object RzToolButton2: TRzToolButton
-        Left = 0
-        Top = 27
+        Left = 4
+        Top = 127
+        Width = 30
+        AllowAllUp = True
         ImageIndex = 9
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = ATexto
         Align = alTop
       end
       object RzToolButton3: TRzToolButton
-        Left = 0
-        Top = 52
+        Left = 34
+        Top = 127
+        Width = 30
+        AllowAllUp = True
         ImageIndex = 11
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AHub
+        Align = alTop
       end
       object RzToolButton4: TRzToolButton
-        Left = 0
-        Top = 102
+        Left = 4
+        Top = 172
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 2
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = ANav
+        Align = alBottom
       end
       object RzToolButton5: TRzToolButton
-        Left = 0
-        Top = 127
+        Left = 34
+        Top = 172
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 5
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AMusicC
+        Align = alBottom
       end
       object RzToolButton6: TRzToolButton
-        Left = 0
-        Top = 177
+        Left = 4
+        Top = 222
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 1
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AFiletoZip
+        Align = alBottom
       end
       object RzToolButton7: TRzToolButton
-        Left = 0
-        Top = 202
+        Left = 34
+        Top = 222
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 3
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = ALoadPDF
-      end
-      object RzSpacer1: TRzSpacer
-        Left = 0
-        Top = 88
-        Width = 67
-        Height = 3
-        Grooved = True
-      end
-      object RzSpacer2: TRzSpacer
-        Left = 0
-        Top = 163
-        Width = 67
-        Height = 3
-        Grooved = True
-      end
-      object RzSpacer3: TRzSpacer
-        Left = 0
-        Top = 238
-        Width = 67
-        Height = 3
-        Grooved = True
+        Align = alBottom
       end
       object RzToolButton8: TRzToolButton
-        Left = 0
-        Top = 252
+        Left = 4
+        Top = 272
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 12
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AAlarme
+        Align = alBottom
       end
       object RzToolButton9: TRzToolButton
-        Left = 0
-        Top = 277
+        Left = 34
+        Top = 272
+        Width = 30
+        Height = 34
+        AllowAllUp = True
         ImageIndex = 13
         Images = VirtualImageList1
+        UseToolbarButtonSize = False
         Action = AExplorer
+        Align = alBottom
+      end
+      object Label9: TLabel
+        Left = 4
+        Top = 83
+        Width = 60
+        Height = 13
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Offline'
+      end
+      object Label10: TLabel
+        Left = 4
+        Top = 155
+        Width = 60
+        Height = 18
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Online'
+      end
+      object Label11: TLabel
+        Left = 4
+        Top = 208
+        Width = 60
+        Height = 13
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Conv./Facil.'
+      end
+      object Label12: TLabel
+        Left = 4
+        Top = 258
+        Width = 60
+        Height = 13
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Aux'#237'liar'
+      end
+      object RzSpacer2: TRzSpacer
+        Left = 4
+        Top = 59
+        Width = 60
+        Height = 10
+        Grooved = True
+      end
+      object RzSpacer1: TRzSpacer
+        Left = 4
+        Top = 10
+        Width = 60
+        Height = 8
+        Grooved = True
+        Orientation = orVertical
+      end
+      object RzSpacer3: TRzSpacer
+        Left = 4
+        Top = 310
+        Width = 60
+        Height = 8
+        Grooved = True
+        Orientation = orVertical
+      end
+      object Label5: TLabel
+        AlignWithMargins = True
+        Left = 7
+        Top = 25
+        Width = 57
+        Height = 28
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Menu R'#225'pido'
+        WordWrap = True
       end
     end
     object CategoryPanelGroup1: TCategoryPanelGroup
@@ -238,7 +335,7 @@ object ProjNONS: TProjNONS
           Height = 0
           Align = alClient
           TabOrder = 0
-          object Label5: TLabel
+          object Label6: TLabel
             Left = 1
             Top = 1
             Width = 194
@@ -254,7 +351,7 @@ object ProjNONS: TProjNONS
             WordWrap = True
             ExplicitWidth = 172
           end
-          object label6: TRzLEDDisplay
+          object RzLEDDisplay1: TRzLEDDisplay
             Left = 1
             Top = -31
             Width = 194

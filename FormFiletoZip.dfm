@@ -4,7 +4,7 @@ object FFiletoZip: TFFiletoZip
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSingle
   Caption = 'Comprimir Arquivo'
-  ClientHeight = 103
+  ClientHeight = 186
   ClientWidth = 651
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,12 +17,13 @@ object FFiletoZip: TFFiletoZip
   Position = poDefault
   Visible = True
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
     Left = 262
     Top = 0
-    Height = 103
+    Height = 186
     Align = alRight
     ExplicitLeft = 11
     ExplicitTop = 2
@@ -32,33 +33,50 @@ object FFiletoZip: TFFiletoZip
     Left = 0
     Top = 0
     Width = 262
-    Height = 103
+    Height = 186
     Align = alClient
+    BevelOuter = bvNone
     TabOrder = 0
+    ExplicitLeft = -2
+    ExplicitTop = 8
     object Label1: TLabel
-      Left = 8
-      Top = 8
+      Left = 10
+      Top = 86
       Width = 126
       Height = 13
       Caption = 'Selecione o/os Arquivo(s):'
     end
     object Label4: TLabel
-      Left = 140
-      Top = 58
+      Left = 142
+      Top = 136
       Width = 30
       Height = 13
       Caption = 'status'
     end
     object Label2: TLabel
-      Left = 8
-      Top = 58
+      Left = 10
+      Top = 136
       Width = 107
       Height = 13
       Caption = 'Progresso do Arquivo:'
     end
+    object Label3: TLabel
+      Left = 10
+      Top = 6
+      Width = 51
+      Height = 13
+      Caption = 'Salvar em:'
+    end
+    object Label5: TLabel
+      Left = 10
+      Top = 45
+      Width = 86
+      Height = 13
+      Caption = 'Nome do Arquivo:'
+    end
     object BitBtn1: TBitBtn
-      Left = 8
-      Top = 27
+      Left = 10
+      Top = 105
       Width = 126
       Height = 25
       Caption = 'Selecionar'
@@ -66,8 +84,8 @@ object FFiletoZip: TFFiletoZip
       OnClick = BitBtn1Click
     end
     object BitBtn2: TBitBtn
-      Left = 140
-      Top = 27
+      Left = 142
+      Top = 105
       Width = 111
       Height = 25
       Caption = 'Iniciar'
@@ -76,25 +94,42 @@ object FFiletoZip: TFFiletoZip
       OnClick = BitBtn2Click
     end
     object ProgressBar1: TProgressBar
-      Left = 6
-      Top = 77
+      Left = 8
+      Top = 155
       Width = 245
       Height = 17
       TabOrder = 2
+    end
+    object Edit1: TEdit
+      Left = 8
+      Top = 21
+      Width = 241
+      Height = 21
+      TabOrder = 3
+      OnExit = Edit1Exit
+    end
+    object Edit2: TEdit
+      Left = 8
+      Top = 59
+      Width = 241
+      Height = 21
+      TabOrder = 4
     end
   end
   object Panel2: TPanel
     Left = 265
     Top = 0
     Width = 386
-    Height = 103
+    Height = 186
     Align = alRight
+    BevelOuter = bvNone
     TabOrder = 1
+    ExplicitHeight = 103
     object Image2: TImage
-      Left = 346
-      Top = 1
+      Left = 347
+      Top = 0
       Width = 39
-      Height = 101
+      Height = 186
       Align = alRight
       Center = True
       ParentShowHint = False
@@ -113,13 +148,19 @@ object FFiletoZip: TFFiletoZip
       ExplicitHeight = 228
     end
     object ListBox1: TListBox
-      Left = 1
-      Top = 1
-      Width = 345
-      Height = 101
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 341
+      Height = 180
       Align = alClient
       ItemHeight = 13
       TabOrder = 0
+      OnKeyDown = ListBox1KeyDown
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitWidth = 345
+      ExplicitHeight = 101
     end
   end
   object OpenDialog1: TOpenDialog
