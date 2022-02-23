@@ -91,6 +91,7 @@ object ProjNONS: TProjNONS
       Width = 71
       Height = 504
       Align = alLeft
+      AutoStyle = False
       Images = VirtualImageList1
       TextOptions = ttoCustom
       BorderInner = fsNone
@@ -103,7 +104,6 @@ object ProjNONS: TProjNONS
       TabOrder = 1
       Transparent = True
       VisualStyle = vsGradient
-      ExplicitLeft = 3
       ToolbarControls = (
         RzSpacer1
         Label5
@@ -119,13 +119,15 @@ object ProjNONS: TProjNONS
         RzToolButton6
         RzToolButton7
         Label12
+        RzToolButton10
         RzToolButton8
         RzToolButton9
         RzSpacer3)
       object RzToolButton1: TRzToolButton
         Left = 4
-        Top = 102
+        Top = 97
         Width = 60
+        Height = 34
         AllowAllUp = True
         ImageIndex = 10
         Images = VirtualImageList1
@@ -205,27 +207,25 @@ object ProjNONS: TProjNONS
       end
       object RzToolButton8: TRzToolButton
         Left = 4
-        Top = 272
+        Top = 302
         Width = 30
-        Height = 34
         AllowAllUp = True
         ImageIndex = 12
         Images = VirtualImageList1
         UseToolbarButtonSize = False
         Action = AAlarme
-        Align = alBottom
+        Align = alTop
       end
       object RzToolButton9: TRzToolButton
         Left = 34
-        Top = 272
+        Top = 302
         Width = 30
-        Height = 34
         AllowAllUp = True
         ImageIndex = 13
         Images = VirtualImageList1
         UseToolbarButtonSize = False
         Action = AExplorer
-        Align = alBottom
+        Align = alTop
       end
       object Label9: TLabel
         Left = 4
@@ -284,7 +284,7 @@ object ProjNONS: TProjNONS
       end
       object RzSpacer3: TRzSpacer
         Left = 4
-        Top = 310
+        Top = 335
         Width = 60
         Height = 8
         Grooved = True
@@ -301,6 +301,18 @@ object ProjNONS: TProjNONS
         AutoSize = False
         Caption = 'Menu R'#225'pido'
         WordWrap = True
+      end
+      object RzToolButton10: TRzToolButton
+        Left = 4
+        Top = 272
+        Width = 60
+        Height = 34
+        AllowAllUp = True
+        ImageIndex = 14
+        Images = VirtualImageList1
+        UseToolbarButtonSize = False
+        Action = Atxtaux
+        Align = alTop
       end
     end
     object CategoryPanelGroup1: TCategoryPanelGroup
@@ -390,6 +402,15 @@ object ProjNONS: TProjNONS
           Action = AExplorer
           Align = alTop
           TabOrder = 1
+        end
+        object Button10: TButton
+          Left = 0
+          Top = 50
+          Width = 196
+          Height = 25
+          Action = Atxtaux
+          Align = alTop
+          TabOrder = 2
         end
       end
       object CategoryPanel3: TCategoryPanel
@@ -796,6 +817,10 @@ object ProjNONS: TProjNONS
     object AExplorer: TAction
       Caption = 'Explorador de Arquivos'
       OnExecute = AExplorerExecute
+    end
+    object Atxtaux: TAction
+      Caption = 'Aux'#237'liar de Texto'
+      OnExecute = AtxtauxExecute
     end
   end
   object ImageCollection1: TImageCollection
@@ -2361,6 +2386,21 @@ object ProjNONS: TProjNONS
               92CAE19D6CFE4D38E5A1C7843CB039C4BB39D2B29528E5E5931863E2247CCB2D
               DF812F2C216366D5E887560000000049454E44AE426082}
           end>
+      end
+      item
+        Name = 'Text Input Form_32px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F400000006624B474400FF00FF00FFA0BDA793000000B5494441545809ED52BB
+              0A80300C6CA58BBF26F8FF8BA0831FE1561369A28496829A7689F4C8A3E42E1E
+              75CE3E73C01C30073A3BE0937E4CB175F0436B45A91744831C11EDDF4B76BCBB
+              03A50566F8E715101316881340ED901009EC90508FE2E6FEFB88931965A356F3
+              E0CB84F94385E0A8DC7FBEA6578F1B2199ACB1F784BC2FD5CF995CCE7AA54748
+              4323240808BA073742E8AADCECA885703507EE11A54C3EC26B2B25AD2C6D7707
+              B25B59D31C3007CC81960E9CF86E2324B4AAC4F40000000049454E44AE426082}
+          end>
       end>
     Left = 260
     Top = 80
@@ -2452,6 +2492,12 @@ object ProjNONS: TProjNONS
         CollectionName = 'Windows Explorer_32px'
         Disabled = False
         Name = 'Windows Explorer_32px'
+      end
+      item
+        CollectionIndex = 39
+        CollectionName = 'Text Input Form_32px'
+        Disabled = False
+        Name = 'Text Input Form_32px'
       end>
     ImageCollection = ImageCollection1
     Width = 20

@@ -66,6 +66,8 @@ type
     RzSpacer1: TRzSpacer;
     RzSpacer3: TRzSpacer;
     Label5: TLabel;
+    Atxtaux: TAction;
+    RzToolButton10: TRzToolButton;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
@@ -74,6 +76,7 @@ type
     CategoryPanel4: TCategoryPanel;
     Button6: TButton;
     Button9: TButton;
+    Button10: TButton;
     CategoryPanel3: TCategoryPanel;
     Button5: TButton;
     Button7: TButton;
@@ -102,6 +105,7 @@ type
     procedure AMusicCExecute(Sender: TObject);
     procedure ALoadPDFExecute(Sender: TObject);
     procedure AExplorerExecute(Sender: TObject);
+    procedure AtxtauxExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -122,7 +126,7 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer;
+  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 var
@@ -362,7 +366,7 @@ begin
  FMusica.Show;
 end;
 
-//Explorador - Win 3.1 (Directory e FileListbox)
+//Explorador - Raize Components
 procedure TProjNONS.AExplorerExecute(Sender: TObject);
 begin
  Button9.Enabled := False;
@@ -370,5 +374,12 @@ begin
  FExplorer.Show;
 end;
 
+//Auxíliar de Texto - Ajuda a lidar com textos
+procedure TProjNONS.AtxtauxExecute(Sender: TObject);
+begin
+ Button10.Enabled := False;
+ Ftxtaux := TFtxtaux.Create(Application);
+ Ftxtaux.Show;
+end;
 
 end.

@@ -15,7 +15,8 @@ uses
   FormSend in 'FormSend.pas' {FSend},
   FormMusica in 'FormMusica.pas' {FMusica},
   FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile},
-  FormExplorer in 'FormExplorer.pas' {FExplorer};
+  FormExplorer in 'FormExplorer.pas' {FExplorer},
+  FormTextaux in 'FormTextaux.pas' {Ftxtaux};
 
 {$R *.res}
 

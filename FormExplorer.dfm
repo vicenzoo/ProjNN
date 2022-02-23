@@ -28,8 +28,6 @@ object FExplorer: TFExplorer
     BevelOuter = bvNone
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitLeft = 221
-    ExplicitWidth = 463
     object Panel3: TPanel
       Left = 649
       Top = 0
@@ -38,7 +36,6 @@ object FExplorer: TFExplorer
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 428
       object Image1: TImage
         Left = 0
         Top = 0
@@ -92,8 +89,8 @@ object FExplorer: TFExplorer
       Height = 356
       Align = alClient
       IconOptions.AutoArrange = True
+      MultiSelect = True
       TabOrder = 1
-      ExplicitWidth = 428
     end
   end
 end
