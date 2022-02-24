@@ -17,7 +17,6 @@ type
     SplitView2: TSplitView;
     Panel1: TPanel;
     Panel2: TPanel;
-    Label1: TLabel;
     Timer1: TTimer;
     Panel4: TPanel;
     ActionList1: TActionList;
@@ -37,8 +36,6 @@ type
     BitBtn1: TBitBtn;
     Label4: TLabel;
     Image1: TImage;
-    TimePicker1: TTimePicker;
-    Label2: TLabel;
     AFiletoZip: TAction;
     Image3: TImage;
     AAlarme: TAction;
@@ -87,6 +84,12 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Label13: TLabel;
+    Label2: TLabel;
+    AClock: TAction;
+    BitBtn4: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -106,6 +109,7 @@ type
     procedure ALoadPDFExecute(Sender: TObject);
     procedure AExplorerExecute(Sender: TObject);
     procedure AtxtauxExecute(Sender: TObject);
+    procedure AClockExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -126,7 +130,7 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux;
+  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux, FormClock;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 var
@@ -168,13 +172,15 @@ begin
    Panel4.Visible := false;
    Panel2.Visible := false;
    label2.Caption := FormatDateTime('dd / ddd',Date);
+   BitBtn4.Visible := false;
   end
   else
   begin
    SplitView2.Open;
    Panel4.Visible := true;
    Panel2.Visible := true;
-   label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
+   label2.Caption := FormatDateTime('dddd - mmmm yyyy ',Date);
+   BitBtn4.Visible := true;
   end;
 end;
 
@@ -194,7 +200,8 @@ end;
 
 procedure TProjNONS.Timer1Timer(Sender: TObject);
 begin
-  TimePicker1.Time := time;
+  Label13.Caption := '';
+  Label13.Caption := TimeToStr(time);
 end;
 
 //Verifica se esta conectado;
@@ -381,5 +388,13 @@ begin
  Ftxtaux := TFtxtaux.Create(Application);
  Ftxtaux.Show;
 end;
+
+procedure TProjNONS.AClockExecute(Sender: TObject);
+begin
+  BitBtn4.Enabled := False;
+  FClock := TFClock.Create(Application);
+  FClock.Show;
+end;
+
 
 end.

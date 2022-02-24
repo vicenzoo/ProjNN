@@ -16,7 +16,8 @@ uses
   FormMusica in 'FormMusica.pas' {FMusica},
   FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile},
   FormExplorer in 'FormExplorer.pas' {FExplorer},
-  FormTextaux in 'FormTextaux.pas' {Ftxtaux};
+  FormTextaux in 'FormTextaux.pas' {Ftxtaux},
+  FormClock in 'FormClock.pas' {FClock};
 
 {$R *.res}
 

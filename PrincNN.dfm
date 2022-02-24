@@ -332,7 +332,6 @@ object ProjNONS: TProjNONS
       HeaderFont.Name = 'Tahoma'
       HeaderFont.Style = []
       TabOrder = 2
-      ExplicitTop = 49
       object CategoryPanel2: TCategoryPanel
         Top = 120
         Height = 30
@@ -528,37 +527,15 @@ object ProjNONS: TProjNONS
       ExplicitLeft = 10
       ExplicitTop = -6
     end
-    object Label2: TLabel
-      Left = 0
-      Top = 549
-      Width = 225
-      Height = 13
-      Align = alBottom
-      Alignment = taCenter
-      Caption = 'Dia.Hora'
-      Color = clBtnFace
-      ParentColor = False
-      Transparent = False
-      ExplicitWidth = 42
-    end
     object Panel2: TPanel
       Left = 0
-      Top = 493
+      Top = 516
       Width = 225
-      Height = 56
+      Height = 50
       Align = alBottom
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 0
-      object Label1: TLabel
-        Left = 0
-        Top = 38
-        Width = 225
-        Height = 13
-        Align = alTop
-        Caption = 'Data/Hora:'
-        ExplicitWidth = 54
-      end
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -591,7 +568,7 @@ object ProjNONS: TProjNONS
       Left = 0
       Top = 39
       Width = 225
-      Height = 454
+      Height = 477
       Align = alClient
       BevelOuter = bvNone
       ParentBackground = False
@@ -673,20 +650,97 @@ object ProjNONS: TProjNONS
         OnClick = BitBtn3Click
       end
     end
-    object TimePicker1: TTimePicker
+    object Panel6: TPanel
       Left = 0
-      Top = 562
+      Top = 566
       Width = 225
+      Height = 28
       Align = alBottom
-      Enabled = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
+      BevelOuter = bvNone
+      Caption = 'Panel6'
       TabOrder = 2
-      Time = 44472.771667291660000000
-      TimeFormat = 'hh:mm'
+      object Panel7: TPanel
+        Left = 0
+        Top = 0
+        Width = 200
+        Height = 28
+        Align = alClient
+        BevelOuter = bvNone
+        Caption = 'Panel7'
+        TabOrder = 0
+        object Label13: TLabel
+          Left = 0
+          Top = 13
+          Width = 200
+          Height = 13
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'Hora'
+          Color = clBtnFace
+          ParentColor = False
+          Transparent = False
+          ExplicitWidth = 23
+        end
+        object Label2: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 13
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'Dia.Hora'
+          Color = clBtnFace
+          ParentColor = False
+          Transparent = False
+          ExplicitWidth = 42
+        end
+      end
+      object BitBtn4: TBitBtn
+        Left = 200
+        Top = 0
+        Width = 25
+        Height = 28
+        Action = AClock
+        Align = alRight
+        Glyph.Data = {
+          42040000424D4204000000000000420000002800000010000000100000000100
+          20000300000000040000000000000000000000000000000000000000FF0000FF
+          0000FF0000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000EB0000004500000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000004B000000EC0000003B000000000000
+          0000000000000000000700000056000000000000000000000000000000000000
+          0000000000000000000000000000000000000000004B000000EC0000003B0000
+          000000000006000000B2000000F90000004E0000000000000000000000000000
+          000000000000000000000000000000000000000000000000004C000000EC0000
+          0040000000B1000000AD0000004E000000C40000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000450000
+          00E7000000AD000000050000000C000000F20000000000000000000000000000
+          0000000000000000000000000000000000000000000000000005000000AD0000
+          00AF000000050000000000000020000000F60000002300000000000000000000
+          00000000000000000000000000000000000000000003000000A2000000B90000
+          000800000000000000000000000200000080000000E80000004E000000000000
+          00000000000000000000000000000000000000000053000000FA0000004E0000
+          00110000001C0000000000000000000000000000002B000000D20000009A0000
+          000900000000000000000000000000000000000000000000004C000000C10000
+          00EA000000F2000000660000000000000000000000000000001F000000F60000
+          0069000000000000000000000000000000000000000000000000000000000000
+          000000000027000000E6000000250000000000000010000000CB0000008C0000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000005D000000CF00000018000000CB0000008B000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000000000000000000009B000000F70000007B00000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000000000000000000000A000000620000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000000}
+        TabOrder = 1
+        WordWrap = True
+      end
     end
   end
   object Panel1: TPanel
@@ -821,6 +875,10 @@ object ProjNONS: TProjNONS
     object Atxtaux: TAction
       Caption = 'Aux'#237'liar de Texto'
       OnExecute = AtxtauxExecute
+    end
+    object AClock: TAction
+      ImageIndex = 14
+      OnExecute = AClockExecute
     end
   end
   object ImageCollection1: TImageCollection
@@ -2401,6 +2459,23 @@ object ProjNONS: TProjNONS
               4323240808BA073742E8AADCECA885703507EE11A54C3EC26B2B25AD2C6D7707
               B25B59D31C3007CC81960E9CF86E2324B4AAC4F40000000049454E44AE426082}
           end>
+      end
+      item
+        Name = 'Pin_16px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+              6100000006624B474400FF00FF00FFA0BDA793000000E3494441543811D5CFBF
+              4A42511CC0F11F99FDA3C136872021A2A147700B9C949620687069087A0697F6
+              7A82DA5A6A11C1ADB1D921F0212AAAC921A9A9CF0902F122571B02E5FBB9E7DE
+              73CFB9F71AF14FBF35EF39E1CF5DDB39A4C5CC35ED78A44C8F0BA66ED7CA2776
+              48951C7A5C32B1863B0FBC32E094D1B65C7C7046A643335F1CB0C126A3EDB9E8
+              73C52A990A666EB86785DF169C9C47C40BE9E186C915DD6AD3219D1BA21211E9
+              B3B78D5355B3EA99F4A0A2719D0199D2A78D4F364CDC72CC2277ECD327B7BA15
+              EF54492D3974F924F7BF8F6FB6E7A765C723727BB3A2C69CF50D11AA21F9F9F1
+              AD660000000049454E44AE426082}
+          end>
       end>
     Left = 260
     Top = 80
@@ -2498,6 +2573,12 @@ object ProjNONS: TProjNONS
         CollectionName = 'Text Input Form_32px'
         Disabled = False
         Name = 'Text Input Form_32px'
+      end
+      item
+        CollectionIndex = 40
+        CollectionName = 'Pin_16px'
+        Disabled = False
+        Name = 'Pin_16px'
       end>
     ImageCollection = ImageCollection1
     Width = 20
