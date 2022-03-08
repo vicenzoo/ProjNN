@@ -1,7 +1,7 @@
 object Ftxtaux: TFtxtaux
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu, biMinimize]
+  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Aux'#237'liar de Texto'
   ClientHeight = 363

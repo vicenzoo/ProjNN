@@ -9,7 +9,8 @@ uses
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
-  Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel;
+  Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel,ShellApi,
+  Vcl.CategoryButtons;
 
 type
   TProjNONS = class(TForm)
@@ -45,26 +46,19 @@ type
     ComboBox1: TComboBox;
     ALoadPDF: TAction;
     AExplorer: TAction;
-    RzToolbar1: TRzToolbar;
-    RzToolButton1: TRzToolButton;
-    RzToolButton2: TRzToolButton;
-    RzToolButton3: TRzToolButton;
-    RzToolButton4: TRzToolButton;
-    RzToolButton5: TRzToolButton;
-    RzToolButton6: TRzToolButton;
-    RzToolButton7: TRzToolButton;
-    RzToolButton8: TRzToolButton;
-    RzToolButton9: TRzToolButton;
-    Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Label12: TLabel;
-    RzSpacer2: TRzSpacer;
-    RzSpacer1: TRzSpacer;
-    RzSpacer3: TRzSpacer;
-    Label5: TLabel;
     Atxtaux: TAction;
-    RzToolButton10: TRzToolButton;
+    Panel6: TPanel;
+    Panel7: TPanel;
+    Label13: TLabel;
+    Label2: TLabel;
+    AClock: TAction;
+    BitBtn4: TBitBtn;
+    OpenDialog1: TOpenDialog;
+    CategoryButtons1: TCategoryButtons;
+    Panel8: TPanel;
+    BitBtn5: TBitBtn;
+    Image4: TImage;
+    Label1: TLabel;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
@@ -84,12 +78,6 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
-    Panel6: TPanel;
-    Panel7: TPanel;
-    Label13: TLabel;
-    Label2: TLabel;
-    AClock: TAction;
-    BitBtn4: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -110,9 +98,12 @@ type
     procedure AExplorerExecute(Sender: TObject);
     procedure AtxtauxExecute(Sender: TObject);
     procedure AClockExecute(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
+    boolicon : Boolean;
     procedure listararquivos(diretorio: string; sub: boolean);
     function TemAtributo(Attr, Val: Integer): Boolean;
   public
@@ -137,6 +128,7 @@ var
 Ver,styles : string;
 begin
   cont := 0;
+  boolicon := false;
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
   Ver := Versao(Application.ExeName);
@@ -170,6 +162,7 @@ begin
   begin
    SplitView2.Close;
    Panel4.Visible := false;
+   Label1.Caption := 'Atalho';
    Panel2.Visible := false;
    label2.Caption := FormatDateTime('dd / ddd',Date);
    BitBtn4.Visible := false;
@@ -178,6 +171,7 @@ begin
   begin
    SplitView2.Open;
    Panel4.Visible := true;
+   Label1.Caption := 'Atalho Rápido';
    Panel2.Visible := true;
    label2.Caption := FormatDateTime('dddd - mmmm yyyy ',Date);
    BitBtn4.Visible := true;
@@ -306,6 +300,48 @@ begin
   else MessageDlg('Impossível Salvar!',mtWarning,[mbYes],0);
 end;
 
+//Icone de Atalho
+procedure TProjNONS.BitBtn5Click(Sender: TObject);
+var
+  Bitmap : TBitmap;
+  IconIndex: word;
+  Buffer: array[0..2048] of char;
+  IconHandle: HIcon;
+begin
+ if (boolicon = false) then
+ begin
+ boolicon := true;
+ OpenDialog1.Execute();
+ StrCopy(@Buffer, PChar(OpenDialog1.FileName));
+ IconIndex := 0;
+ IconHandle := ExtractAssociatedIcon(HInstance, Buffer, IconIndex);
+ if IconHandle <> 0 then
+ Icon.Handle := IconHandle;
+ Bitmap := TBitmap.Create;
+  try
+    Bitmap.Width := Icon.Width;
+    Bitmap.Height := Icon.Height;
+    Bitmap.Canvas.Draw(0, 0,Icon);
+    BitBtn5.Glyph.Assign(Bitmap);
+  finally
+    Bitmap.Free;
+  end;
+  image4.Visible := true;
+  exit;
+ end
+ else
+ begin
+  ShellExecute(Handle,'open',pchar(OpenDialog1.FileName),nil,nil,sw_show)
+ end;
+end;
+
+procedure TProjNONS.Image4Click(Sender: TObject);
+begin
+  BitBtn5.Glyph := nil;
+  VirtualImageList1.GetBitmap(16,BitBtn5.Glyph);
+  Image4.Visible := false;
+  boolicon := false;
+end;
 
 //Actions
 

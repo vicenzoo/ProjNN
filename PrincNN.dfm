@@ -24,7 +24,7 @@ object ProjNONS: TProjNONS
     Width = 200
     Height = 594
     CloseStyle = svcCompact
-    CompactWidth = 75
+    CompactWidth = 80
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 0
@@ -84,236 +84,103 @@ object ProjNONS: TProjNONS
         OnChange = ComboBox1Change
       end
     end
-    object RzToolbar1: TRzToolbar
-      AlignWithMargins = True
-      Left = 203
-      Top = 42
-      Width = 71
-      Height = 504
+    object CategoryButtons1: TCategoryButtons
+      Left = 200
+      Top = 39
+      Width = 79
+      Height = 510
       Align = alLeft
-      AutoStyle = False
+      BackgroundGradientColor = clBtnFace
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BorderStyle = bsNone
+      ButtonFlow = cbfVertical
+      ButtonOptions = [boFullSize, boGradientFill, boShowCaptions, boCaptionOnlyBorder]
+      Categories = <
+        item
+          Caption = 'Menu'
+          Color = 16053492
+          Collapsed = True
+          Items = <>
+          TextColor = clWindowFrame
+        end
+        item
+          Caption = 'Offline'
+          Color = clSilver
+          Collapsed = False
+          Items = <
+            item
+              Action = AVideo
+              ImageIndex = 10
+            end
+            item
+              Action = ATexto
+              ImageIndex = 9
+            end
+            item
+              Action = AHub
+              ImageIndex = 11
+            end>
+          TextColor = clWindow
+        end
+        item
+          Caption = 'Online'
+          Color = clSilver
+          Collapsed = False
+          Items = <
+            item
+              Action = ANav
+              Caption = 'Nav.'
+              ImageIndex = 2
+            end
+            item
+              Action = AMusicC
+              ImageIndex = 5
+            end>
+          TextColor = clWindow
+        end
+        item
+          Caption = 'Conv.'
+          Color = clSilver
+          Collapsed = False
+          Items = <
+            item
+              Action = AFiletoZip
+              Caption = 'ZIP'
+              ImageIndex = 1
+            end
+            item
+              Action = ALoadPDF
+              ImageIndex = 3
+            end>
+          TextColor = clWindow
+        end
+        item
+          Caption = 'Aux'#237'liar'
+          Color = clSilver
+          Collapsed = False
+          Items = <
+            item
+              Action = AAlarme
+              ImageIndex = 12
+            end
+            item
+              Action = AExplorer
+              Caption = 'Explorer'
+              ImageIndex = 13
+            end
+            item
+              Action = Atxtaux
+              Caption = 'Texto+'
+              ImageIndex = 14
+            end>
+          TextColor = clWindow
+        end>
+      HotButtonColor = 10930928
       Images = VirtualImageList1
-      TextOptions = ttoCustom
-      BorderInner = fsNone
-      BorderOuter = fsNone
-      BorderSides = [sdLeft]
-      BorderWidth = 0
-      FlatColor = clSilver
-      GradientColorStart = clMedGray
-      GradientColorStop = clMedGray
+      RegularButtonColor = clWhite
+      SelectedButtonColor = clSilver
       TabOrder = 1
-      Transparent = True
-      VisualStyle = vsGradient
-      ToolbarControls = (
-        RzSpacer1
-        Label5
-        RzSpacer2
-        Label9
-        RzToolButton1
-        RzToolButton2
-        RzToolButton3
-        Label10
-        RzToolButton4
-        RzToolButton5
-        Label11
-        RzToolButton6
-        RzToolButton7
-        Label12
-        RzToolButton10
-        RzToolButton8
-        RzToolButton9
-        RzSpacer3)
-      object RzToolButton1: TRzToolButton
-        Left = 4
-        Top = 97
-        Width = 60
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 10
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AVideo
-        Align = alTop
-      end
-      object RzToolButton2: TRzToolButton
-        Left = 4
-        Top = 127
-        Width = 30
-        AllowAllUp = True
-        ImageIndex = 9
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = ATexto
-        Align = alTop
-      end
-      object RzToolButton3: TRzToolButton
-        Left = 34
-        Top = 127
-        Width = 30
-        AllowAllUp = True
-        ImageIndex = 11
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AHub
-        Align = alTop
-      end
-      object RzToolButton4: TRzToolButton
-        Left = 4
-        Top = 172
-        Width = 30
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 2
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = ANav
-        Align = alBottom
-      end
-      object RzToolButton5: TRzToolButton
-        Left = 34
-        Top = 172
-        Width = 30
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 5
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AMusicC
-        Align = alBottom
-      end
-      object RzToolButton6: TRzToolButton
-        Left = 4
-        Top = 222
-        Width = 30
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 1
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AFiletoZip
-        Align = alBottom
-      end
-      object RzToolButton7: TRzToolButton
-        Left = 34
-        Top = 222
-        Width = 30
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 3
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = ALoadPDF
-        Align = alBottom
-      end
-      object RzToolButton8: TRzToolButton
-        Left = 4
-        Top = 302
-        Width = 30
-        AllowAllUp = True
-        ImageIndex = 12
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AAlarme
-        Align = alTop
-      end
-      object RzToolButton9: TRzToolButton
-        Left = 34
-        Top = 302
-        Width = 30
-        AllowAllUp = True
-        ImageIndex = 13
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = AExplorer
-        Align = alTop
-      end
-      object Label9: TLabel
-        Left = 4
-        Top = 83
-        Width = 60
-        Height = 13
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'Offline'
-      end
-      object Label10: TLabel
-        Left = 4
-        Top = 155
-        Width = 60
-        Height = 18
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'Online'
-      end
-      object Label11: TLabel
-        Left = 4
-        Top = 208
-        Width = 60
-        Height = 13
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'Conv./Facil.'
-      end
-      object Label12: TLabel
-        Left = 4
-        Top = 258
-        Width = 60
-        Height = 13
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'Aux'#237'liar'
-      end
-      object RzSpacer2: TRzSpacer
-        Left = 4
-        Top = 59
-        Width = 60
-        Height = 10
-        Grooved = True
-      end
-      object RzSpacer1: TRzSpacer
-        Left = 4
-        Top = 10
-        Width = 60
-        Height = 8
-        Grooved = True
-        Orientation = orVertical
-      end
-      object RzSpacer3: TRzSpacer
-        Left = 4
-        Top = 335
-        Width = 60
-        Height = 8
-        Grooved = True
-        Orientation = orVertical
-      end
-      object Label5: TLabel
-        AlignWithMargins = True
-        Left = 7
-        Top = 25
-        Width = 57
-        Height = 28
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'Menu R'#225'pido'
-        WordWrap = True
-      end
-      object RzToolButton10: TRzToolButton
-        Left = 4
-        Top = 272
-        Width = 60
-        Height = 34
-        AllowAllUp = True
-        ImageIndex = 14
-        Images = VirtualImageList1
-        UseToolbarButtonSize = False
-        Action = Atxtaux
-        Align = alTop
-      end
     end
     object CategoryPanelGroup1: TCategoryPanelGroup
       Left = 0
@@ -332,6 +199,7 @@ object ProjNONS: TProjNONS
       HeaderFont.Name = 'Tahoma'
       HeaderFont.Style = []
       TabOrder = 2
+      ExplicitTop = 49
       object CategoryPanel2: TCategoryPanel
         Top = 120
         Height = 30
@@ -528,20 +396,23 @@ object ProjNONS: TProjNONS
       ExplicitTop = -6
     end
     object Panel2: TPanel
-      Left = 0
-      Top = 516
-      Width = 225
-      Height = 50
+      AlignWithMargins = True
+      Left = 3
+      Top = 465
+      Width = 219
+      Height = 41
       Align = alBottom
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 470
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 225
+        Width = 219
         Height = 13
         Align = alTop
+        Alignment = taCenter
         Caption = 'Status'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = -1
@@ -549,12 +420,12 @@ object ProjNONS: TProjNONS
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 37
+        ExplicitTop = -6
       end
       object BitBtn1: TBitBtn
         Left = 0
         Top = 13
-        Width = 225
+        Width = 219
         Height = 25
         Align = alTop
         Caption = 'Verificar Conex'#227'o'
@@ -562,17 +433,19 @@ object ProjNONS: TProjNONS
         NumGlyphs = 2
         TabOrder = 0
         OnClick = BitBtn1Click
+        ExplicitTop = 30
       end
     end
     object Panel4: TPanel
       Left = 0
       Top = 39
       Width = 225
-      Height = 477
+      Height = 423
       Align = alClient
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 1
+      ExplicitHeight = 402
       object Label3: TLabel
         Left = 0
         Top = 227
@@ -666,7 +539,8 @@ object ProjNONS: TProjNONS
         Height = 28
         Align = alClient
         BevelOuter = bvNone
-        Caption = 'Panel7'
+        ParentBackground = False
+        ParentColor = True
         TabOrder = 0
         object Label13: TLabel
           Left = 0
@@ -676,8 +550,6 @@ object ProjNONS: TProjNONS
           Align = alTop
           Alignment = taCenter
           Caption = 'Hora'
-          Color = clBtnFace
-          ParentColor = False
           Transparent = False
           ExplicitWidth = 23
         end
@@ -689,8 +561,6 @@ object ProjNONS: TProjNONS
           Align = alTop
           Alignment = taCenter
           Caption = 'Dia.Hora'
-          Color = clBtnFace
-          ParentColor = False
           Transparent = False
           ExplicitWidth = 42
         end
@@ -740,6 +610,111 @@ object ProjNONS: TProjNONS
           000000000000}
         TabOrder = 1
         WordWrap = True
+      end
+    end
+    object Panel8: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 512
+      Width = 219
+      Height = 51
+      Align = alBottom
+      AutoSize = True
+      BevelOuter = bvNone
+      ParentBackground = False
+      ParentColor = True
+      TabOrder = 3
+      ExplicitLeft = 0
+      ExplicitTop = 490
+      ExplicitWidth = 225
+      object Image4: TImage
+        AlignWithMargins = True
+        Left = 200
+        Top = 16
+        Width = 16
+        Height = 32
+        Align = alRight
+        AutoSize = True
+        Center = True
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+          001008060000001FF3FF6100000006624B474400FF00FF00FFA0BDA793000000
+          A44944415478DA6364A0103052DB002620FE47400F8A1A64039881F838109702
+          F1411C9A1D80B81388AD80F82F3617D800F106204E00E22D6872BE403C1F8803
+          80F808BE30C066084CB33F101F252610AD817823102742F95835E3330066C876
+          20FE0FC45ED8341332C00F881741D9B140BC991403409AE7429DCD00F54E3210
+          6F22C60064CDC7A06256B80C413700A4690ED490E36872580DA17A42A2282993
+          0528360000C506271166201E770000000049454E44AE426082}
+        Transparent = True
+        Visible = False
+        OnClick = Image4Click
+        ExplicitLeft = 206
+        ExplicitTop = 3
+        ExplicitHeight = 16
+      end
+      object Label1: TLabel
+        Left = 0
+        Top = 0
+        Width = 219
+        Height = 13
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Atalho R'#225'pido'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitWidth = 79
+      end
+      object BitBtn5: TBitBtn
+        Left = 0
+        Top = 13
+        Width = 40
+        Height = 38
+        Align = alLeft
+        Glyph.Data = {
+          42040000424D4204000000000000420000002800000010000000100000000100
+          20000300000000040000000000000000000000000000000000000000FF0000FF
+          0000FF0000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000400000004000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000400000008000000080000000800000
+          0080000000C0000000C000000080000000800000008000000080000000400000
+          0000000000000000000000000000000000400000008000000080000000800000
+          0080000000C0000000C000000080000000800000008000000080000000400000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000800000008000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000400000004000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          000000000000}
+        TabOrder = 0
+        OnClick = BitBtn5Click
+        ExplicitLeft = 10
+        ExplicitTop = 0
+        ExplicitHeight = 41
       end
     end
   end
@@ -2579,10 +2554,21 @@ object ProjNONS: TProjNONS
         CollectionName = 'Pin_16px'
         Disabled = False
         Name = 'Pin_16px'
+      end
+      item
+        CollectionIndex = 23
+        CollectionName = 'Plus Math_32px'
+        Disabled = False
+        Name = 'Plus Math_32px'
       end>
     ImageCollection = ImageCollection1
-    Width = 20
     Left = 260
     Top = 110
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Application|*.exe'
+    InitialDir = 'C:\Program Files'
+    Left = 290
+    Top = 80
   end
 end

@@ -33940,6 +33940,7 @@ object FClock: TFClock
     Height = 140
     Align = alClient
     BevelOuter = bvNone
+    ParentColor = True
     TabOrder = 1
     object Label1: TLabel
       Left = 0
@@ -33949,9 +33950,13 @@ object FClock: TFClock
       Align = alTop
       Alignment = taCenter
       Caption = 'Dia'
-      Color = clBtnFace
-      ParentColor = False
-      Transparent = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Transparent = True
       ExplicitWidth = 15
     end
     object Label6: TLabel
