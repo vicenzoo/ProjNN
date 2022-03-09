@@ -78,6 +78,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
+    FileOpenDialog1: TFileOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -273,7 +274,7 @@ procedure TProjNONS.BitBtn2Click(Sender: TObject);
 begin
   if not (Memo1.Text = '') then
   begin
-    SelectDirectory('Selecione uma pasta', 'C:\', selDir);
+    if FileOpenDialog1.Execute then seldir := FileOpenDialog1.filename;
     if not (selDir = '') then memo1.Lines.SaveToFile(selDir + '\Anotacao' + calendardata +'.txt');
   end
   else MessageDlg('Impossível Exportar!',mtWarning,[mbYes],0);

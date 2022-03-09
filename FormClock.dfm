@@ -3,9 +3,9 @@ object FClock: TFClock
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Rel'#243'gio'
+  Caption = 'Previs'#227'o do Tempo'
   ClientHeight = 140
-  ClientWidth = 368
+  ClientWidth = 380
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -33936,68 +33936,203 @@ object FClock: TFClock
   object Panel1: TPanel
     Left = 140
     Top = 0
-    Width = 228
+    Width = 240
     Height = 140
     Align = alClient
     BevelOuter = bvNone
     ParentColor = True
     TabOrder = 1
-    object Label1: TLabel
-      Left = 0
-      Top = 13
-      Width = 228
-      Height = 13
-      Align = alTop
-      Alignment = taCenter
-      Caption = 'Dia'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      Transparent = True
-      ExplicitWidth = 15
+    object Memo1: TMemo
+      Left = 257
+      Top = 48
+      Width = 135
+      Height = 89
+      ScrollBars = ssVertical
+      TabOrder = 0
+      Visible = False
     end
-    object Label6: TLabel
+    object TabControl1: TTabControl
       Left = 0
       Top = 0
-      Width = 228
-      Height = 13
+      Width = 240
+      Height = 115
       Align = alTop
-      Alignment = taCenter
-      Caption = 'Projeto No Net System (NONS) '
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-      WordWrap = True
-      ExplicitWidth = 172
+      MultiLine = True
+      TabOrder = 1
+      Tabs.Strings = (
+        'Previs'#227'o do Tempo'
+        'Sobre')
+      TabIndex = 0
+      OnChange = TabControl1Change
+      object Panel4: TPanel
+        Left = 4
+        Top = 81
+        Width = 232
+        Height = 96
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 0
+        ExplicitTop = 117
+        object Label7: TLabel
+          Left = 0
+          Top = 0
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Previs'#227'o do Tempo'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          ExplicitLeft = 1
+          ExplicitTop = 1
+          ExplicitWidth = 108
+        end
+        object Label1: TLabel
+          Left = 0
+          Top = 13
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Dia'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          Transparent = True
+          ExplicitLeft = 1
+          ExplicitTop = 14
+          ExplicitWidth = 15
+        end
+        object Label5: TLabel
+          Left = 0
+          Top = 33
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Label5'
+          ExplicitTop = 86
+        end
+        object Label4: TLabel
+          Left = 0
+          Top = 26
+          Width = 232
+          Height = 7
+          Align = alTop
+          Caption = 'Label4'
+          ExplicitLeft = -1
+          ExplicitTop = 19
+        end
+        object Image1: TImage
+          Left = 127
+          Top = 46
+          Width = 105
+          Height = 50
+          Align = alRight
+          ExplicitTop = -9
+          ExplicitHeight = 105
+        end
+      end
+      object Panel3: TPanel
+        Left = 4
+        Top = 24
+        Width = 232
+        Height = 57
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 1
+        Visible = False
+        object Label2: TLabel
+          Left = 0
+          Top = 13
+          Width = 232
+          Height = 26
+          Align = alTop
+          Caption = 'Delphi 10.3'#13'Desenvolvido por: Vicenzo Fran'#231'a'
+          ExplicitWidth = 162
+        end
+        object Label6: TLabel
+          Left = 0
+          Top = 0
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Projeto No Net System (NONS) '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          WordWrap = True
+          ExplicitLeft = -1
+        end
+        object Label3: TLabel
+          Left = 0
+          Top = 39
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Label3'
+          ExplicitWidth = 31
+        end
+      end
     end
-    object Label2: TLabel
+    object Panel2: TPanel
       Left = 0
-      Top = 101
-      Width = 228
-      Height = 26
+      Top = 121
+      Width = 240
+      Height = 19
       Align = alBottom
-      Caption = 'Delphi 10.3'#13'Desenvolvido por: Vicenzo Fran'#231'a'
-      ExplicitWidth = 162
-    end
-    object Label3: TLabel
-      Left = 0
-      Top = 127
-      Width = 228
-      Height = 13
-      Align = alBottom
-      Caption = 'Label3'
-      ExplicitWidth = 31
+      BevelOuter = bvNone
+      TabOrder = 2
+      object Label8: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 234
+        Height = 13
+        Align = alClient
+        Caption = 'Previs'#227'o do tempo por: Weatherstack'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ExplicitTop = 8
+        ExplicitHeight = 23
+      end
     end
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 136
-    Top = 10
+    Left = 6
+    Top = 70
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'http://api.weatherstack.com/current'
+    Params = <>
+    Left = 4
+    Top = 102
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 34
+    Top = 102
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'application/json'
+    Left = 62
+    Top = 102
   end
 end
