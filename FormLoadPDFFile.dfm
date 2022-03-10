@@ -18,18 +18,6 @@ object FLoadPDFFile: TFLoadPDFFile
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
-  object AcroPDF1: TAcroPDF
-    Left = 0
-    Top = 41
-    Width = 758
-    Height = 483
-    Align = alClient
-    TabOrder = 0
-    ExplicitTop = 0
-    ExplicitWidth = 687
-    ExplicitHeight = 340
-    ControlData = {000E0000574E0000EB310000}
-  end
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -37,7 +25,7 @@ object FLoadPDFFile: TFLoadPDFFile
     Height = 41
     Align = alTop
     BevelOuter = bvNone
-    TabOrder = 1
+    TabOrder = 0
     object Image1: TImage
       Left = 0
       Top = 0
@@ -78,6 +66,18 @@ object FLoadPDFFile: TFLoadPDFFile
       ExplicitLeft = 0
       ExplicitHeight = 758
     end
+  end
+  object AcroPDF1: TAcroPDF
+    Left = 0
+    Top = 41
+    Width = 758
+    Height = 483
+    Align = alClient
+    TabOrder = 1
+    ExplicitTop = 0
+    ExplicitWidth = 687
+    ExplicitHeight = 340
+    ControlData = {000E0000574E0000EB310000}
   end
   object OpenDialog1: TOpenDialog
     Filter = 'PDF File|*.pdf'

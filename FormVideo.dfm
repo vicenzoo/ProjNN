@@ -17,16 +17,23 @@ object FVideo: TFVideo
   Position = poDefault
   Visible = True
   OnClose = FormClose
-  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Splitter1: TSplitter
+    Left = 200
+    Top = 0
+    Height = 412
+    ExplicitLeft = 10
+    ExplicitTop = 10
+    ExplicitHeight = 406
+  end
   object SplitView1: TSplitView
     Left = 0
     Top = 0
     Width = 200
-    Height = 420
+    Height = 412
+    BevelEdges = [beTop, beRight, beBottom]
     BevelOuter = bvRaised
-    CloseStyle = svcCompact
     CompactWidth = 75
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -37,96 +44,73 @@ object FVideo: TFVideo
     ParentFont = False
     Placement = svpLeft
     TabOrder = 0
-    object Image1: TImage
-      Left = 1
-      Top = 40
-      Width = 198
+    object Image3: TImage
+      AlignWithMargins = True
+      Left = 4
+      Top = 369
+      Width = 192
       Height = 39
-      Align = alTop
-      Center = True
-      ParentShowHint = False
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-        3E4944415478DAEDD3A101004008C340D87F687E81D74D4522319CE90EDC0A10
-        20E073BBE4CF4A403401022A01F80C71403401022A01F80C7140340102043C85
-        DE062195E388820000000049454E44AE426082}
-      ShowHint = False
-      OnClick = Image1Click
-      ExplicitLeft = -4
-      ExplicitTop = 0
-    end
-    object Image2: TImage
-      Left = 1
-      Top = 1
-      Width = 198
-      Height = 39
-      Align = alTop
-      Center = True
-      ParentShowHint = False
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-        7B4944415478DA63641860C038EA805107E010FF4F2FFB06BD03A8154538CD1B
-        920EF80BC44C445A0CD33F3C1DC00CC4FF88D43FF44380144BE9E600BA460172
-        BCFF661880340073C03720E61AC810201550DD017C40FC8104C7D0240D101BEC
-        44C90D3907100386A703280543D701D40643C7017403A30E18750000E9F94521
-        22C9CDA90000000049454E44AE426082}
-      ShowHint = False
-      OnClick = Image2Click
-      ExplicitLeft = 2
-      ExplicitTop = 11
-    end
-    object BitBtn1: TBitBtn
-      Left = 1
-      Top = 79
-      Width = 198
-      Height = 52
-      Align = alTop
-      Caption = 'Nova Sele'#231#227'o'
-      TabOrder = 0
-      OnClick = BitBtn1Click
-    end
-    object Panel3: TPanel
-      Left = 1
-      Top = 388
-      Width = 198
-      Height = 31
       Align = alBottom
-      Color = clGray
-      ParentBackground = False
-      TabOrder = 1
-      object MediaPlayer1: TMediaPlayer
-        Left = 1
-        Top = 1
-        Width = -4
-        Height = 29
-        Align = alClient
-        VisibleButtons = [btPlay, btPause, btStop, btStep, btBack]
-        DoubleBuffered = True
-        Display = Panel1
-        ParentDoubleBuffered = False
-        TabOrder = 0
-      end
+      Center = True
+      ParentShowHint = False
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
+        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
+        3E4944415478DAEDD2C10D0020080340D97F685C414382C45CFFB4F720D6E304
+        0040F13EAB3D00000000630179D552D81B0B38CDBF3F00000000D01600800DDE
+        4E16216840F9210000000049454E44AE426082}
+      ShowHint = False
+      OnClick = BitBtn1Click
+      ExplicitLeft = 2
+      ExplicitTop = 344
+    end
+    object RzLEDDisplay1: TRzLEDDisplay
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 192
+      Height = 20
+      BorderColor = clSilver
+      BorderOuter = fsFlatRounded
+      FlatColor = clGray
+      FlatColorAdjustment = 1
+      Align = alTop
+      Caption = ''
+      BackColor = clWhite
+      SegOnColor = clWindowText
+      SegOffColor = cl3DLight
+      Scrolling = True
+      ExplicitLeft = 21
+      ExplicitTop = -2
+      ExplicitWidth = 198
     end
     object ListView1: TListView
-      Left = 1
-      Top = 131
-      Width = 198
-      Height = 257
+      AlignWithMargins = True
+      Left = 4
+      Top = 30
+      Width = 192
+      Height = 333
       Align = alClient
-      Columns = <>
+      Columns = <
+        item
+          AutoSize = True
+          Caption = 'Sele'#231#227'o Atual:'
+        end>
+      HideSelection = False
       ReadOnly = True
-      TabOrder = 2
-      ViewStyle = vsList
+      TabOrder = 0
+      ViewStyle = vsReport
       OnClick = ListView1Click
+      ExplicitTop = 4
+      ExplicitHeight = 359
     end
   end
   object Panel1: TPanel
-    Left = 200
-    Top = 0
-    Width = 585
-    Height = 420
+    AlignWithMargins = True
+    Left = 206
+    Top = 3
+    Width = 576
+    Height = 406
     Align = alClient
     BevelOuter = bvNone
     Color = clBackground
@@ -134,16 +118,114 @@ object FVideo: TFVideo
     TabOrder = 1
     OnDblClick = Panel1DblClick
   end
-  object ProgressBar1: TProgressBar
+  object Panel2: TPanel
     Left = 0
-    Top = 420
+    Top = 412
     Width = 785
-    Height = 17
+    Height = 25
     Align = alBottom
+    ParentBackground = False
     TabOrder = 2
+    ExplicitLeft = 70
+    ExplicitTop = 418
+    object Image1: TImage
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 27
+      Height = 17
+      Align = alLeft
+      Center = True
+      ParentShowHint = False
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+        001008060000001FF3FF6100000006624B474400FF00FF00FFA0BDA793000000
+        204944415478DA6364A010300E2A031A48D4DB40750346C360340C0647189005
+        00424C0611684116410000000049454E44AE426082}
+      ShowHint = False
+      OnClick = Image1Click
+    end
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 734
+      Top = 6
+      Width = 28
+      Height = 15
+      Margins.Top = 5
+      Align = alRight
+      Alignment = taCenter
+      Caption = '00:00'
+      ExplicitLeft = 728
+      ExplicitTop = 4
+      ExplicitHeight = 13
+    end
+    object Label2: TLabel
+      AlignWithMargins = True
+      Left = 132
+      Top = 6
+      Width = 28
+      Height = 15
+      Margins.Top = 5
+      Align = alRight
+      Alignment = taCenter
+      Caption = '00:00'
+      ExplicitLeft = 125
+      ExplicitTop = 8
+    end
+    object Image2: TImage
+      AlignWithMargins = True
+      Left = 765
+      Top = 4
+      Width = 16
+      Height = 17
+      Margins.Left = 0
+      Align = alRight
+      Center = True
+      ParentShowHint = False
+      Picture.Data = {
+        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
+        001008060000001FF3FF6100000006624B474400FF00FF00FFA0BDA793000000
+        9F4944415478DA6364A0103052D300072826061C806214031AA0061C20A019A6
+        A6019B01C8743B162FEE01621B6475F80CF807C45540FC1FCA7701E2A3E8EAB1
+        197018885D81B80C4DFE271077106300C8465B207602626624173430A002BC06
+        D441E5BA90E46DA0614094012C40FC15C97690D32BA061E0428C01A030388224
+        578EA4B6819001BB191051850C3A8931C081818284E4C0406152260B506C0000
+        E00A2B11A6EFE3290000000049454E44AE426082}
+      ShowHint = False
+      OnClick = Image2Click
+      ExplicitLeft = 761
+    end
+    object MediaPlayer1: TMediaPlayer
+      Left = 34
+      Top = 1
+      Width = 94
+      Height = 23
+      Align = alClient
+      VisibleButtons = [btPlay, btPause, btStop]
+      DoubleBuffered = True
+      Display = Panel1
+      ParentDoubleBuffered = False
+      TabOrder = 0
+      OnClick = MediaPlayer1Click
+      ExplicitLeft = 4
+      ExplicitTop = 2
+      ExplicitWidth = 91
+    end
+    object ProgressBar1: TProgressBar
+      AlignWithMargins = True
+      Left = 166
+      Top = 4
+      Width = 562
+      Height = 17
+      Align = alRight
+      TabOrder = 1
+      ExplicitLeft = 194
+      ExplicitTop = 3
+    end
   end
   object Timer1: TTimer
     Enabled = False
+    Interval = 1
     OnTimer = Timer1Timer
     Left = 680
     Top = 8

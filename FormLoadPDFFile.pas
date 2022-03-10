@@ -5,15 +5,16 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, Vcl.OleCtrls, AcroPDFLib_TLB, Vcl.Imaging.pngimage;
+  Vcl.ExtCtrls, Vcl.OleCtrls, AcroPDFLib_TLB, Vcl.Imaging.pngimage,
+  Vcl.ComCtrls, Vcl.WinXCtrls;
 
 type
   TFLoadPDFFile = class(TForm)
     OpenDialog1: TOpenDialog;
-    AcroPDF1: TAcroPDF;
     Panel1: TPanel;
     Image1: TImage;
     Image2: TImage;
+    AcroPDF1: TAcroPDF;
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -39,6 +40,8 @@ begin
 end;
 
 procedure TFLoadPDFFile.Image1Click(Sender: TObject);
+var
+ x : integer;
 begin
  if opendialog1.execute then
  AcroPDF1.src := OpenDialog1.FileName;

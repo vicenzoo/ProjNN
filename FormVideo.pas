@@ -6,31 +6,39 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXCtrls,
   Vcl.StdCtrls, Vcl.Buttons, Vcl.MPlayer, Vcl.ComCtrls, Vcl.ToolWin,
-  Vcl.ActnMan, Vcl.ActnCtrls, Vcl.Grids, Vcl.Imaging.pngimage;
+  Vcl.ActnMan, Vcl.ActnCtrls, Vcl.Grids, Vcl.Imaging.pngimage, RzBorder;
 
 type
   TFVideo = class(TForm)
     Timer1: TTimer;
     SplitView1: TSplitView;
     OpenDialog1: TOpenDialog;
-    Image1: TImage;
-    BitBtn1: TBitBtn;
     Panel1: TPanel;
-    ProgressBar1: TProgressBar;
-    Panel3: TPanel;
-    MediaPlayer1: TMediaPlayer;
-    Image2: TImage;
     ListView1: TListView;
+    Panel2: TPanel;
+    MediaPlayer1: TMediaPlayer;
+    ProgressBar1: TProgressBar;
+    Splitter1: TSplitter;
+    Image3: TImage;
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    RzLEDDisplay1: TRzLEDDisplay;
+    Image2: TImage;
     procedure Timer1Timer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure ListView1Click(Sender: TObject);
     procedure Panel1DblClick(Sender: TObject);
     procedure Image3Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
+    procedure MediaPlayer1Click(Sender: TObject; Button: TMPBtnType;
+      var DoDefault: Boolean);
   private
+    function MSecToTime(const intTime: integer): string;
+    procedure WMSysCommand(var Msg: TWMSysCommand);
+      message WM_SYSCOMMAND;
     { Private declarations }
   public
     { Public declarations }
@@ -54,9 +62,18 @@ begin
   ProjNONS.Button1.Enabled := True;
 end;
 
-procedure TFVideo.FormCreate(Sender: TObject);
+procedure TFVideo.WMSysCommand(var Msg: TWMSysCommand);
 begin
- //Image1Click(sender);
+  case Msg.CmdType of
+    SC_MAXIMIZE:
+    begin
+    ShowWindow(FVideo.Handle, SW_MAXIMIZE) ;
+    ProjNONS.SplitView1.Visible := false;
+    ProjNONS.SplitView2.Visible := false;
+    exit;
+    end;
+  end;
+  inherited;
 end;
 
 procedure TFVideo.BitBtn1Click(Sender: TObject);
@@ -76,31 +93,35 @@ begin
     MediaPlayer1.DisplayRect := Panel1.ClientRect;
    end;
    MediaPlayer1.Play;
+   Label1.Caption := MSecToTime(MediaPlayer1.Length);
    ProgressBar1.Max := MediaPlayer1.Length;
    timer1.Enabled := true;
+   RzLEDDisplay1.Caption := 'Tocando agr: ' +
+   ExtractFileName(ListView1.Items.Item[ListView1.Items.Count -1].Caption);
   end;
+  SplitView1.Close;
 end;
 
+function TFVideo.MSecToTime (const intTime: integer):string ;
+var intmsec :real;
+begin
+//o equivalente a 1 ms
+intMSec := 1 / 24 / 60 / 60 / 1000;
+//define o retorno com o formato Time
+result := FormatDateTime('nn:ss', intTime * intMSec);
+end;
 
 procedure TFVideo.Image1Click(Sender: TObject);
 begin
-  if SplitView1.Opened then
-  begin
-   SplitView1.Close;
-   MediaPlayer1.VisibleButtons := [btPlay,btPause];
-   ListView1.Width := 50;
-  end
-  else
-  begin
-   SplitView1.Open;
-   MediaPlayer1.VisibleButtons := [btPlay,btPause,btStop,btStep,btBack];
-  // ListView1.Items.Item.
-  end;
+  if SplitView1.Opened then SplitView1.Close
+  else SplitView1.Open;
 end;
 
 procedure TFVideo.Image2Click(Sender: TObject);
 begin
  ShowWindow(FVideo.Handle, SW_RESTORE) ;
+ ProjNONS.SplitView1.Visible := true;
+ ProjNONS.SplitView2.Visible := true;
 end;
 
 procedure TFVideo.Image3Click(Sender: TObject);
@@ -120,7 +141,22 @@ begin
   ProgressBar1.Max := MediaPlayer1.Length;
   MediaPlayer1.Play;
   timer1.Enabled := true;
+  Label1.Caption := MSecToTime(MediaPlayer1.Length);
+  RzLEDDisplay1.Caption := 'Tocando agr: ' +
+  ExtractFileName(listView1.Selected.Caption);
  end;
+ SplitView1.Close;
+end;
+
+procedure TFVideo.MediaPlayer1Click(Sender: TObject; Button: TMPBtnType;
+  var DoDefault: Boolean);
+begin
+ if Button = btStop then
+ begin
+  MediaPlayer1.Rewind;
+  ProgressBar1.Position := 0;
+ end;
+
 end;
 
 procedure TFVideo.Panel1DblClick(Sender: TObject);
@@ -132,6 +168,7 @@ procedure TFVideo.Timer1Timer(Sender: TObject);
 begin
   ProgressBar1.Position := MediaPlayer1.Position;
   MediaPlayer1.DisplayRect := Panel1.ClientRect;
+  Label2.Caption := MSecToTime(MediaPlayer1.Position);
 end;
 
 end.

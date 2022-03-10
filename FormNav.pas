@@ -6,23 +6,23 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
   Vcl.OleCtrls, SHDocVw, Vcl.StdCtrls, Vcl.Buttons,IniFiles, ShlObj, Vcl.Menus,WinInet,
-  StrUtils, System.UITypes, Winapi.ActiveX;
+  StrUtils, System.UITypes, Winapi.ActiveX,Registry, Vcl.ToolWin, Vcl.ComCtrls;
 
 type
   TFNav = class(TForm)
     Panel1: TPanel;
     Image2: TImage;
-    Image1: TImage;
-    BitBtn2: TBitBtn;
     Splitter2: TSplitter;
-    BitBtn1: TBitBtn;
     Panel2: TPanel;
     ComboBox1: TComboBox;
-    Splitter1: TSplitter;
-    Splitter3: TSplitter;
-    Image3: TImage;
-    Image4: TImage;
     WebBrowser1: TWebBrowser;
+    ToolBar1: TToolBar;
+    Image1: TImage;
+    Image4: TImage;
+    Image3: TImage;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
     procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
@@ -94,6 +94,35 @@ begin
   end
 end;
 
+procedure ExibirURLsVisitadas(Urls: TStrings);
+var
+Reg: TRegistry;
+S: TStringList;
+i: Integer;
+begin
+Reg := TRegistry.Create;
+try
+Reg.RootKey := HKEY_CURRENT_USER;
+if Reg.OpenKey('Software\Microsoft\Internet '+
+'Explorer\TypedURLs', False) then
+begin
+S := TStringList.Create;
+try
+reg.GetValueNames(S);
+for i := 0 to S.Count - 1 do
+begin
+Urls.Add(reg.ReadString(S.Strings[i]));
+end;
+finally
+S.Free;
+end;
+Reg.CloseKey;
+end;
+finally
+Reg.Free;
+end;
+end;
+
 function DesktopDir: string;
 var
   DesktopPidl: PItemIDList;
@@ -127,6 +156,7 @@ end;
 procedure TFNav.FormCreate(Sender: TObject);
 begin
   WebBrowser1.Silent:= true;
+  ExibirURLsVisitadas(combobox1.Items);
   BitBtn1Click(sender);
 end;
 
@@ -147,8 +177,9 @@ end;
 procedure TFNav.ComboBox1KeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if Key = VK_RETURN then
-    WebBrowser1.Navigate(ComboBox1.Text);
+  if (key=13) then
+    webbrowser1.Navigate(combobox1.Text);
+    ToolButton2.Enabled := true;
 end;
 
 procedure TFNav.Image1Click(Sender: TObject);
@@ -167,13 +198,11 @@ begin
  if Panel2.Align = alBottom then
  begin
   Panel1.Align := alTop;
-  Splitter1.Align := alTop;
   Panel2.Align := alTop;
  end
  else
  begin
  Panel1.Align := alBottom;
- Splitter1.Align := alBottom;
  Panel2.Align := alBottom;
  end;
 end;
