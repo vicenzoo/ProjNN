@@ -24,6 +24,7 @@ object ProjNONS: TProjNONS
     Width = 200
     Height = 594
     CloseStyle = svcCompact
+    Color = clMenu
     CompactWidth = 80
     OpenedWidth = 200
     Placement = svpLeft
@@ -51,7 +52,7 @@ object ProjNONS: TProjNONS
       Height = 45
       Align = alBottom
       BevelOuter = bvNone
-      Color = clGray
+      Color = cl3DLight
       ParentBackground = False
       TabOrder = 0
       object Label8: TLabel
@@ -62,9 +63,9 @@ object ProjNONS: TProjNONS
         Align = alTop
         Alignment = taCenter
         Caption = 'Estilos:'
-        Color = clWhite
+        Color = clBlack
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
+        Font.Color = clBlack
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
@@ -140,7 +141,7 @@ object ProjNONS: TProjNONS
           TextColor = clWindow
         end
         item
-          Caption = 'Conv.'
+          Caption = 'Facil.'
           Color = clSilver
           Collapsed = False
           Items = <
@@ -152,6 +153,11 @@ object ProjNONS: TProjNONS
             item
               Action = ALoadPDF
               ImageIndex = 3
+            end
+            item
+              Action = AFileDownloader
+              Caption = 'Dloader'
+              ImageIndex = 20
             end>
           TextColor = clWindow
         end
@@ -189,8 +195,9 @@ object ProjNONS: TProjNONS
       VertScrollBar.Tracking = True
       ChevronColor = clGray
       ChevronHotColor = 445951
-      Color = clMenuBar
-      GradientBaseColor = clWhite
+      Color = clMenu
+      GradientBaseColor = clMenuBar
+      GradientColor = clWhite
       GradientDirection = gdHorizontal
       HeaderAlignment = taCenter
       HeaderFont.Charset = DEFAULT_CHARSET
@@ -282,7 +289,7 @@ object ProjNONS: TProjNONS
       object CategoryPanel3: TCategoryPanel
         Top = 60
         Height = 30
-        Caption = 'Conversores / Facilitadores'
+        Caption = 'Facilitadores'
         Collapsed = True
         TabOrder = 2
         object Button5: TButton
@@ -302,6 +309,15 @@ object ProjNONS: TProjNONS
           Action = ALoadPDF
           Align = alTop
           TabOrder = 1
+        end
+        object Button11: TButton
+          Left = 0
+          Top = 50
+          Width = 196
+          Height = 25
+          Action = AFileDownloader
+          Align = alTop
+          TabOrder = 2
         end
       end
       object CategoryPanel5: TCategoryPanel
@@ -373,6 +389,7 @@ object ProjNONS: TProjNONS
     Width = 225
     Height = 594
     CloseStyle = svcCompact
+    Color = clMenu
     CompactWidth = 75
     OpenedWidth = 225
     Placement = svpRight
@@ -440,6 +457,7 @@ object ProjNONS: TProjNONS
       Height = 423
       Align = alClient
       BevelOuter = bvNone
+      Color = clMenu
       ParentBackground = False
       TabOrder = 1
       object Label3: TLabel
@@ -716,7 +734,7 @@ object ProjNONS: TProjNONS
     Align = alTop
     BevelOuter = bvNone
     Caption = 'Bem Vindo ao Sistema NN (No NET System)'
-    Color = clWhite
+    Color = clBtnHighlight
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clYellow
     Font.Height = -20
@@ -844,6 +862,10 @@ object ProjNONS: TProjNONS
     object AClock: TAction
       ImageIndex = 14
       OnExecute = AClockExecute
+    end
+    object AFileDownloader: TAction
+      Caption = 'Downloader'
+      OnExecute = AFileDownloaderExecute
     end
   end
   object ImageCollection1: TImageCollection
@@ -2420,6 +2442,37 @@ object ProjNONS: TProjNONS
               EF54492D3974F924F7BF8F6FB6E7A765C723727BB3A2C69CF50D11AA21F9F9F1
               AD660000000049454E44AE426082}
           end>
+      end
+      item
+        Name = 'Download_16px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+              6100000006624B474400FF00FF00FFA0BDA79300000089494441543811DD90BB
+              0D834010440723530199ABA0221A21B8568801BB1417E2D429C26F1002615970
+              64C8AB79DAD1EEDE573A7B0449411B71D9E845B5FE74831B8FCFE05BAEB9B7AA
+              FFFA838A8906BC8034CABEC5B9475A942C767629AE861C9E9040012F28A1875D
+              F9C40753EF893BD93552BCAE8C76E0ABDB638FCBA79AE89541D2B043D0A9E203
+              F41E156302ACC92A0000000049454E44AE426082}
+          end>
+      end
+      item
+        Name = 'Download_32px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F400000006624B474400FF00FF00FFA0BDA793000000F3494441545809EDD54D
+              0E01411005E0E604564858389E849BDA6261E328BC6FD16223266610D2524F55
+              D7CFABEEEA314A699F36817E13B8A41CA25E93F16B65C355B50DB409B409B409
+              FCCC04D679F74D83AE324BA29AA8FEB20D85F7FD3E1A71D44DF8E1E68821E710
+              CDBF89EE2D9330EC0284A7E84550850FEA5A4C0E9F1AB535D64B23428858038D
+              105A037B992F316BB96AE21A4E1022D640230DD9B02AA59C834B20476ECCE1C5
+              FD7A16343A869E866A8B4DE37FAB389D536A7C0F3EB1B736AFE41A695837C0E6
+              ABF18F68D7E1E7F691B13F3AD13C011B89FA51193DD9B73B7E92D229FCB0CFD7
+              FF8C3A6DBF25FDF504AEFFA434878588EE850000000049454E44AE426082}
+          end>
       end>
     Left = 260
     Top = 80
@@ -2547,6 +2600,12 @@ object ProjNONS: TProjNONS
         CollectionName = 'Back Arrow_16px'
         Disabled = False
         Name = 'Back Arrow_16px'
+      end
+      item
+        CollectionIndex = 42
+        CollectionName = 'Download_32px'
+        Disabled = False
+        Name = 'Download_32px'
       end>
     ImageCollection = ImageCollection1
     Left = 260

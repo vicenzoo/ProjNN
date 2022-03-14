@@ -38,7 +38,6 @@ type
     Label4: TLabel;
     Image1: TImage;
     AFiletoZip: TAction;
-    Image3: TImage;
     AAlarme: TAction;
     AMusicC: TAction;
     Panel5: TPanel;
@@ -59,6 +58,8 @@ type
     BitBtn5: TBitBtn;
     Image4: TImage;
     Label1: TLabel;
+    FileOpenDialog1: TFileOpenDialog;
+    AFileDownloader: TAction;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
@@ -71,6 +72,7 @@ type
     CategoryPanel3: TCategoryPanel;
     Button5: TButton;
     Button7: TButton;
+    Button11: TButton;
     CategoryPanel5: TCategoryPanel;
     Button8: TButton;
     Button3: TButton;
@@ -78,7 +80,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
-    FileOpenDialog1: TFileOpenDialog;
+    Image3: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -101,6 +103,7 @@ type
     procedure AClockExecute(Sender: TObject);
     procedure BitBtn5Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
+    procedure AFileDownloaderExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -122,7 +125,8 @@ implementation
 {$R *.dfm}
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
-  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux, FormClock;
+  FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux, FormClock,
+  FormFileDownload;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 var
@@ -431,6 +435,13 @@ begin
   BitBtn4.Enabled := False;
   FClock := TFClock.Create(Application);
   FClock.Show;
+end;
+
+procedure TProjNONS.AFileDownloaderExecute(Sender: TObject);
+begin
+  Button11.Enabled := False;
+  FFiledownload := TFFiledownload.Create(Application);
+  FFiledownload.Show;
 end;
 
 

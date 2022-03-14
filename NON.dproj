@@ -70,7 +70,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>NON</SanitizedProjectName>
-        <Custom_Styles>Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10.vsf;&quot;Windows10 Blue|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Blue.vsf&quot;;&quot;Windows10 Green|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Green.vsf&quot;;&quot;Windows10 Purple|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Purple.vsf&quot;;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;</Custom_Styles>
+        <Custom_Styles>Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10.vsf;&quot;Windows10 Malibu|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10Malibu.vsf&quot;;&quot;Windows10 SlateGray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10SlateGray.vsf&quot;;Zircon|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Zircon.vsf</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -100,9 +100,9 @@
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Build>20</VerInfo_Build>
+        <VerInfo_Build>25</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.2.0.20;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.2.0.25;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_MinorVer>2</VerInfo_MinorVer>
         <Icon_MainIcon>NON_Icon3.ico</Icon_MainIcon>
     </PropertyGroup>
@@ -179,6 +179,10 @@
         </DCCReference>
         <DCCReference Include="FormClock.pas">
             <Form>FClock</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FormFileDownload.pas">
+            <Form>FFiledownload</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

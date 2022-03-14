@@ -1,29 +1,14 @@
 ﻿[Panel1]
 Coordinates=452,366,47,51
 
-[CategoryPanel2]
-Coordinates=685,10,92,51
-
-[Button3]
-Coordinates=153,366,53,51
-
 [SplitView2]
 Coordinates=130,427,65,51
 
 [Atxtaux]
 Coordinates=26,426,52,33
 
-[Button2]
-Coordinates=544,305,53,51
-
-[CategoryPanelGroup1]
-Coordinates=10,488,123,33
-
 [FileOpenDialog1]
 Coordinates=647,1,95,33
-
-[RzLEDDisplay1]
-Coordinates=818,427,89,33
 
 [CategoryButtons1]
 Coordinates=705,427,103,33
@@ -40,9 +25,6 @@ Coordinates=132,305,46,51
 [AFiletoZip]
 Coordinates=647,157,64,33
 
-[CategoryPanel1]
-Coordinates=787,10,92,51
-
 [ActionList1]
 Coordinates=308,248,70,33
 
@@ -52,17 +34,11 @@ Coordinates=607,305,50,51
 [Label2]
 Coordinates=843,366,46,51
 
-[CategoryPanel4]
-Coordinates=506,427,92,51
-
 [CalendarView1]
 Coordinates=608,427,87,33
 
 [Label4]
 Coordinates=611,366,46,51
-
-[Button4]
-Coordinates=389,366,53,51
 
 [BitBtn4]
 Coordinates=273,366,50,51
@@ -72,9 +48,6 @@ Coordinates=647,209,40,33
 
 [Panel8]
 Coordinates=667,366,47,51
-
-[Label6]
-Coordinates=245,305,46,51
 
 [Panel5]
 Coordinates=216,366,47,51
@@ -91,23 +64,11 @@ Coordinates=901,305,47,51
 [Panel4]
 Coordinates=10,427,47,51
 
-[Button6]
-Coordinates=301,305,53,51
-
 [AAlarme]
 Coordinates=647,261,56,33
 
 [AVideo]
 Coordinates=647,313,49,33
-
-[Image3]
-Coordinates=205,427,49,51
-
-[Button9]
-Coordinates=387,427,53,51
-
-[Button1]
-Coordinates=481,305,53,51
 
 [AHub]
 Coordinates=647,365,41,33
@@ -130,12 +91,6 @@ Coordinates=567,10,49,51
 [Panel7]
 Coordinates=727,305,47,51
 
-[CategoryPanel3]
-Coordinates=509,366,92,51
-
-[Button8]
-Coordinates=67,427,53,51
-
 [Label1]
 Coordinates=787,366,46,51
 
@@ -150,12 +105,6 @@ Coordinates=647,515,48,33
 
 [ATexto]
 Coordinates=588,515,49,33
-
-[Button5]
-Coordinates=264,427,53,51
-
-[Panel3]
-Coordinates=188,305,47,51
 
 [AExplorer]
 Coordinates=519,515,63,33
@@ -175,15 +124,6 @@ Coordinates=460,515,49,33
 [ImageCollection1]
 Coordinates=788,1,99,33
 
-[Button7]
-Coordinates=724,366,53,51
-
-[Button10]
-Coordinates=85,366,58,51
-
-[CategoryPanel5]
-Coordinates=899,366,92,51
-
 [VirtualImageList1]
 Coordinates=788,53,100,33
 
@@ -192,4 +132,7 @@ Coordinates=505,10,52,51
 
 [SplitView1]
 Coordinates=10,366,65,51
+
+[]
+Coordinates=205,427,49,51
 

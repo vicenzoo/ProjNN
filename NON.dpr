@@ -17,7 +17,8 @@ uses
   FormLoadPDFFile in 'FormLoadPDFFile.pas' {FLoadPDFFile},
   FormExplorer in 'FormExplorer.pas' {FExplorer},
   FormTextaux in 'FormTextaux.pas' {Ftxtaux},
-  FormClock in 'FormClock.pas' {FClock};
+  FormClock in 'FormClock.pas' {FClock},
+  FormFileDownload in 'FormFileDownload.pas' {FFiledownload};
 
 {$R *.res}
 

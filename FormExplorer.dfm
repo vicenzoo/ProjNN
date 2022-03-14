@@ -4,8 +4,8 @@ object FExplorer: TFExplorer
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSingle
   Caption = 'NONS Explorer'
-  ClientHeight = 356
-  ClientWidth = 684
+  ClientHeight = 419
+  ClientWidth = 763
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,23 +22,27 @@ object FExplorer: TFExplorer
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 684
-    Height = 356
+    Width = 763
+    Height = 419
     Align = alClient
     BevelOuter = bvNone
     Caption = 'Panel1'
     TabOrder = 0
+    ExplicitWidth = 684
+    ExplicitHeight = 356
     object Panel3: TPanel
-      Left = 649
+      Left = 728
       Top = 0
       Width = 35
-      Height = 356
+      Height = 419
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = 649
+      ExplicitHeight = 356
       object Image1: TImage
         Left = 0
-        Top = 0
+        Top = 39
         Width = 35
         Height = 39
         Align = alTop
@@ -59,7 +63,7 @@ object FExplorer: TFExplorer
       end
       object Image2: TImage
         Left = 0
-        Top = 317
+        Top = 380
         Width = 35
         Height = 39
         Align = alBottom
@@ -81,16 +85,120 @@ object FExplorer: TFExplorer
         ExplicitLeft = -8
         ExplicitTop = 136
       end
+      object Image3: TImage
+        Left = 0
+        Top = 0
+        Width = 35
+        Height = 39
+        Align = alTop
+        Center = True
+        ParentShowHint = False
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
+          00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
+          3E4944415478DAEDD3A101004008C340D87F687E81D74D4522319CE90EDC0A10
+          20E073BBE4CF4A403401022A01F80C71403401022A01F80C7140340102043C85
+          DE062195E388820000000049454E44AE426082}
+        ShowHint = False
+        OnClick = Image3Click
+        ExplicitTop = 10
+      end
     end
     object RzShellList1: TRzShellList
-      Left = 0
+      Left = 6
       Top = 0
-      Width = 649
-      Height = 356
+      Width = 722
+      Height = 419
       Align = alClient
       IconOptions.AutoArrange = True
       MultiSelect = True
       TabOrder = 1
+      ExplicitLeft = 126
+      ExplicitWidth = 488
+      ExplicitHeight = 356
     end
+    object SplitView1: TSplitView
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 0
+      Height = 413
+      Opened = False
+      OpenedWidth = 150
+      Placement = svpLeft
+      TabOrder = 2
+      ExplicitHeight = 350
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 370
+        Width = -6
+        Height = 13
+        Align = alBottom
+        Alignment = taCenter
+        Caption = 'Estilos:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitTop = 307
+        ExplicitWidth = 39
+      end
+      object ComboBox1: TComboBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 389
+        Width = 0
+        Height = 21
+        Align = alBottom
+        Style = csDropDownList
+        ItemIndex = 0
+        TabOrder = 0
+        Text = 'Icone'
+        OnCloseUp = ComboBox1CloseUp
+        Items.Strings = (
+          'Icone'
+          'Lista'
+          'Relat'#243'rio'
+          'Itens Pequenos')
+        ExplicitTop = 326
+        ExplicitWidth = 114
+      end
+      object GroupBox1: TGroupBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 0
+        Height = 361
+        Align = alClient
+        Caption = 'Utilit'#225'rios:'
+        TabOrder = 1
+        ExplicitWidth = 144
+        ExplicitHeight = 298
+        object BitBtn1: TBitBtn
+          AlignWithMargins = True
+          Left = 5
+          Top = 18
+          Width = 134
+          Height = 25
+          Align = alTop
+          Caption = 'Exportar Arquivo'
+          TabOrder = 0
+          OnClick = BitBtn1Click
+          ExplicitLeft = 60
+          ExplicitTop = 120
+          ExplicitWidth = 75
+        end
+      end
+    end
+  end
+  object FileOpenDialog1: TFileOpenDialog
+    FavoriteLinks = <>
+    FileTypes = <>
+    Options = [fdoPickFolders, fdoPathMustExist]
+    Left = 66
+    Top = 28
   end
 end
