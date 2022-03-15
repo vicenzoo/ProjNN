@@ -11,7 +11,6 @@ uses
 type
   TFNav = class(TForm)
     Panel1: TPanel;
-    Image2: TImage;
     Splitter2: TSplitter;
     Panel2: TPanel;
     ComboBox1: TComboBox;
@@ -23,7 +22,6 @@ type
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
     ToolButton3: TToolButton;
-    procedure Image2Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -186,11 +184,6 @@ procedure TFNav.Image1Click(Sender: TObject);
 begin
  Atalho(GetHTMLTitle(ComboBox1.Text),ComboBox1.Text);
  MessageDlg('Atalho Criado em ' + DesktopDir,mtConfirmation,[mbOK],0);
-end;
-
-procedure TFNav.Image2Click(Sender: TObject);
-begin
- ShowWindow(FNav.Handle, SW_RESTORE) ;
 end;
 
 procedure TFNav.Image3Click(Sender: TObject);

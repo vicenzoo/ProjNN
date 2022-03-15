@@ -13,7 +13,6 @@ type
     OpenDialog1: TOpenDialog;
     Panel1: TPanel;
     Image1: TImage;
-    Image2: TImage;
     AcroPDF1: TAcroPDF;
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);

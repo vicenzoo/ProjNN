@@ -12,6 +12,8 @@ object ProjNONS: TProjNONS
   Font.Name = 'Tahoma'
   Font.Style = []
   FormStyle = fsMDIForm
+  GlassFrame.Enabled = True
+  Menu = MainMenu1
   OldCreateOrder = False
   Visible = True
   WindowState = wsMaximized
@@ -20,15 +22,16 @@ object ProjNONS: TProjNONS
   TextHeight = 13
   object SplitView1: TSplitView
     Left = 0
-    Top = 41
+    Top = 0
     Width = 200
-    Height = 594
+    Height = 635
     CloseStyle = svcCompact
     Color = clMenu
     CompactWidth = 80
     OpenedWidth = 200
     Placement = svpLeft
     TabOrder = 0
+    ExplicitHeight = 664
     object Image2: TImage
       Left = 0
       Top = 0
@@ -47,7 +50,7 @@ object ProjNONS: TProjNONS
     end
     object Panel5: TPanel
       Left = 0
-      Top = 549
+      Top = 590
       Width = 200
       Height = 45
       Align = alBottom
@@ -55,6 +58,7 @@ object ProjNONS: TProjNONS
       Color = cl3DLight
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 619
       object Label8: TLabel
         Left = 0
         Top = 0
@@ -88,15 +92,17 @@ object ProjNONS: TProjNONS
     object CategoryButtons1: TCategoryButtons
       Left = 200
       Top = 39
-      Width = 79
-      Height = 510
+      Width = 80
+      Height = 551
       Align = alLeft
-      BackgroundGradientColor = clBtnFace
+      BackgroundGradientColor = clWhite
+      BackgroundGradientDirection = gdVertical
       BevelInner = bvNone
       BevelOuter = bvNone
       BorderStyle = bsNone
       ButtonFlow = cbfVertical
-      ButtonOptions = [boFullSize, boGradientFill, boShowCaptions, boCaptionOnlyBorder]
+      ButtonWidth = 5
+      ButtonOptions = [boFullSize, boGradientFill, boShowCaptions, boUsePlusMinus, boCaptionOnlyBorder]
       Categories = <
         item
           Caption = 'Menu'
@@ -107,7 +113,7 @@ object ProjNONS: TProjNONS
         end
         item
           Caption = 'Offline'
-          Color = clSilver
+          Color = clWhite
           Collapsed = False
           Items = <
             item
@@ -122,11 +128,11 @@ object ProjNONS: TProjNONS
               Action = AHub
               ImageIndex = 11
             end>
-          TextColor = clWindow
+          TextColor = clBlack
         end
         item
           Caption = 'Online'
-          Color = clSilver
+          Color = clWhite
           Collapsed = False
           Items = <
             item
@@ -138,11 +144,11 @@ object ProjNONS: TProjNONS
               Action = AMusicC
               ImageIndex = 5
             end>
-          TextColor = clWindow
+          TextColor = clBlack
         end
         item
           Caption = 'Facil.'
-          Color = clSilver
+          Color = clWhite
           Collapsed = False
           Items = <
             item
@@ -159,11 +165,11 @@ object ProjNONS: TProjNONS
               Caption = 'Dloader'
               ImageIndex = 20
             end>
-          TextColor = clWindow
+          TextColor = clBlack
         end
         item
           Caption = 'Aux'#237'liar'
-          Color = clSilver
+          Color = clWhite
           Collapsed = False
           Items = <
             item
@@ -180,24 +186,37 @@ object ProjNONS: TProjNONS
               Caption = 'Texto+'
               ImageIndex = 14
             end>
-          TextColor = clWindow
+          TextColor = clBlack
         end>
-      HotButtonColor = 10930928
+      Color = clMenu
+      GradientDirection = gdVertical
+      HotButtonColor = 10154236
       Images = VirtualImageList1
       RegularButtonColor = clWhite
-      SelectedButtonColor = clSilver
+      SelectedButtonColor = 5698042
       TabOrder = 1
+      ExplicitLeft = 0
     end
     object CategoryPanelGroup1: TCategoryPanelGroup
       Left = 0
       Top = 39
-      Height = 510
+      Height = 551
+      VertScrollBar.ParentColor = False
+      VertScrollBar.Smooth = True
+      VertScrollBar.Style = ssFlat
       VertScrollBar.Tracking = True
-      ChevronColor = clGray
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      BiDiMode = bdLeftToRight
       ChevronHotColor = 445951
       Color = clMenu
-      GradientBaseColor = clMenuBar
-      GradientColor = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      GradientBaseColor = clMenu
+      GradientColor = clMenu
       GradientDirection = gdHorizontal
       HeaderAlignment = taCenter
       HeaderFont.Charset = DEFAULT_CHARSET
@@ -205,7 +224,10 @@ object ProjNONS: TProjNONS
       HeaderFont.Height = -11
       HeaderFont.Name = 'Tahoma'
       HeaderFont.Style = []
+      ParentBiDiMode = False
+      ParentFont = False
       TabOrder = 2
+      ExplicitTop = 49
       object CategoryPanel2: TCategoryPanel
         Top = 120
         Height = 30
@@ -385,15 +407,17 @@ object ProjNONS: TProjNONS
   end
   object SplitView2: TSplitView
     Left = 762
-    Top = 41
+    Top = 0
     Width = 225
-    Height = 594
+    Height = 635
     CloseStyle = svcCompact
     Color = clMenu
     CompactWidth = 75
     OpenedWidth = 225
     Placement = svpRight
     TabOrder = 1
+    ExplicitLeft = 768
+    ExplicitHeight = 664
     object Image1: TImage
       Left = 0
       Top = 0
@@ -414,13 +438,14 @@ object ProjNONS: TProjNONS
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 3
-      Top = 465
+      Top = 506
       Width = 219
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 535
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -454,12 +479,13 @@ object ProjNONS: TProjNONS
       Left = 0
       Top = 39
       Width = 225
-      Height = 423
+      Height = 464
       Align = alClient
       BevelOuter = bvNone
       Color = clMenu
       ParentBackground = False
       TabOrder = 1
+      ExplicitHeight = 493
       object Label3: TLabel
         Left = 0
         Top = 227
@@ -539,13 +565,14 @@ object ProjNONS: TProjNONS
     end
     object Panel6: TPanel
       Left = 0
-      Top = 566
+      Top = 607
       Width = 225
       Height = 28
       Align = alBottom
       BevelOuter = bvNone
       Caption = 'Panel6'
       TabOrder = 2
+      ExplicitTop = 636
       object Panel7: TPanel
         Left = 0
         Top = 0
@@ -629,7 +656,7 @@ object ProjNONS: TProjNONS
     object Panel8: TPanel
       AlignWithMargins = True
       Left = 3
-      Top = 512
+      Top = 553
       Width = 219
       Height = 51
       Align = alBottom
@@ -638,6 +665,7 @@ object ProjNONS: TProjNONS
       ParentBackground = False
       ParentColor = True
       TabOrder = 3
+      ExplicitTop = 582
       object Image4: TImage
         AlignWithMargins = True
         Left = 200
@@ -724,91 +752,6 @@ object ProjNONS: TProjNONS
         TabOrder = 0
         OnClick = BitBtn5Click
       end
-    end
-  end
-  object Panel1: TPanel
-    Left = 0
-    Top = 0
-    Width = 987
-    Height = 41
-    Align = alTop
-    BevelOuter = bvNone
-    Caption = 'Bem Vindo ao Sistema NN (No NET System)'
-    Color = clBtnHighlight
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clYellow
-    Font.Height = -20
-    Font.Name = 'Segoe UI Semibold'
-    Font.Style = [fsBold]
-    ParentBackground = False
-    ParentFont = False
-    ShowCaption = False
-    TabOrder = 2
-    object Image3: TImage
-      Left = 0
-      Top = 0
-      Width = 987
-      Height = 41
-      Align = alClient
-      Center = True
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000006
-        2D4944415478DAC5970D908D6514C7FFEF5D5A212A29959665D845BE559318B3
-        5A1F4BD3F48161A634A6263564B75088A894A9284D6A34BB19334899C6C7463E
-        2A4C32A596D6CADEBBE46B48CAC726E46BDDB7DFF3DCD7DEF7DD5DBAA6D47BE7
-        CC7B9EF39CE79CFF73CE79CEFB5C47FFF3E35C8AB21B566356F496AB5B18DE04
-        D5823F84EC5728ACEA5AE934D5D17F15805B80D95A1A0AFB38D41A32CEB6E178
-        1FFC31DE37306E00DF06AA06AD5554AF39ADF4E53F06E096280B63D3BDDDCE84
-        162A5D1B1C4751D75528F02E504D7E3DB1F8107A0F409F0127DB69A61D970C00
-        A38E4A348EDDBDC4F003DE13755A27555BF58C4152310A8D4E4EBA06C26F831F
-        0ABF06C06DB55F5B75BD3A2A64813767AE3F73AB1306609D47702A0D801BA224
-        E5EBAC9E85BF5F67D495848C857F9EF9154E0B6501C0853F8D2CCB4BC95CF8E7
-        F48B96919837913D013D82EEFCC400146B0252E33003E70754A625883B60B827
-        748A9DAD651CAA00C058DA8BFEADE84F64F40C94AB131A46FD8C807F05CA40FF
-        9B8B02C0791F244BA07EEC7A1339FC1A710AE342C2D81E67DF32BEC3530F0288
-        3D9300308B7526EFD5A17CB6F0209198017F1FF2D6A4F0609500DC354C37D08F
-        985BE1B4540EF94CD739358C4D6A3715B08722EB1647ABC354FA0F80CE2C9725
-        E90F274DDFB95B01E9E82A4F5648628E12892246AB009D5D3580B03D666F10DC
-        A6547E47F846E55AE9CAA328BBE1B459B92CA4BD385BEEAD8B3F510ACE217E8E
-        7AF980AD63332DE0E6C3B7709A6B67550036315A8581B779FF84A8A637B50BD4
-        4D982F80EFE87355550A4C642613CB0F7158EC93AE67135D29EECDCCE713E1F1
-        0100EE76765D8653D71E9F2C6B24AEF131C61E435EAA58A3B93800118174D252
-        A223CC5CED8B4C076CDD033DCCBAE64100113D89F278163604A529BCCE811D25
-        E9130C145670742100FB91DF8C7CA3CCE9897B9AC04696B1914D8C52D1D91D07
-        50ACD799E8A034F216E1F048C9BE85D9B828310E130450C64692B1B30CBEB74F
-        9E4FFC06307B129B779BC6E50730C7AA246B38CD26B7424E67108128BF11151C
-        1502E055002C50C5E70C0D2C598FB2B68B6F233B713A067DF3F1CA869F170710
-        B6677F1FC261BACC0F9B3505FE1685F8AEBF06726DC184A88568B051F00C61CE
-        84EDA30453609E0D50BB402A3909E87741FF37568C04C01C7F045EE49589C25D
-        80290D54AF341AFA5EB22D3811007F4266138DB01E6536E4A5208FDE388AF494
-        56AE8188FAA3389BF2AB4FC73239EDEBAB01D39CCC1731922000D3649290AE93
-        F92C3B360A666C8EF22EDE5FD0A6EA396DECB12EEF0375A8CE838C0678BB9FED
-        774455F7C5FD11F8BA7F0BC065038EFD5E4C61FFEBBC8F571DDB615D224061B2
-        EEB6F3EAFE4EB8DC862FAA412887E19B7853A500A80700730C7B2600E069D6E7
-        F09EC2FCFB443715DEDC074C63326931F269950144D4DD862704FA53B4514757
-        941B6DADDF692B572289175592CEF2313AEE16E99A0080241219E292A218006B
-        BB5837225B8DFD54D5503B27359ECEE0E7D844C1A10AD2B80B84752FFC206F57
-        2B713F0F60E6A252DD53AFDC071C15515C93911D6634EE3C006B62ABAE05DC72
-        6CD5A721F5387F550B0288E0DAB547288F7D8C05CA22AF200F823C857BCF3BB6
-        982E9C827ED021682594ED07E081A80D88C5AC68C9B017F35B2ADF88C2F633BA
-        146823B956BDC79D772AFC086818D5BB94FD1779855A11C057D44A06C15D8C6E
-        0FA4398108987BA4743BF2DADEF5ED00EFCE555F4A8B3598C95C7B1AA27A8AFC
-        75821F4BE872F8A0B4B2952EADF10130C72B83F79DACEBCEDB38984C1467F151
-        6F4CD3D98EDE7A64699277418DF588172E782D275C5D71BCD0ABDE311859E46E
-        562DA7AD4ED81B4F886612AB8199989A44411E30F3643A8AE3DDAC7919CAC451
-        1F7B910971F45CEA28A4265C647EAEB2082B81D84202AAD91BF050348B31BD10
-        239F721AC214D1E972BD1DF487B3DC25A2B670074275D13B6ECF84B88E39A425
-        8D1444ECF15E02F0D10901F0E5AFB1CC372156642D3DB169B7C72073F7BBCE93
-        6DC4E2022F6D46DE03BE2DB2E9004CA17EFA239BCA694A71DA73B41305100063
-        6E4FE73066FE2DB9843CF6EC810AD8D9610FF0701CAFB797D6EDF48E325B2373
-        ED5D51F60FCFE0C0C7E8723F001A23D39A4DB18A3F2B359447333AF5DF01D84B
-        1B3BC1AD3A4D9FF33FF29C7FEE2F9D335A332DDCEF7F0000000049454E44AE42
-        6082}
-      ExplicitLeft = 530
-      ExplicitTop = 10
-      ExplicitWidth = 105
-      ExplicitHeight = 105
     end
   end
   object Timer1: TTimer
@@ -2473,6 +2416,65 @@ object ProjNONS: TProjNONS
               ABF18F68D7E1E7F691B13F3AD13C011B89FA51193DD9B73B7E92D229FCB0CFD7
               FF8C3A6DBF25FDF504AEFFA434878588EE850000000049454E44AE426082}
           end>
+      end
+      item
+        Name = 'Close Window_32px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F400000006624B474400FF00FF00FFA0BDA79300000190494441545809ED56C1
+              4A03410C1DAD273D94A248A53FD57E83E0C58B9F20F875855A2988850A7E8956
+              DF1B483BCC24D95DD6753D6CC9DBCC247999B7E9141AC2F01926D0F3044E94F3
+              19DB2BF1B621F61CE54D4EF300F61400F7EBA6F63D738EF946AE508C5853E3C1
+              5F16C913400E45D0B70105987CED2B308BBB483415700F11978065D748CC8156
+              46511C3D6F6DDAE8011BC6D7F09A081EFE8ADC27B000C4AC7E922FBC4598A072
+              0550C416FE06109B61B103985BC28F0131AB9FE40BEF113411DEE16CEEF563BE
+              40152115F10EF607A0BD39C2D1AAFAC5A2F4518740111B907830C17B918E1DA9
+              83B9FD983C5436589CA3F60210E39A31D9B7F214C5B7DA1B5D6688CB857BC6FA
+              05607D7E31118E56D52F16A50F8F901E2EB77D02B2F5EB402A78FD982F6011B4
+              C385EC89B0FA09B7F016E109951CF506FE0AC86D8AC01BC09A5B7831AB9FE40B
+              6F1146A87C0C216887231C8D22EEE2EAF8B0FA1D2BB2556342C6CFB76E3F2673
+              C29FEE7B17E0FD21E11F095EA84E27D2FB04F896DA1B5A71ADB66EACF369D615
+              32D4FDAF09FC00BF126372C07B4DEB0000000049454E44AE426082}
+          end>
+      end
+      item
+        Name = 'Minimize Window_32px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F400000006624B474400FF00FF00FFA0BDA7930000007A494441545809ED96DB
+              0AC0200C43DDE5FF3F79B33EF85443A19D84414450A2ADF120D4D6D444804CE0
+              00E7BF40AFCAEEBCB39AB11A7F07099CE3603F5A8644E9046440044440044480
+              4E202A46B3B83C36C914A6CBE246AC0DEBFE1B02DB8C6E4BBC06EE55BA81E811
+              C29F8CBF4B4EA113C8D95694087C48A0035656053588812F6E0000000049454E
+              44AE426082}
+          end>
+      end
+      item
+        Name = 'Chevron Right_32px'
+        SourceImages = <
+          item
+            Image.Data = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F400000006624B474400FF00FF00FFA0BDA793000001B2494441545809ED96BD
+              4E4241108507C5682C342644FC2BB0A6D3C29F18253E818FC45B584B245476C6
+              4750132BE21FD18617D0206A8DDF216CD85C5181DCBD58B039E7CE30BB77CEEC
+              6C365CB3F118AC036996E7E148308DEA05FC848730514CA25681AD0E9BD85D98
+              08247E8A92C41BD87328FF0DBB038342E225142428F12D7CC5CA58C582175134
+              33098947F80ED122B6DD44DC3643C22A540135EC0A74F08B6810547730F1639E
+              94D75045D4CD6C1D3AA4708EA1E6743B0A1668448BC85977F8457C102E58A0F1
+              6F8AB862836A79DDCC72D61D295C771CEAC401BF83409D187911736CED12B6E0
+              335C830ED14EECBB89B8ED02096FA08A78C066A1837F455F096EC29E98E8191D
+              3C38C32B22E61BA688CCC258B14436ED5ABBBFC7F7772FC133629AFB75F7AC19
+              0A127FE44D09242EBE8C703FE22FACFBF1DC991B0ABEF81D19B2D0C16FBBC437
+              DC445C362ABEE8250E2EAE7FC01A823AF35B6CA2E21904AB50E24FD855E8E0DF
+              F577827B307614EDEF0F92266B828893D7B4CB128E3AE03E3A142B776241C5D1
+              684382BD3E4A13116F57C0434554B0EA8498A838BA6D4CF03C8141EE3979FB42
+              9A557938466C1DF802674A81E0E2DB98BB0000000049454E44AE426082}
+          end>
       end>
     Left = 260
     Top = 80
@@ -2606,6 +2608,30 @@ object ProjNONS: TProjNONS
         CollectionName = 'Download_32px'
         Disabled = False
         Name = 'Download_32px'
+      end
+      item
+        CollectionIndex = 17
+        CollectionName = 'Internet_50px'
+        Disabled = False
+        Name = 'Internet_50px'
+      end
+      item
+        CollectionIndex = 43
+        CollectionName = 'Close Window_32px'
+        Disabled = False
+        Name = 'Close Window_32px'
+      end
+      item
+        CollectionIndex = 44
+        CollectionName = 'Minimize Window_32px'
+        Disabled = False
+        Name = 'Minimize Window_32px'
+      end
+      item
+        CollectionIndex = 45
+        CollectionName = 'Chevron Right_32px'
+        Disabled = False
+        Name = 'Chevron Right_32px'
       end>
     ImageCollection = ImageCollection1
     Left = 260
@@ -2623,5 +2649,13 @@ object ProjNONS: TProjNONS
     Options = [fdoPickFolders, fdoPathMustExist]
     Left = 940
     Top = 440
+  end
+  object MainMenu1: TMainMenu
+    OwnerDraw = True
+    Left = 290
+    Top = 110
+    object TMenuItem
+      Visible = False
+    end
   end
 end

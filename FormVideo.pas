@@ -24,7 +24,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     RzLEDDisplay1: TRzLEDDisplay;
-    Image2: TImage;
     procedure Timer1Timer(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
@@ -58,6 +57,7 @@ uses PrincNN;
 
 procedure TFVideo.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+  Image2Click(Sender);
   Action := caFree;
   ProjNONS.Button1.Enabled := True;
 end;
@@ -70,6 +70,13 @@ begin
     ShowWindow(FVideo.Handle, SW_MAXIMIZE) ;
     ProjNONS.SplitView1.Visible := false;
     ProjNONS.SplitView2.Visible := false;
+    exit;
+    end;
+    SC_RESTORE:
+    begin
+    ShowWindow(FVideo.Handle, SW_RESTORE);
+    ProjNONS.SplitView1.Visible := true;
+    ProjNONS.SplitView2.Visible := true;
     exit;
     end;
   end;
@@ -119,7 +126,6 @@ end;
 
 procedure TFVideo.Image2Click(Sender: TObject);
 begin
- ShowWindow(FVideo.Handle, SW_RESTORE) ;
  ProjNONS.SplitView1.Visible := true;
  ProjNONS.SplitView2.Visible := true;
 end;

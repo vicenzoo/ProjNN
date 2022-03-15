@@ -1,7 +1,4 @@
-﻿[Panel1]
-Coordinates=452,366,47,51
-
-[SplitView2]
+﻿[SplitView2]
 Coordinates=130,427,65,51
 
 [Atxtaux]
@@ -134,5 +131,5 @@ Coordinates=505,10,52,51
 Coordinates=10,366,65,51
 
 []
-Coordinates=205,427,49,51
+Coordinates=452,366,47,51
 

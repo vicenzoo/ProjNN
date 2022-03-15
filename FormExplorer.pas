@@ -13,7 +13,6 @@ type
   TFExplorer = class(TForm)
     Panel1: TPanel;
     Panel3: TPanel;
-    Image1: TImage;
     RzShellList1: TRzShellList;
     Image2: TImage;
     SplitView1: TSplitView;

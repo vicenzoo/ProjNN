@@ -37,8 +37,6 @@ object FFiletoZip: TFFiletoZip
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = -2
-    ExplicitTop = 8
     object Label1: TLabel
       Left = 10
       Top = 86
@@ -124,43 +122,17 @@ object FFiletoZip: TFFiletoZip
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitHeight = 103
-    object Image2: TImage
-      Left = 347
-      Top = 0
-      Width = 39
-      Height = 186
-      Align = alRight
-      Center = True
-      ParentShowHint = False
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-        7B4944415478DA63641860C038EA805107E010FF4F2FFB06BD03A8154538CD1B
-        920EF80BC44C445A0CD33F3C1DC00CC4FF88D43FF44380144BE9E600BA460172
-        BCFF661880340073C03720E61AC810201550DD017C40FC8104C7D0240D101BEC
-        44C90D3907100386A703280543D701D40643C7017403A30E18750000E9F94521
-        22C9CDA90000000049454E44AE426082}
-      ShowHint = False
-      OnClick = Image2Click
-      ExplicitLeft = 566
-      ExplicitTop = 58
-      ExplicitHeight = 228
-    end
     object ListBox1: TListBox
       AlignWithMargins = True
       Left = 3
       Top = 3
-      Width = 341
+      Width = 380
       Height = 180
       Align = alClient
       ItemHeight = 13
       TabOrder = 0
       OnKeyDown = ListBox1KeyDown
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 345
-      ExplicitHeight = 101
+      ExplicitWidth = 341
     end
   end
   object OpenDialog1: TOpenDialog

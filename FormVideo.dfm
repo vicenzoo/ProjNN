@@ -3,7 +3,7 @@ object FVideo: TFVideo
   Top = 0
   BorderIcons = [biSystemMenu, biMaximize]
   BorderStyle = bsSingle
-  Caption = 'Acesso HD'
+  Caption = 'NONS V'#237'deo Player'
   ClientHeight = 437
   ClientWidth = 785
   Color = clBtnFace
@@ -101,8 +101,6 @@ object FVideo: TFVideo
       TabOrder = 0
       ViewStyle = vsReport
       OnClick = ListView1Click
-      ExplicitTop = 4
-      ExplicitHeight = 359
     end
   end
   object Panel1: TPanel
@@ -126,8 +124,6 @@ object FVideo: TFVideo
     Align = alBottom
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 70
-    ExplicitTop = 418
     object Image1: TImage
       AlignWithMargins = True
       Left = 4
@@ -147,7 +143,7 @@ object FVideo: TFVideo
     end
     object Label1: TLabel
       AlignWithMargins = True
-      Left = 734
+      Left = 753
       Top = 6
       Width = 28
       Height = 15
@@ -155,13 +151,11 @@ object FVideo: TFVideo
       Align = alRight
       Alignment = taCenter
       Caption = '00:00'
-      ExplicitLeft = 728
-      ExplicitTop = 4
       ExplicitHeight = 13
     end
     object Label2: TLabel
       AlignWithMargins = True
-      Left = 132
+      Left = 151
       Top = 6
       Width = 28
       Height = 15
@@ -169,36 +163,12 @@ object FVideo: TFVideo
       Align = alRight
       Alignment = taCenter
       Caption = '00:00'
-      ExplicitLeft = 125
-      ExplicitTop = 8
-    end
-    object Image2: TImage
-      AlignWithMargins = True
-      Left = 765
-      Top = 4
-      Width = 16
-      Height = 17
-      Margins.Left = 0
-      Align = alRight
-      Center = True
-      ParentShowHint = False
-      Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000100000
-        001008060000001FF3FF6100000006624B474400FF00FF00FFA0BDA793000000
-        9F4944415478DA6364A0103052D300072826061C806214031AA0061C20A019A6
-        A6019B01C8743B162FEE01621B6475F80CF807C45540FC1FCA7701E2A3E8EAB1
-        197018885D81B80C4DFE271077106300C8465B207602626624173430A002BC06
-        D441E5BA90E46DA0614094012C40FC15C97690D32BA061E0428C01A030388224
-        578EA4B6819001BB191051850C3A8931C081818284E4C0406152260B506C0000
-        E00A2B11A6EFE3290000000049454E44AE426082}
-      ShowHint = False
-      OnClick = Image2Click
-      ExplicitLeft = 761
+      ExplicitHeight = 13
     end
     object MediaPlayer1: TMediaPlayer
       Left = 34
       Top = 1
-      Width = 94
+      Width = 112
       Height = 23
       Align = alClient
       VisibleButtons = [btPlay, btPause, btStop]
@@ -207,20 +177,15 @@ object FVideo: TFVideo
       ParentDoubleBuffered = False
       TabOrder = 0
       OnClick = MediaPlayer1Click
-      ExplicitLeft = 4
-      ExplicitTop = 2
-      ExplicitWidth = 91
     end
     object ProgressBar1: TProgressBar
       AlignWithMargins = True
-      Left = 166
+      Left = 185
       Top = 4
       Width = 562
       Height = 17
       Align = alRight
       TabOrder = 1
-      ExplicitLeft = 194
-      ExplicitTop = 3
     end
   end
   object Timer1: TTimer

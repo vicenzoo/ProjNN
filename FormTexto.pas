@@ -11,7 +11,6 @@ uses
 type
   TFTexto = class(TForm)
     Panel1: TPanel;
-    Image2: TImage;
     Memo1: TMemo;
     Splitter1: TSplitter;
     OpenDialog1: TOpenDialog;

@@ -20,7 +20,6 @@ type
     Label2: TLabel;
     ProgressBar1: TProgressBar;
     Splitter1: TSplitter;
-    Image2: TImage;
     Edit1: TEdit;
     Label3: TLabel;
     Edit2: TEdit;

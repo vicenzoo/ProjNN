@@ -32,16 +32,16 @@ object FMusica: TFMusica
       705
       77)
     object Image1: TImage
-      Left = 583
-      Top = 12
+      Left = 633
+      Top = 14
       Width = 61
       Height = 57
       Align = alCustom
       Stretch = True
     end
     object Label1: TLabel
-      Left = 437
-      Top = 14
+      Left = 487
+      Top = 16
       Width = 137
       Height = 19
       Alignment = taRightJustify
@@ -55,8 +55,8 @@ object FMusica: TFMusica
       ParentFont = False
     end
     object Label2: TLabel
-      Left = 537
-      Top = 39
+      Left = 587
+      Top = 41
       Width = 37
       Height = 13
       Alignment = taRightJustify
@@ -118,43 +118,13 @@ object FMusica: TFMusica
       OnClick = Button1Click
       ExplicitLeft = 81
     end
-    object Panel3: TPanel
-      Left = 650
-      Top = 2
-      Width = 53
-      Height = 73
-      Align = alRight
-      BevelOuter = bvNone
-      TabOrder = 0
-      object Image2: TImage
-        Left = 0
-        Top = 0
-        Width = 53
-        Height = 73
-        Align = alClient
-        Center = True
-        ParentShowHint = False
-        Picture.Data = {
-          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-          00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-          7B4944415478DA63641860C038EA805107E010FF4F2FFB06BD03A8154538CD1B
-          920EF80BC44C445A0CD33F3C1DC00CC4FF88D43FF44380144BE9E600BA460172
-          BCFF661880340073C03720E61AC810201550DD017C40FC8104C7D0240D101BEC
-          44C90D3907100386A703280543D701D40643C7017403A30E18750000E9F94521
-          22C9CDA90000000049454E44AE426082}
-        ShowHint = False
-        OnClick = Image2Click
-        ExplicitLeft = 30
-        ExplicitWidth = 64
-      end
-    end
     object Button3: TButton
       Left = 168
       Top = 20
       Width = 77
       Height = 51
       Caption = 'Ultima tocada'
-      TabOrder = 1
+      TabOrder = 0
       Visible = False
       OnClick = Button3Click
     end
@@ -175,7 +145,6 @@ object FMusica: TFMusica
       'Memo1')
     ParentFont = False
     TabOrder = 1
-    ExplicitHeight = 354
   end
   object Panel2: TPanel
     Left = 0

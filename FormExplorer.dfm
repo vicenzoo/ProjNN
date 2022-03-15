@@ -28,8 +28,6 @@ object FExplorer: TFExplorer
     BevelOuter = bvNone
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitWidth = 684
-    ExplicitHeight = 356
     object Panel3: TPanel
       Left = 728
       Top = 0
@@ -38,29 +36,6 @@ object FExplorer: TFExplorer
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 649
-      ExplicitHeight = 356
-      object Image1: TImage
-        Left = 0
-        Top = 39
-        Width = 35
-        Height = 39
-        Align = alTop
-        Center = True
-        ParentShowHint = False
-        Picture.Data = {
-          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-          00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-          7B4944415478DA63641860C038EA805107E010FF4F2FFB06BD03A8154538CD1B
-          920EF80BC44C445A0CD33F3C1DC00CC4FF88D43FF44380144BE9E600BA460172
-          BCFF661880340073C03720E61AC810201550DD017C40FC8104C7D0240D101BEC
-          44C90D3907100386A703280543D701D40643C7017403A30E18750000E9F94521
-          22C9CDA90000000049454E44AE426082}
-        ShowHint = False
-        OnClick = Image1Click
-        ExplicitLeft = 6
-        ExplicitTop = 247
-      end
       object Image2: TImage
         Left = 0
         Top = 380
@@ -113,9 +88,6 @@ object FExplorer: TFExplorer
       IconOptions.AutoArrange = True
       MultiSelect = True
       TabOrder = 1
-      ExplicitLeft = 126
-      ExplicitWidth = 488
-      ExplicitHeight = 356
     end
     object SplitView1: TSplitView
       AlignWithMargins = True
@@ -127,7 +99,6 @@ object FExplorer: TFExplorer
       OpenedWidth = 150
       Placement = svpLeft
       TabOrder = 2
-      ExplicitHeight = 350
       object Label1: TLabel
         AlignWithMargins = True
         Left = 3
@@ -143,7 +114,6 @@ object FExplorer: TFExplorer
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitTop = 307
         ExplicitWidth = 39
       end
       object ComboBox1: TComboBox
@@ -163,8 +133,6 @@ object FExplorer: TFExplorer
           'Lista'
           'Relat'#243'rio'
           'Itens Pequenos')
-        ExplicitTop = 326
-        ExplicitWidth = 114
       end
       object GroupBox1: TGroupBox
         AlignWithMargins = True
@@ -175,8 +143,6 @@ object FExplorer: TFExplorer
         Align = alClient
         Caption = 'Utilit'#225'rios:'
         TabOrder = 1
-        ExplicitWidth = 144
-        ExplicitHeight = 298
         object BitBtn1: TBitBtn
           AlignWithMargins = True
           Left = 5
@@ -187,9 +153,6 @@ object FExplorer: TFExplorer
           Caption = 'Exportar Arquivo'
           TabOrder = 0
           OnClick = BitBtn1Click
-          ExplicitLeft = 60
-          ExplicitTop = 120
-          ExplicitWidth = 75
         end
       end
     end

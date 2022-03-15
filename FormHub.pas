@@ -20,8 +20,6 @@ type
     Label2: TLabel;
     Edit1: TEdit;
     Label3: TLabel;
-    Panel2: TPanel;
-    Image2: TImage;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Image2Click(Sender: TObject);

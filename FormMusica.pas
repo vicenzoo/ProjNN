@@ -31,8 +31,6 @@ type
     RESTRequest4: TRESTRequest;
     RESTResponse4: TRESTResponse;
     Panel2: TPanel;
-    Panel3: TPanel;
-    Image2: TImage;
     Label3: TLabel;
     RESTRequest5: TRESTRequest;
     RESTResponse5: TRESTResponse;
@@ -48,7 +46,6 @@ type
     procedure Button4Click(Sender: TObject);
     procedure IdHTTPServer1CommandGet(AContext: TIdContext;
       ARequestInfo: TIdHTTPRequestInfo; AResponseInfo: TIdHTTPResponseInfo);
-    procedure Image2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
   private
@@ -341,10 +338,5 @@ begin
   ShowMessage('Autorização concedida com sucesso!');
 end;
 
-
-procedure TFMusica.Image2Click(Sender: TObject);
-begin
- ShowWindow(FMusica.Handle, SW_RESTORE) ;
-end;
 
 end.

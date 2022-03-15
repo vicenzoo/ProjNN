@@ -10,13 +10,13 @@ uses
   Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
   Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel,ShellApi,
-  Vcl.CategoryButtons;
+  Vcl.CategoryButtons, Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ActnMenus,
+  Vcl.XPStyleActnCtrls, Vcl.Tabs;
 
 type
   TProjNONS = class(TForm)
     SplitView1: TSplitView;
     SplitView2: TSplitView;
-    Panel1: TPanel;
     Panel2: TPanel;
     Timer1: TTimer;
     Panel4: TPanel;
@@ -60,6 +60,7 @@ type
     Label1: TLabel;
     FileOpenDialog1: TFileOpenDialog;
     AFileDownloader: TAction;
+    MainMenu1: TMainMenu;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
@@ -80,7 +81,6 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
-    Image3: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -104,6 +104,8 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
     procedure AFileDownloaderExecute(Sender: TObject);
+    procedure CloseClick(Sender: TObject);
+    procedure MinClick(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -154,12 +156,23 @@ begin
   BitBtn1Click(Sender);
 end;
 
+//Controle da Janela
+procedure TProjNONS.CloseClick(Sender: TObject);
+begin
+ close;
+end;
+
+procedure TProjNONS.MinClick(Sender: TObject);
+begin
+   ShowWindow(ProjNONS.Handle, SW_MINIMIZE) ;
+end;
+
+//Combobox Estilos
 procedure TProjNONS.ComboBox1Change(Sender: TObject);
 begin
  if ComboBox1.ItemIndex=-1 then exit;
  TStyleManager.TrySetStyle(ComboBox1.Items[ComboBox1.ItemIndex]);
 end;
-
 
 procedure TProjNONS.Image1Click(Sender: TObject);
 begin
