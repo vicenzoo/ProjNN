@@ -61,6 +61,7 @@ type
     FileOpenDialog1: TFileOpenDialog;
     AFileDownloader: TAction;
     MainMenu1: TMainMenu;
+    ADraw: TAction;
     CategoryPanelGroup1: TCategoryPanelGroup;
     CategoryPanel2: TCategoryPanel;
     Panel3: TPanel;
@@ -81,6 +82,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button4: TButton;
+    Button12: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -106,6 +108,7 @@ type
     procedure AFileDownloaderExecute(Sender: TObject);
     procedure CloseClick(Sender: TObject);
     procedure MinClick(Sender: TObject);
+    procedure ADrawExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -128,7 +131,7 @@ implementation
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
   FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux, FormClock,
-  FormFileDownload;
+  FormFileDownload, FormPaint;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 var
@@ -456,6 +459,14 @@ begin
   FFiledownload := TFFiledownload.Create(Application);
   FFiledownload.Show;
 end;
+
+procedure TProjNONS.ADrawExecute(Sender: TObject);
+begin
+  Button12.Enabled := False;
+  FDraw := TFDraw.Create(Application);
+  FDraw.Show;
+end;
+
 
 
 end.

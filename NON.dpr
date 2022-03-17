@@ -20,7 +20,8 @@ uses
   FormTextaux in 'FormTextaux.pas' {Ftxtaux},
   FormClock in 'FormClock.pas' {FClock},
   FormFileDownload in 'FormFileDownload.pas' {FFiledownload},
-  FormSplash in 'FormSplash.pas' {FSplash};
+  FormSplash in 'FormSplash.pas' {FSplash},
+  FormPaint in 'FormPaint.pas' {FDraw};
 
 {$R *.res}
 
