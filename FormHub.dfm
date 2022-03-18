@@ -86,7 +86,6 @@ object FHub: TFHub
         Align = alClient
         ItemHeight = 13
         TabOrder = 1
-        ExplicitWidth = 463
       end
       object Button2: TButton
         Left = 4

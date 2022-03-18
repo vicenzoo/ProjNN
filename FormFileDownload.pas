@@ -54,7 +54,7 @@ end;
 
 procedure TFFiledownload.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  ProjNONS.Button11.Enabled := True;
+  ProjNONS.RzBitBtn9.Enabled := True;
   Action := caFree;
 end;
 

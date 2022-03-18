@@ -11,7 +11,7 @@ uses
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
   Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel,ShellApi,
   Vcl.CategoryButtons, Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ActnMenus,
-  Vcl.XPStyleActnCtrls, Vcl.Tabs;
+  Vcl.XPStyleActnCtrls, Vcl.Tabs, RzLabel;
 
 type
   TProjNONS = class(TForm)
@@ -33,16 +33,12 @@ type
     AHub: TAction;
     ANav: TAction;
     Label7: TLabel;
-    Image2: TImage;
     BitBtn1: TBitBtn;
     Label4: TLabel;
     Image1: TImage;
     AFiletoZip: TAction;
     AAlarme: TAction;
     AMusicC: TAction;
-    Panel5: TPanel;
-    Label8: TLabel;
-    ComboBox1: TComboBox;
     ALoadPDF: TAction;
     AExplorer: TAction;
     Atxtaux: TAction;
@@ -53,7 +49,6 @@ type
     AClock: TAction;
     BitBtn4: TBitBtn;
     OpenDialog1: TOpenDialog;
-    CategoryButtons1: TCategoryButtons;
     Panel8: TPanel;
     BitBtn5: TBitBtn;
     Image4: TImage;
@@ -62,31 +57,29 @@ type
     AFileDownloader: TAction;
     MainMenu1: TMainMenu;
     ADraw: TAction;
+    Image3: TImage;
+    RzBitBtn1: TRzBitBtn;
+    RzLabel1: TRzLabel;
+    RzBitBtn2: TRzBitBtn;
+    RzBitBtn3: TRzBitBtn;
+    RzBitBtn4: TRzBitBtn;
+    RzBitBtn5: TRzBitBtn;
+    RzBitBtn6: TRzBitBtn;
+    RzBitBtn7: TRzBitBtn;
+    RzBitBtn8: TRzBitBtn;
+    RzBitBtn9: TRzBitBtn;
+    RzBitBtn10: TRzBitBtn;
+    RzBitBtn11: TRzBitBtn;
+    RzBitBtn12: TRzBitBtn;
+    Panel1: TPanel;
     CategoryPanelGroup1: TCategoryPanelGroup;
-    CategoryPanel2: TCategoryPanel;
-    Panel3: TPanel;
-    Label6: TLabel;
-    RzLEDDisplay1: TRzLEDDisplay;
-    CategoryPanel4: TCategoryPanel;
-    Button6: TButton;
-    Button9: TButton;
-    Button10: TButton;
-    CategoryPanel3: TCategoryPanel;
-    Button5: TButton;
-    Button7: TButton;
-    Button11: TButton;
-    CategoryPanel5: TCategoryPanel;
-    Button8: TButton;
-    Button3: TButton;
     CategoryPanel1: TCategoryPanel;
-    Button1: TButton;
-    Button2: TButton;
-    Button4: TButton;
-    Button12: TButton;
+    Panel5: TPanel;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
-    procedure Image2Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure AVideoExecute(Sender: TObject);
     procedure CalendarView1Click(Sender: TObject);
@@ -106,9 +99,10 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
     procedure AFileDownloaderExecute(Sender: TObject);
-    procedure CloseClick(Sender: TObject);
-    procedure MinClick(Sender: TObject);
     procedure ADrawExecute(Sender: TObject);
+    procedure CategoryPanel1Click(Sender: TObject);
+    procedure CategoryPanel1Collapse(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -134,17 +128,20 @@ uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
   FormFileDownload, FormPaint;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
-var
-Ver,styles : string;
 begin
   cont := 0;
   boolicon := false;
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
-  Ver := Versao(Application.ExeName);
-  RzLEDDisplay1.Caption := 'Ver.: ' + ver;
+  //Ver := Versao(Application.ExeName);
+  //RzLEDDisplay1.Caption := 'Ver.: ' + ver;
+  BitBtn1Click(Sender);
+end;
 
-
+procedure TProjNONS.FormShow(Sender: TObject);
+var
+ styles : string;
+begin
  with ComboBox1 do
  begin
   Items.BeginUpdate;
@@ -156,18 +153,18 @@ begin
    Items.EndUpdate;
   end;
  end;
-  BitBtn1Click(Sender);
+ BitBtn1Click(Sender);
 end;
 
 //Controle da Janela
-procedure TProjNONS.CloseClick(Sender: TObject);
+procedure TProjNONS.CategoryPanel1Click(Sender: TObject);
 begin
- close;
+ Panel1.Height := 65;
 end;
 
-procedure TProjNONS.MinClick(Sender: TObject);
+procedure TProjNONS.CategoryPanel1Collapse(Sender: TObject);
 begin
-   ShowWindow(ProjNONS.Handle, SW_MINIMIZE) ;
+ Panel1.Height := 25;
 end;
 
 //Combobox Estilos
@@ -196,20 +193,6 @@ begin
    Panel2.Visible := true;
    label2.Caption := FormatDateTime('dddd - mmmm yyyy ',Date);
    BitBtn4.Visible := true;
-  end;
-end;
-
-procedure TProjNONS.Image2Click(Sender: TObject);
-begin
-  if SplitView1.Opened then
-  begin
-   SplitView1.Close;
-   CategoryPanelGroup1.Visible := false;
-  end
-  else
-  begin
-   SplitView1.Open;
-   CategoryPanelGroup1.Visible := true;
   end;
 end;
 
@@ -369,7 +352,7 @@ end;
 //Abre Video - Media Player de vídeos
 procedure TProjNONS.AVideoExecute(Sender: TObject);
 begin
- Button1.Enabled := False;
+ RzBitBtn1.Enabled := False;
  FVideo := TFVideo.Create(Application);
  FVideo.Show;
 end;
@@ -377,7 +360,7 @@ end;
 //Abre Texto - Editor de Texto Simples
 procedure TProjNONS.ATextoExecute(Sender: TObject);
 begin
- Button2.Enabled := False;
+ RzBitBtn2.Enabled := False;
  FTexto := TFTexto.Create(Application);
  FTexto.Show;
 end;
@@ -385,7 +368,7 @@ end;
 //Abre Navegador - Componente WebBrowser Delphi
 procedure TProjNONS.ANavExecute(Sender: TObject);
 begin
- Button3.Enabled := False;
+ RzBitBtn5.Enabled := False;
  FNav := TFNav.Create(Application);
  FNav.Show;
 end;
@@ -393,7 +376,7 @@ end;
 //Hub Dispositivos - Hub Bluetooth / Dispositvos Conectados na Maquina
 procedure TProjNONS.AHubExecute(Sender: TObject);
 begin
- Button4.Enabled := False;
+ RzBitBtn3.Enabled := False;
  FHub := TFHub.Create(Application);
  FHub.Show;
 end;
@@ -401,7 +384,7 @@ end;
 //Comprime Arquivos - Bibloteca TZipFile
 procedure TProjNONS.AFiletoZipExecute(Sender: TObject);
 begin
- Button5.Enabled := False;
+ RzBitBtn7.Enabled := False;
  FFiletoZip := TFFiletoZip.Create(Application);
  FFiletoZip.Show;
 end;
@@ -409,7 +392,7 @@ end;
 //Alarme - Define Alarme
 procedure TProjNONS.AAlarmeExecute(Sender: TObject);
 begin
- Button6.Enabled := False;
+ RzBitBtn10.Enabled := False;
  FAlarme := TFAlarme.Create(Application);
  FAlarme.Show;
 end;
@@ -417,7 +400,7 @@ end;
 //Abrir PDF - Biblioteca ACroPDF (Active X)
 procedure TProjNONS.ALoadPDFExecute(Sender: TObject);
 begin
- Button7.Enabled := False;
+ RzBitBtn8.Enabled := False;
  FLoadPDFFile := TFLoadPDFFile.Create(Application);
  FLoadPDFFile.Show;
 end;
@@ -425,7 +408,7 @@ end;
 //Musica - Api REST (SPOTIFY)
 procedure TProjNONS.AMusicCExecute(Sender: TObject);
 begin
- Button8.Enabled := False;
+ RzBitBtn6.Enabled := False;
  FMusica := TFMusica.Create(Application);
  FMusica.Show;
 end;
@@ -433,7 +416,7 @@ end;
 //Explorador - Raize Components
 procedure TProjNONS.AExplorerExecute(Sender: TObject);
 begin
- Button9.Enabled := False;
+ RzBitBtn11.Enabled := False;
  FExplorer := TFExplorer.Create(Application);
  FExplorer.Show;
 end;
@@ -441,7 +424,7 @@ end;
 //Auxíliar de Texto - Ajuda a lidar com textos
 procedure TProjNONS.AtxtauxExecute(Sender: TObject);
 begin
- Button10.Enabled := False;
+ RzBitBtn12.Enabled := False;
  Ftxtaux := TFtxtaux.Create(Application);
  Ftxtaux.Show;
 end;
@@ -455,14 +438,14 @@ end;
 
 procedure TProjNONS.AFileDownloaderExecute(Sender: TObject);
 begin
-  Button11.Enabled := False;
+  RzBitBtn9.Enabled := False;
   FFiledownload := TFFiledownload.Create(Application);
   FFiledownload.Show;
 end;
 
 procedure TProjNONS.ADrawExecute(Sender: TObject);
 begin
-  Button12.Enabled := False;
+  RzBitBtn4.Enabled := False;
   FDraw := TFDraw.Create(Application);
   FDraw.Show;
 end;

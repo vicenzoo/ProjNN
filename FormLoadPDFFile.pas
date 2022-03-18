@@ -35,7 +35,7 @@ uses PrincNN;
 procedure TFLoadPDFFile.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button7.Enabled := True;
+  ProjNONS.RzBitBtn8.Enabled := True;
 end;
 
 procedure TFLoadPDFFile.Image1Click(Sender: TObject);

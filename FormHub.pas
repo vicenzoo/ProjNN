@@ -47,7 +47,7 @@ uses PrincNN;
 procedure TFHub.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button4.Enabled := True;
+  ProjNONS.RzBitBtn3.Enabled := True;
 end;
 
 procedure TFHub.FormCreate(Sender: TObject);

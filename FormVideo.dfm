@@ -146,29 +146,27 @@ object FVideo: TFVideo
       Left = 753
       Top = 6
       Width = 28
-      Height = 15
+      Height = 13
       Margins.Top = 5
       Align = alRight
       Alignment = taCenter
       Caption = '00:00'
-      ExplicitHeight = 13
     end
     object Label2: TLabel
       AlignWithMargins = True
       Left = 151
       Top = 6
       Width = 28
-      Height = 15
+      Height = 13
       Margins.Top = 5
       Align = alRight
       Alignment = taCenter
       Caption = '00:00'
-      ExplicitHeight = 13
     end
     object MediaPlayer1: TMediaPlayer
       Left = 34
       Top = 1
-      Width = 112
+      Width = -2
       Height = 23
       Align = alClient
       VisibleButtons = [btPlay, btPause, btStop]

@@ -41,7 +41,7 @@ uses PrincNN;
 procedure TFAlarme.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button6.Enabled := True;
+  ProjNONS.RzBitBtn10.Enabled := True;
 end;
 
 procedure TFAlarme.FormCreate(Sender: TObject);

@@ -35,46 +35,40 @@ object FFiledownload: TFFiledownload
     object Label2: TLabel
       Left = 0
       Top = 0
-      Width = 328
+      Width = 40
       Height = 13
       Align = alTop
       Alignment = taCenter
       Caption = 'Destino:'
-      ExplicitWidth = 40
     end
     object Label3: TLabel
       Left = 0
       Top = 80
-      Width = 328
+      Width = 74
       Height = 13
       Margins.Top = 5
       Align = alTop
       Alignment = taCenter
       Caption = 'Nome Arquivo: '
-      ExplicitWidth = 74
     end
     object Label1: TLabel
       Left = 0
       Top = 40
-      Width = 328
+      Width = 17
       Height = 13
       Align = alTop
       Alignment = taCenter
       Caption = 'Url:'
-      ExplicitWidth = 17
     end
     object Label4: TLabel
       AlignWithMargins = True
       Left = 3
       Top = 125
-      Width = 81
-      Height = 24
+      Width = 49
+      Height = 13
       Margins.Top = 5
       Align = alLeft
       Caption = 'Extens'#227'o:'
-      ExplicitLeft = 0
-      ExplicitTop = 120
-      ExplicitHeight = 35
     end
     object Edit2: TEdit
       AlignWithMargins = True
@@ -118,8 +112,6 @@ object FFiledownload: TFFiledownload
       Align = alRight
       Style = csDropDownList
       TabOrder = 3
-      ExplicitLeft = 340
-      ExplicitTop = 123
     end
     object Panel1: TPanel
       AlignWithMargins = True

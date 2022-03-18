@@ -9,7 +9,7 @@ object ProjNONS: TProjNONS
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Name = 'Segoe UI'
   Font.Style = []
   FormStyle = fsMDIForm
   GlassFrame.Enabled = True
@@ -18,412 +18,375 @@ object ProjNONS: TProjNONS
   Visible = True
   WindowState = wsMaximized
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object SplitView1: TSplitView
     Left = 0
     Top = 0
-    Width = 200
-    Height = 635
+    Width = 60
+    Height = 610
     CloseStyle = svcCompact
-    Color = clMenu
-    CompactWidth = 80
-    OpenedWidth = 200
+    Color = clWhite
+    OpenedWidth = 60
     Placement = svpLeft
     TabOrder = 0
-    object Image2: TImage
-      Left = 0
-      Top = 0
-      Width = 200
+    ExplicitHeight = 635
+    object Image3: TImage
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 54
       Height = 39
       Align = alTop
       Center = True
       Picture.Data = {
-        0954506E67496D61676589504E470D0A1A0A0000000D49484452000000200000
-        00200806000000737A7AF400000006624B474400FF00FF00FFA0BDA793000000
-        3E4944415478DAEDD3A101004008C340D87F687E81D74D4522319CE90EDC0A10
-        20E073BBE4CF4A403401022A01F80C71403401022A01F80C7140340102043C85
-        DE062195E388820000000049454E44AE426082}
-      OnClick = Image2Click
-      ExplicitWidth = 598
+        055449636F6E0000010001002020000001002000A81000001600000028000000
+        2000000040000000010020000000000000100000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000E3FF0900D8FF4800FFFF03000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000D7FF7800D7FFFF00D7FFDE00D7FF6C00DFFF0800000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000DBFF2300D8FF4100D8FF5B
+        00D7FF6600D7FF6600D7FF4700D7FF13000000000000000000D7FF6C00D5FF31
+        0000000000DBFF0700D7FFE600D6FF8A00D7FF8500D7FFFF00D6FF5D00000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000D7FF2000D7FF8100D7FFD500D7FFFF00D7FFFF00D7FFEA
+        00D7FFDD00D7FFEA00D7FFFE00D7FFFE00D7FFCB00D8FF7500D6FFE200D8FFEF
+        00D8FF3400D6FF6300D7FFF300D2FF1100D7FF6600D7FFF200CFFF1000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00D3FF1700D7FF9200D7FFF900D8FFCF00D6FF7D00D5FF3000DBFF0700000000
+        000000000000000000DDFF0F00D8FF4200D6FF9000D7FFE800D8FFF700D7FFEB
+        00D7FFEE00D7FFDF00D8FF8F00FFFF0300D7FFDA00D7FF8B0000000000000000
+        0000000000000000000000000000000000000000000000000000000000D5FF3D
+        00D7FFEB00D7FFD900D6FF510000000000D1FF0B0000000000D5FF3700D7FF7A
+        0000000000D7FF9800D5FF180000000000D1FF0B00E3FF0900D8FFE900D7FF6C
+        00D6FFB000D7FFFA00D6FF1F00D8FF5400D7FFF900D9FF1B0000000000000000
+        00000000000000000000000000000000000000000000000000D6FF5E00D7FFF9
+        00D7FF9900D5FF0600D7FF3A00D7FFB300DBFF2300D8FF4E00D7FFF800D7FFB7
+        0000000000D7FFFF00D7FFDE00D6FF1F00D6FF5800D7FF9A00D7FFE300D7FF67
+        00CCFF0500D6FF250000000000D7FFC500D7FFEC00D7FFAA00D7FFAA00D8FFA8
+        00D7FF260000000000000000000000000000000000D7FF4700D7FFFB00D8FF6E
+        00BFFF0400D6FF9000D7FFFE00D8FF6900D3FF1D00D8FFEF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFC100FFFF0200D7FFB200D8FFF700D7FF67
+        00000000000000000000000000D7FF7400D7FFAA00D6FFB600D7FFFF00D7FFE7
+        00D8FF2100000000000000000000000000D8FF2700D7FFF000D7FF8C00CCFF05
+        00D7FFB400D7FFFF00D7FFEA00DFFF0800D8FF9B00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FF5300D7FF3F00D7FFF800D7FF67
+        0000000000000000000000000000000000D5FF0C00D8FFBC00D7FFE600D7FF2D
+        0000000000000000000000000000000000D7FFB700D8FFC200FFFF0300D6FF51
+        00D7FFAA00D7FFAA00D6FF6300DFFF0800D7FFA500D7FFAA00D7FFAA00D7FF7A
+        0000000000D7FFAA00D7FFAA00D7FFAA00D8FF7C0000000000D7FFED00D7FF67
+        00000000000000000000000000D5FF1200D8FFC900D7FFDE00DBFF2300000000
+        00000000000000000000000000D8FF4200D7FFFE00D9FF3500D1FF0B00D2FF11
+        00D2FF1100D2FF1100FFFF0100CCFF0A00D2FF1100D2FF1100D2FF1100D5FF0C
+        0000000000D2FF1100D2FF1100D2FF1100D2FF1100D5FF0600D7FFE000D7FF67
+        000000000000000000D6FF1900D8FFD700D7FFF800DFFF280000000000000000
+        00000000000000000000000000D7FFB700D7FFAD00D5FF0600D7FFDD00D7FFFF
+        00D7FFFF00D7FFEE00FFFF0100D7FFB900D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D6FF7000D8FFE000D7FF67
+        0000000000D8FF2100D7FFDF00D7FFCD00D6FFEC00D7FF730000000000000000
+        000000000000000000DBFF0E00D7FFF900D8FF4F00D7FF5F00D7FFFF00D7FFFF
+        00D7FFFF00D7FFB700FFFF0200D7FFF000D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D6FFA900D7FFE000D7FF67
+        00D5FF2A00D7FFEA00D7FFF800D9FF1B00D8FF8F00D7FFCB0000000000000000
+        000000000000000000D8FF5500D7FFF500CCFF0A00D7FFB400D7FFFF00D7FFFF
+        00D7FFFF00D6FF8A00D8FF2700D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFDD00D7FFE000D6FFA3
+        00D6FFF500D7FFFC00D7FFFF00D6FF6300D8FF4200D7FFFE00D2FF1100000000
+        000000000000000000D7FF8100D7FFC50000000000D8FFEF00D7FFFF00D7FFFF
+        00D7FFFF00D7FF7400D7FF3F00D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFF500D7FFE000D7FFFF
+        00D8FFFD00D7FFFF00D7FFFF00D8FF9B00DDFF0F00D7FFFE00D8FF4100000000
+        000000000000000000D8FF9B00D7FFAB00D9FF1400D7FFFF00D7FFFF00D7FFFF
+        00D7FFFF00D7FF6000D6FF5700D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFC800D7FFF8
+        00D7FFFF00D7FFFF00D7FFFF00D7FFC40000000000D7FFEA00D6FF5D00000000
+        000000000000000000D7FFB100D8FF9500000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000000000D6FFDC00D6FF6B00000000
+        000000000000000000D6FFA300D6FFA300DDFF0F00D7FFAA00D7FFAA00D7FFAA
+        00D7FFAA00D6FF3E00D9FF3C00D7FFAA00D7FFAA00D7FFAA00D7FFAA00D7FF7A
+        0000000000D7FFAA00D7FFAA00D7FFAA00D7FFAA00D7FFAA00D1FF0B00D8FF6E
+        00D7FFAA00D7FFAA00D7FFAA00D8FF880000000000D7FFEC00D8FF5B00000000
+        000000000000000000D6FF8A00D8FFBC00FFFF0300D7FFF800D7FFFF00D7FFFF
+        00D7FFFF00D8FF6E00D7FF4700D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFFB00FFFF0200D7FFB7
+        00D7FFFF00D7FFFF00D7FFFF00D7FFB100DBFF0700D7FFFE00D8FF4100000000
+        000000000000000000D8FF6900D7FFE500FFFF0100D7FFC500D7FFFF00D7FFFF
+        00D7FFFF00D6FF8300D9FF2F00D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFE50000000000D7FFCD
+        00D7FFFF00D7FFFF00D7FFFF00D8FF7C00D5FF3100D7FFFF00D7FF2000000000
+        000000000000000000DBFF2300D7FFFF00D6FF3200D8FF7B00D7FFFF00D7FFFF
+        00D7FFFF00D8FFA800D5FF0C00D7FFFB00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D7FFBD00FFFF0100D8FFEF
+        00D7FFFF00D7FFFF00D7FFFF00D5FF3100D6FF7D00D7FFDA0000000000000000
+        00000000000000000000000000D7FFCE00D8FF8800D6FF1900D7FFF500D7FFFF
+        00D7FFFF00D7FFDE0000000000D7FFCC00D7FFFF00D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FFFF00D6FF8300DAFF2900D7FFFF
+        00D7FFFF00D7FFFF00D7FFC400FFFF0100D7FFD200D6FF840000000000000000
+        00000000000000000000000000D7FF6600D7FFF100D9FF1400D7FF4700D7FF66
+        00D7FF6600D7FF6600FFFF0200D8FF4100D7FF6600D7FF6600D7FF6600D9FF49
+        0000000000D7FF6600D7FF6600D7FF6600D7FF6600D5FF2400D6FF1F00D7FF66
+        00D7FF6600D7FF6600DAFF2900D7FF5200D7FFF900DAFF220000000000000000
+        00000000000000000000000000BFFF0400D7FFD800D6FF900000000000D9FF28
+        00D6FF4400D6FF4400D5FF2400CCFF0500D6FF4400D6FF4400D6FF4400D5FF31
+        0000000000D6FF4400D6FF4400D6FF4400D9FF360000000000D5FF3700D6FF44
+        00D6FF4400D9FF1400CCFF0500D7FFD700D7FF91000000000000000000000000
+        0000000000000000000000000000000000D6FF4A00D7FFFB00D8FF4F00D3FF1D
+        00D7FFE100D7FFFF00D8FFCF0000000000D7FFC800D7FFFF00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D7FFFF00D7FF7F00D3FF1D00D7FFFA00D7FFFF
+        00D7FFB100BFFF0400D7FF9800D7FFE800DBFF15000000000000000000000000
+        000000000000000000000000000000000000000000D6FF7D00D7FFF300D8FF34
+        00DBFF1C00D7FFCD00D7FFFF00D6FF4500D5FF3D00D7FFFD00D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFFF00D8FFE200DBFF0E00D7FF8D00D7FFFF00D7FF9A
+        00CCFF0500D7FF7300D7FFF800D7FF3900000000000000000000000000000000
+        000000000000000000000000000000000000000000FFFF0100D7FF9E00D7FFF4
+        00D8FF5500DBFF0700D6FF7D00D7FFCE00D1FF0B00D6FF8400D7FFFF00D7FFB7
+        0000000000D7FFFF00D7FFF800D8FF4100D8FF3400D7FFD800D8FF4F00BFFF04
+        00D7FF9200D7FFFA00D7FF590000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000FFFF0100D8FF7B
+        00D7FFFD00D7FF9A00D6FF1900CFFF1000DBFF230000000000D7FF7400D8FFA8
+        0000000000D7FFDA00D8FF410000000000D9FF2F00BFFF0400D5FF3700D7FFC7
+        00D7FFED00D8FF42000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00D9FF4900D7FFD900D7FFF300D7FF8B00D7FF3900FFFF020000000000FFFF02
+        0000000000FFFF020000000000CCFF0A00D6FF5000D7FFAC00D7FFFE00D7FFB4
+        00DBFF2300000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000CCFF0500D7FF6C00D7FFD200D7FFFF00D7FFE800D8FFC200D7FFA6
+        00D7FF9900D6FFB000D7FFC800D7FFF600D7FFFA00D7FFBA00D5FF4300000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000D7FF2000D8FF6800D7FF8500D7FF9F
+        00D7FFAA00D6FF9600D7FF7F00D8FF5600DDFF0F000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000FFFFFF8FFFFFFF83FFF01903FF800003FE038007FC292007F8010040
+        F00101C0E00101E1E00109C3C0010187C0010107800100078001000390010003
+        800100139FFFFFF380010013800100038001040380010007C0410007C0010007
+        C401080FE021000FF001001FF001003FF809207FFE0540FFFF0003FFFFE00FFF
+        FFFFFFFF}
+      ExplicitWidth = 62
     end
-    object Panel5: TPanel
-      Left = 0
-      Top = 590
-      Width = 200
-      Height = 45
-      Align = alBottom
-      BevelOuter = bvNone
-      Color = cl3DLight
-      ParentBackground = False
-      TabOrder = 0
-      object Label8: TLabel
-        Left = 0
-        Top = 0
-        Width = 200
-        Height = 13
-        Align = alTop
-        Alignment = taCenter
-        Caption = 'Estilos:'
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        ExplicitWidth = 34
-      end
-      object ComboBox1: TComboBox
-        AlignWithMargins = True
-        Left = 3
-        Top = 16
-        Width = 194
-        Height = 21
-        Align = alTop
-        Style = csDropDownList
-        TabOrder = 0
-        OnChange = ComboBox1Change
-      end
-    end
-    object CategoryButtons1: TCategoryButtons
-      Left = 200
-      Top = 39
-      Width = 80
-      Height = 551
-      Align = alLeft
-      BackgroundGradientColor = clWhite
-      BackgroundGradientDirection = gdVertical
-      BevelInner = bvNone
-      BevelOuter = bvNone
-      BorderStyle = bsNone
-      ButtonFlow = cbfVertical
-      ButtonWidth = 5
-      ButtonOptions = [boFullSize, boGradientFill, boShowCaptions, boUsePlusMinus, boCaptionOnlyBorder]
-      Categories = <
-        item
-          Caption = 'Menu'
-          Color = 16053492
-          Collapsed = True
-          Items = <>
-          TextColor = clWindowFrame
-        end
-        item
-          Caption = 'Offline'
-          Color = clWhite
-          Collapsed = False
-          Items = <
-            item
-              Action = AVideo
-              ImageIndex = 10
-            end
-            item
-              Action = ATexto
-              ImageIndex = 9
-            end
-            item
-              Action = AHub
-              ImageIndex = 11
-            end
-            item
-              Action = ADraw
-              ImageIndex = 25
-            end>
-          TextColor = clBlack
-        end
-        item
-          Caption = 'Online'
-          Color = clWhite
-          Collapsed = False
-          Items = <
-            item
-              Action = ANav
-              Caption = 'Nav.'
-              ImageIndex = 2
-            end
-            item
-              Action = AMusicC
-              ImageIndex = 5
-            end>
-          TextColor = clBlack
-        end
-        item
-          Caption = 'Facil.'
-          Color = clWhite
-          Collapsed = False
-          Items = <
-            item
-              Action = AFiletoZip
-              Caption = 'ZIP'
-              ImageIndex = 1
-            end
-            item
-              Action = ALoadPDF
-              ImageIndex = 3
-            end
-            item
-              Action = AFileDownloader
-              Caption = 'Dloader'
-              ImageIndex = 20
-            end>
-          TextColor = clBlack
-        end
-        item
-          Caption = 'Aux'#237'liar'
-          Color = clWhite
-          Collapsed = False
-          Items = <
-            item
-              Action = AAlarme
-              ImageIndex = 12
-            end
-            item
-              Action = AExplorer
-              Caption = 'Explorer'
-              ImageIndex = 13
-            end
-            item
-              Action = Atxtaux
-              Caption = 'Texto+'
-              ImageIndex = 14
-            end>
-          TextColor = clBlack
-        end>
-      GradientDirection = gdVertical
-      HotButtonColor = 10154236
-      Images = VirtualImageList1
-      RegularButtonColor = clWhite
-      SelectedButtonColor = 5698042
-      TabOrder = 1
-    end
-    object CategoryPanelGroup1: TCategoryPanelGroup
-      Left = 0
-      Top = 39
-      Height = 551
-      VertScrollBar.ParentColor = False
-      VertScrollBar.Smooth = True
-      VertScrollBar.Style = ssFlat
-      VertScrollBar.Tracking = True
-      BevelInner = bvNone
-      BevelOuter = bvNone
-      BiDiMode = bdLeftToRight
-      ChevronHotColor = 445951
-      Color = clMenu
+    object RzLabel1: TRzLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 48
+      Width = 54
+      Height = 17
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'NONS'
+      Color = clWhite
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clBlack
       Font.Height = -11
-      Font.Name = 'Tahoma'
+      Font.Name = 'Segoe UI Semibold'
       Font.Style = []
-      GradientBaseColor = clMenu
-      GradientColor = clMenu
-      GradientDirection = gdHorizontal
-      HeaderAlignment = taCenter
-      HeaderFont.Charset = DEFAULT_CHARSET
-      HeaderFont.Color = clBlack
-      HeaderFont.Height = -11
-      HeaderFont.Name = 'Tahoma'
-      HeaderFont.Style = []
-      ParentBiDiMode = False
+      ParentColor = False
       ParentFont = False
+      BlinkColor = 502520
+      BorderOuter = fsFlatRounded
+      BorderColor = clBlack
+      BorderShadow = clBackground
+      CondenseCaption = ccAtEnd
+      FlatColor = clSilver
+      FlyByColor = 502520
+      HighlightColor = clSilver
+      ExplicitWidth = 34
+    end
+    object RzBitBtn1: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 71
+      Width = 54
+      Height = 33
+      Action = AVideo
+      Align = alTop
+      Caption = 'V'#237'deo'
+      LightTextStyle = True
+      TabOrder = 0
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn2: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 110
+      Width = 54
+      Height = 33
+      Action = ATexto
+      Align = alTop
+      Caption = 'Texto'
+      LightTextStyle = True
+      TabOrder = 1
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn3: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 149
+      Width = 54
+      Height = 33
+      Action = AHub
+      Align = alTop
+      Caption = 'Hub'
+      LightTextStyle = True
       TabOrder = 2
-      object CategoryPanel2: TCategoryPanel
-        Top = 120
-        Height = 30
-        Caption = 'Vers'#227'o Info'
-        Collapsed = True
-        TabOrder = 0
-        ExpandedHeight = 71
-        object Panel3: TPanel
-          Left = 0
-          Top = 0
-          Width = 196
-          Height = 0
-          Align = alClient
-          TabOrder = 0
-          object Label6: TLabel
-            Left = 1
-            Top = 1
-            Width = 194
-            Height = 13
-            Align = alTop
-            Caption = 'Projeto No Net System (NONS) '
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clBlack
-            Font.Height = -11
-            Font.Name = 'Tahoma'
-            Font.Style = [fsBold]
-            ParentFont = False
-            WordWrap = True
-            ExplicitWidth = 172
-          end
-          object RzLEDDisplay1: TRzLEDDisplay
-            Left = 1
-            Top = -31
-            Width = 194
-            Align = alBottom
-            Caption = ''
-            SegOnColor = clYellow
-            SegOffColor = clOlive
-            Scrolling = True
-            ScrollDelay = 50
-            ExplicitLeft = 91
-            ExplicitTop = 17
-            ExplicitWidth = 100
-          end
-        end
-      end
-      object CategoryPanel4: TCategoryPanel
-        Top = 90
-        Height = 30
-        Caption = 'Aux'#237'liar'
-        Collapsed = True
-        TabOrder = 1
-        object Button6: TButton
-          Left = 0
-          Top = 0
-          Width = 196
-          Height = 25
-          Action = AAlarme
-          Align = alTop
-          TabOrder = 0
-        end
-        object Button9: TButton
-          Left = 0
-          Top = 25
-          Width = 196
-          Height = 25
-          Action = AExplorer
-          Align = alTop
-          TabOrder = 1
-        end
-        object Button10: TButton
-          Left = 0
-          Top = 50
-          Width = 196
-          Height = 25
-          Action = Atxtaux
-          Align = alTop
-          TabOrder = 2
-        end
-      end
-      object CategoryPanel3: TCategoryPanel
-        Top = 60
-        Height = 30
-        Caption = 'Facilitadores'
-        Collapsed = True
-        TabOrder = 2
-        object Button5: TButton
-          Left = 0
-          Top = 0
-          Width = 196
-          Height = 25
-          Action = AFiletoZip
-          Align = alTop
-          TabOrder = 0
-        end
-        object Button7: TButton
-          Left = 0
-          Top = 25
-          Width = 196
-          Height = 25
-          Action = ALoadPDF
-          Align = alTop
-          TabOrder = 1
-        end
-        object Button11: TButton
-          Left = 0
-          Top = 50
-          Width = 196
-          Height = 25
-          Action = AFileDownloader
-          Align = alTop
-          TabOrder = 2
-        end
-      end
-      object CategoryPanel5: TCategoryPanel
-        Top = 30
-        Height = 30
-        Caption = 'Online'
-        Collapsed = True
-        TabOrder = 3
-        object Button8: TButton
-          Left = 0
-          Top = 25
-          Width = 196
-          Height = 25
-          Action = AMusicC
-          Align = alTop
-          TabOrder = 0
-        end
-        object Button3: TButton
-          Left = 0
-          Top = 0
-          Width = 196
-          Height = 25
-          Action = ANav
-          Align = alTop
-          TabOrder = 1
-        end
-      end
-      object CategoryPanel1: TCategoryPanel
-        Top = 0
-        Height = 30
-        BiDiMode = bdLeftToRight
-        Caption = 'Offiline'
-        Collapsed = True
-        ParentBiDiMode = False
-        TabOrder = 4
-        object Button1: TButton
-          Left = 0
-          Top = 0
-          Width = 196
-          Height = 25
-          Action = AVideo
-          Align = alTop
-          TabOrder = 0
-        end
-        object Button2: TButton
-          Left = 0
-          Top = 25
-          Width = 196
-          Height = 25
-          Action = ATexto
-          Align = alTop
-          TabOrder = 1
-        end
-        object Button4: TButton
-          Left = 0
-          Top = 50
-          Width = 196
-          Height = 25
-          Action = AHub
-          Align = alTop
-          TabOrder = 2
-        end
-        object Button12: TButton
-          Left = 0
-          Top = 75
-          Width = 196
-          Height = 25
-          Action = ADraw
-          Align = alTop
-          TabOrder = 3
-        end
-      end
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn4: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 188
+      Width = 54
+      Height = 33
+      Action = ADraw
+      Align = alTop
+      Caption = 'Draw'
+      LightTextStyle = True
+      TabOrder = 3
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn5: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 227
+      Width = 54
+      Height = 33
+      Action = ANav
+      Align = alTop
+      Caption = 'Nav.'
+      LightTextStyle = True
+      TabOrder = 4
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn6: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 266
+      Width = 54
+      Height = 33
+      Action = AMusicC
+      Align = alTop
+      Caption = 'Musica'
+      LightTextStyle = True
+      TabOrder = 5
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn7: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 305
+      Width = 54
+      Height = 33
+      Action = AFiletoZip
+      Align = alTop
+      Caption = 'Comp.'
+      LightTextStyle = True
+      TabOrder = 6
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn8: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 344
+      Width = 54
+      Height = 33
+      Action = ALoadPDF
+      Align = alTop
+      Caption = 'PDF'
+      LightTextStyle = True
+      TabOrder = 7
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn9: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 383
+      Width = 54
+      Height = 33
+      Action = AFileDownloader
+      Align = alTop
+      Caption = 'Down.'
+      LightTextStyle = True
+      TabOrder = 8
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn10: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 422
+      Width = 54
+      Height = 33
+      Action = AAlarme
+      Align = alTop
+      Caption = 'Alarme'
+      LightTextStyle = True
+      TabOrder = 9
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn11: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 461
+      Width = 54
+      Height = 33
+      Action = AExplorer
+      Align = alTop
+      Caption = 'Explorer'
+      LightTextStyle = True
+      TabOrder = 10
+      Images = VirtualImageList1
+      Layout = blGlyphTop
+    end
+    object RzBitBtn12: TRzBitBtn
+      AlignWithMargins = True
+      Left = 3
+      Top = 500
+      Width = 54
+      Height = 33
+      Action = Atxtaux
+      Align = alTop
+      Caption = 'Aux. Texto'
+      LightTextStyle = True
+      TabOrder = 11
+      Images = VirtualImageList1
+      Layout = blGlyphTop
     end
   end
   object SplitView2: TSplitView
     Left = 762
     Top = 0
     Width = 225
-    Height = 635
+    Height = 610
     CloseStyle = svcCompact
     Color = clMenu
     CompactWidth = 75
     OpenedWidth = 225
     Placement = svpRight
     TabOrder = 1
+    ExplicitHeight = 635
     object Image1: TImage
       Left = 0
       Top = 0
@@ -444,13 +407,14 @@ object ProjNONS: TProjNONS
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 3
-      Top = 506
+      Top = 475
       Width = 219
       Height = 41
       Align = alBottom
       BevelOuter = bvNone
       ParentBackground = False
       TabOrder = 0
+      ExplicitTop = 461
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -462,10 +426,10 @@ object ProjNONS: TProjNONS
         Font.Charset = DEFAULT_CHARSET
         Font.Color = -1
         Font.Height = -11
-        Font.Name = 'Tahoma'
+        Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 37
+        ExplicitWidth = 31
       end
       object BitBtn1: TBitBtn
         Left = 0
@@ -484,26 +448,39 @@ object ProjNONS: TProjNONS
       Left = 0
       Top = 39
       Width = 225
-      Height = 464
+      Height = 433
       Align = alClient
       BevelOuter = bvNone
       Color = clMenu
       ParentBackground = False
       TabOrder = 1
+      ExplicitHeight = 419
       object Label3: TLabel
         Left = 0
         Top = 227
-        Width = 32
+        Width = 33
         Height = 13
         Caption = 'Notas:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
       end
       object Label7: TLabel
         Left = 2
         Top = 341
-        Width = 27
+        Width = 29
         Height = 13
         Alignment = taCenter
         Caption = 'Name'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
       end
       object CalendarView1: TCalendarView
         Left = 0
@@ -554,6 +531,12 @@ object ProjNONS: TProjNONS
         Width = 85
         Height = 25
         Caption = 'Exportar'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 2
         OnClick = BitBtn2Click
       end
@@ -563,57 +546,78 @@ object ProjNONS: TProjNONS
         Width = 85
         Height = 25
         Caption = 'Salvar'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 3
         OnClick = BitBtn3Click
       end
     end
     object Panel6: TPanel
       Left = 0
-      Top = 607
+      Top = 582
       Width = 225
       Height = 28
       Align = alBottom
       BevelOuter = bvNone
       Caption = 'Panel6'
       TabOrder = 2
+      ExplicitTop = 562
       object Panel7: TPanel
         Left = 0
         Top = 0
-        Width = 200
+        Width = 187
         Height = 28
         Align = alClient
         BevelOuter = bvNone
         ParentBackground = False
         ParentColor = True
         TabOrder = 0
+        ExplicitWidth = 200
         object Label13: TLabel
           Left = 0
           Top = 13
-          Width = 200
+          Width = 187
           Height = 13
           Align = alTop
           Alignment = taCenter
           Caption = 'Hora'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = []
+          ParentFont = False
           Transparent = False
-          ExplicitWidth = 23
+          ExplicitWidth = 24
         end
         object Label2: TLabel
           Left = 0
           Top = 0
-          Width = 200
+          Width = 187
           Height = 13
           Align = alTop
           Alignment = taCenter
           Caption = 'Dia.Hora'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Segoe UI Semilight'
+          Font.Style = []
+          ParentFont = False
           Transparent = False
           ExplicitWidth = 42
         end
       end
       object BitBtn4: TBitBtn
-        Left = 200
-        Top = 0
-        Width = 25
-        Height = 28
+        AlignWithMargins = True
+        Left = 190
+        Top = 3
+        Width = 32
+        Height = 22
         Action = AClock
         Align = alRight
         Glyph.Data = {
@@ -659,21 +663,22 @@ object ProjNONS: TProjNONS
     object Panel8: TPanel
       AlignWithMargins = True
       Left = 3
-      Top = 553
+      Top = 522
       Width = 219
-      Height = 51
+      Height = 57
       Align = alBottom
       AutoSize = True
       BevelOuter = bvNone
       ParentBackground = False
       ParentColor = True
       TabOrder = 3
+      ExplicitTop = 528
       object Image4: TImage
         AlignWithMargins = True
         Left = 200
         Top = 16
         Width = 16
-        Height = 32
+        Height = 38
         Align = alRight
         AutoSize = True
         Center = True
@@ -704,16 +709,16 @@ object ProjNONS: TProjNONS
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -11
-        Font.Name = 'Tahoma'
+        Font.Name = 'Segoe UI Semibold'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 79
+        ExplicitWidth = 73
       end
       object BitBtn5: TBitBtn
         Left = 0
         Top = 13
         Width = 40
-        Height = 38
+        Height = 44
         Align = alLeft
         Glyph.Data = {
           42040000424D4204000000000000420000002800000010000000100000000100
@@ -753,6 +758,98 @@ object ProjNONS: TProjNONS
           000000000000}
         TabOrder = 0
         OnClick = BitBtn5Click
+        ExplicitHeight = 38
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 610
+    Width = 987
+    Height = 25
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 2
+    object CategoryPanelGroup1: TCategoryPanelGroup
+      Left = 0
+      Top = 0
+      Width = 987
+      Height = 25
+      VertScrollBar.Tracking = True
+      VertScrollBar.Visible = False
+      Align = alClient
+      ChevronAlignment = taCenter
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -11
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      HeaderFont.Charset = DEFAULT_CHARSET
+      HeaderFont.Color = clWhite
+      HeaderFont.Height = -11
+      HeaderFont.Name = 'Tahoma'
+      HeaderFont.Style = []
+      HeaderHeight = 18
+      HeaderStyle = hsThemed
+      ParentFont = False
+      TabOrder = 0
+      object CategoryPanel1: TCategoryPanel
+        Top = 0
+        Height = 24
+        Collapsed = True
+        ParentColor = True
+        TabOrder = 0
+        OnCollapse = CategoryPanel1Collapse
+        OnExpand = CategoryPanel1Click
+        ExplicitWidth = 968
+        ExpandedHeight = 66
+        object Panel5: TPanel
+          Left = 0
+          Top = 129
+          Width = 966
+          Height = 45
+          Align = alBottom
+          BevelOuter = bvNone
+          Color = cl3DLight
+          ParentBackground = False
+          TabOrder = 0
+          object Label8: TLabel
+            Left = 0
+            Top = 0
+            Width = 966
+            Height = 13
+            Align = alTop
+            Alignment = taCenter
+            Caption = 'Estilos:'
+            Color = clBlack
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentColor = False
+            ParentFont = False
+            ExplicitWidth = 34
+          end
+          object ComboBox1: TComboBox
+            AlignWithMargins = True
+            Left = 3
+            Top = 16
+            Width = 960
+            Height = 21
+            Align = alTop
+            Style = csDropDownList
+            Color = clMenu
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            OnChange = ComboBox1Change
+          end
+        end
       end
     end
   end
@@ -777,11 +874,11 @@ object ProjNONS: TProjNONS
       OnExecute = AHubExecute
     end
     object ANav: TAction
-      Caption = 'Navegador'
+      Caption = 'Nav.'
       OnExecute = ANavExecute
     end
     object AFiletoZip: TAction
-      Caption = 'Comprimir Arquivo'
+      Caption = 'Comp.'
       OnExecute = AFiletoZipExecute
     end
     object AAlarme: TAction
@@ -797,11 +894,11 @@ object ProjNONS: TProjNONS
       OnExecute = ALoadPDFExecute
     end
     object AExplorer: TAction
-      Caption = 'Explorador de Arquivos'
+      Caption = 'Explorer'
       OnExecute = AExplorerExecute
     end
     object Atxtaux: TAction
-      Caption = 'Aux'#237'liar de Texto'
+      Caption = 'Aux. Texto'
       OnExecute = AtxtauxExecute
     end
     object AClock: TAction
@@ -809,7 +906,7 @@ object ProjNONS: TProjNONS
       OnExecute = AClockExecute
     end
     object AFileDownloader: TAction
-      Caption = 'Downloader'
+      Caption = 'Down.'
       OnExecute = AFileDownloaderExecute
     end
     object ADraw: TAction
@@ -2806,6 +2903,7 @@ object ProjNONS: TProjNONS
     Top = 440
   end
   object MainMenu1: TMainMenu
+    AutoLineReduction = maManual
     OwnerDraw = True
     Left = 290
     Top = 110

@@ -148,7 +148,7 @@ end;
 procedure TFNav.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button3.Enabled := True;
+  ProjNONS.RzBitBtn5.Enabled := True;
 end;
 
 procedure TFNav.FormCreate(Sender: TObject);

@@ -46,7 +46,7 @@ uses PrincNN;
 procedure TFtxtaux.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button10.Enabled := True;
+  ProjNONS.RzBitBtn12.Enabled := True;
 end;
 
 procedure TFtxtaux.FormCreate(Sender: TObject);

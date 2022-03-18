@@ -52,7 +52,7 @@ uses PrincNN;
 procedure TFFiletoZip.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button5.Enabled := True;
+  ProjNONS.RzBitBtn7.Enabled := True;
 end;
 
 procedure TFFiletoZip.FormCreate(Sender: TObject);

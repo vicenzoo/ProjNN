@@ -59,7 +59,7 @@ procedure TFVideo.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Image2Click(Sender);
   Action := caFree;
-  ProjNONS.Button1.Enabled := True;
+  ProjNONS.RzBitBtn1.Enabled := True;
 end;
 
 procedure TFVideo.WMSysCommand(var Msg: TWMSysCommand);

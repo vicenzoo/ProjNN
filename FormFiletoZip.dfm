@@ -132,7 +132,6 @@ object FFiletoZip: TFFiletoZip
       ItemHeight = 13
       TabOrder = 0
       OnKeyDown = ListBox1KeyDown
-      ExplicitWidth = 341
     end
   end
   object OpenDialog1: TOpenDialog

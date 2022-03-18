@@ -112,10 +112,6 @@ object FAlarme: TFAlarme
     Height = 69
     Align = alClient
     TabOrder = 3
-    ExplicitLeft = 170
-    ExplicitTop = 50
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object TimePicker1: TTimePicker
       Left = 1
       Top = 1
@@ -130,8 +126,6 @@ object FAlarme: TFAlarme
       TabOrder = 0
       Time = 44571.327227152770000000
       TimeFormat = 'hh:mm:ss'
-      ExplicitTop = 30
-      ExplicitHeight = 38
     end
   end
   object Timer1: TTimer

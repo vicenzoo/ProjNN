@@ -64,7 +64,7 @@ uses PrincNN, FormNav, FormSend;
 procedure TFTexto.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button2.Enabled := True;
+  ProjNONS.RzBitBtn2.Enabled := True;
 end;
 
 procedure TFTexto.FormCreate(Sender: TObject);

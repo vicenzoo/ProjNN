@@ -69,7 +69,7 @@ uses PrincNN, FormNav;
 procedure TFMusica.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button8.Enabled := True;
+  ProjNONS.RzBitBtn6.Enabled := True;
 end;
 
 procedure TFMusica.Button2Click(Sender: TObject);

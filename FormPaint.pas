@@ -66,7 +66,7 @@ uses PrincNN;
 procedure TFDraw.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   Action := caFree;
-  ProjNONS.Button12.Enabled := True;
+  ProjNONS.RzBitBtn4.Enabled := True;
 end;
 
 procedure TFDraw.FormCreate(Sender: TObject);

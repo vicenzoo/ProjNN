@@ -46,7 +46,7 @@ uses PrincNN;
 procedure TFExplorer.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
  Action := cafree;
- ProjNONS.Button9.Enabled := true;
+ ProjNONS.RzBitBtn11.Enabled := true;
 end;
 
 procedure TFExplorer.BitBtn1Click(Sender: TObject);

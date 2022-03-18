@@ -138,11 +138,12 @@ object FExplorer: TFExplorer
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 0
+        Width = -6
         Height = 361
         Align = alClient
         Caption = 'Utilit'#225'rios:'
         TabOrder = 1
+        ExplicitWidth = 0
         object BitBtn1: TBitBtn
           AlignWithMargins = True
           Left = 5
