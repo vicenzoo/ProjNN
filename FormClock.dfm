@@ -33961,18 +33961,18 @@ object FClock: TFClock
       TabOrder = 1
       Tabs.Strings = (
         'Previs'#227'o do Tempo'
+        'Op'#231#245'es'
         'Sobre')
       TabIndex = 0
       OnChange = TabControl1Change
       object Panel4: TPanel
         Left = 4
-        Top = 81
+        Top = 138
         Width = 232
         Height = 96
         Align = alTop
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitTop = 117
         object Label7: TLabel
           Left = 0
           Top = 0
@@ -33986,8 +33986,6 @@ object FClock: TFClock
           Font.Name = 'Tahoma'
           Font.Style = [fsBold]
           ParentFont = False
-          ExplicitLeft = 1
-          ExplicitTop = 1
           ExplicitWidth = 108
         end
         object Label1: TLabel
@@ -34004,34 +34002,31 @@ object FClock: TFClock
           Font.Style = []
           ParentFont = False
           Transparent = True
-          ExplicitLeft = 1
-          ExplicitTop = 14
           ExplicitWidth = 15
         end
         object Label5: TLabel
           Left = 0
-          Top = 33
+          Top = 39
           Width = 232
           Height = 13
           Align = alTop
           Caption = 'Label5'
-          ExplicitTop = 86
+          ExplicitWidth = 31
         end
         object Label4: TLabel
           Left = 0
           Top = 26
           Width = 232
-          Height = 7
+          Height = 13
           Align = alTop
           Caption = 'Label4'
-          ExplicitLeft = -1
-          ExplicitTop = 19
+          ExplicitWidth = 31
         end
         object Image1: TImage
           Left = 127
-          Top = 46
+          Top = 52
           Width = 105
-          Height = 50
+          Height = 44
           Align = alRight
           ExplicitTop = -9
           ExplicitHeight = 105
@@ -34039,7 +34034,7 @@ object FClock: TFClock
       end
       object Panel3: TPanel
         Left = 4
-        Top = 24
+        Top = 81
         Width = 232
         Height = 57
         Align = alTop
@@ -34069,7 +34064,7 @@ object FClock: TFClock
           Font.Style = [fsBold]
           ParentFont = False
           WordWrap = True
-          ExplicitLeft = -1
+          ExplicitWidth = 172
         end
         object Label3: TLabel
           Left = 0
@@ -34079,6 +34074,43 @@ object FClock: TFClock
           Align = alTop
           Caption = 'Label3'
           ExplicitWidth = 31
+        end
+      end
+      object Panel5: TPanel
+        Left = 4
+        Top = 24
+        Width = 232
+        Height = 57
+        Align = alTop
+        BevelOuter = bvNone
+        TabOrder = 2
+        Visible = False
+        object Label10: TLabel
+          Left = 0
+          Top = 0
+          Width = 232
+          Height = 13
+          Align = alTop
+          Caption = 'Op'#231#245'es'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = [fsBold]
+          ParentFont = False
+          WordWrap = True
+          ExplicitWidth = 41
+        end
+        object CheckBox1: TCheckBox
+          Left = 0
+          Top = 19
+          Width = 97
+          Height = 17
+          Caption = 'Paineis Vis'#237'veis'
+          Checked = True
+          State = cbChecked
+          TabOrder = 0
+          OnClick = CheckBox1Click
         end
       end
     end
@@ -34104,8 +34136,7 @@ object FClock: TFClock
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = 8
-        ExplicitHeight = 23
+        ExplicitWidth = 182
       end
     end
   end

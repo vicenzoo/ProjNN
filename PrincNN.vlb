@@ -1,120 +1,123 @@
 ﻿[SplitView2]
-Coordinates=130,427,65,51
+Coordinates=130,427,75,58
 
 [Atxtaux]
-Coordinates=26,426,52,33
+Coordinates=26,426,57,36
 
 [FileOpenDialog1]
-Coordinates=647,1,95,33
+Coordinates=647,1,111,36
 
 [Image1]
-Coordinates=626,10,49,51
+Coordinates=626,10,57,58
 
 [Label3]
-Coordinates=132,305,46,51
+Coordinates=132,305,53,58
 
 [AFiletoZip]
-Coordinates=647,157,64,33
+Coordinates=647,157,73,36
 
 [ActionList1]
-Coordinates=308,248,70,33
-
-[BitBtn3]
-Coordinates=607,305,50,51
+Coordinates=308,248,78,36
 
 [Label2]
-Coordinates=843,366,46,51
+Coordinates=843,366,53,58
 
 [CalendarView1]
-Coordinates=608,427,87,33
+Coordinates=608,427,102,36
 
 [Label4]
-Coordinates=611,366,46,51
-
-[BitBtn4]
-Coordinates=273,366,50,51
+Coordinates=611,366,53,58
 
 [ANav]
-Coordinates=647,209,40,33
-
-[Panel8]
-Coordinates=667,366,47,51
-
-[Label7]
-Coordinates=333,366,46,51
+Coordinates=647,209,46,36
 
 [Panel6]
-Coordinates=901,305,47,51
+Coordinates=901,305,55,58
 
 [Panel4]
-Coordinates=10,427,47,51
+Coordinates=10,427,55,58
 
 [AAlarme]
-Coordinates=647,261,56,33
+Coordinates=647,261,64,36
 
 [AVideo]
-Coordinates=647,313,49,33
+Coordinates=647,313,56,36
 
 [AHub]
-Coordinates=647,365,41,33
+Coordinates=647,365,46,36
 
 [Panel2]
-Coordinates=844,305,47,51
+Coordinates=844,305,55,58
 
 [ALoadPDF]
-Coordinates=647,417,66,33
-
-[BitBtn2]
-Coordinates=327,427,50,51
+Coordinates=647,417,77,36
 
 [OpenDialog1]
-Coordinates=568,441,77,33
-
-[Image4]
-Coordinates=567,10,49,51
+Coordinates=568,441,90,36
 
 [Panel7]
-Coordinates=727,305,47,51
-
-[Label1]
-Coordinates=787,366,46,51
+Coordinates=727,305,55,58
 
 [AMusicC]
-Coordinates=683,469,58,33
+Coordinates=683,469,66,36
 
 [Timer1]
-Coordinates=647,515,48,33
+Coordinates=647,515,55,36
 
 [ATexto]
-Coordinates=588,515,49,33
+Coordinates=588,515,55,36
 
 [AExplorer]
-Coordinates=519,515,63,33
+Coordinates=519,515,71,36
 
 [Memo1]
-Coordinates=10,305,53,51
+Coordinates=10,305,64,58
 
 [BitBtn1]
-Coordinates=784,305,50,51
-
-[BitBtn5]
-Coordinates=667,305,50,51
+Coordinates=784,305,56,58
 
 [AClock]
-Coordinates=460,515,49,33
+Coordinates=460,515,55,36
 
 [ImageCollection1]
-Coordinates=788,1,99,33
+Coordinates=788,1,114,36
 
 [VirtualImageList1]
-Coordinates=788,53,100,33
+Coordinates=788,53,114,36
 
 [Label13]
-Coordinates=505,10,52,51
+Coordinates=505,10,60,58
 
 [SplitView1]
-Coordinates=10,366,65,51
+Coordinates=10,366,75,58
 
 []
-Coordinates=216,366,47,51
+Coordinates=333,366,53,58
+
+[ComboBox1]
+Coordinates=107,77,101,124
+
+[ADraw]
+Coordinates=167,239,53,36
+
+[CategoryPanelGroup1]
+Coordinates=353,111,142,36
+
+[Panel1]
+Coordinates=246,78,55,58
+
+[MainMenu1]
+Coordinates=405,322,81,36
+
+[Panel5]
+Coordinates=48,77,55,58
+
+[AFileDownloader]
+Coordinates=533,197,113,36
+
+[Label8]
+Coordinates=126,1,53,58
+
+[CategoryPanel1]
+Coordinates=0,0,107,58
 

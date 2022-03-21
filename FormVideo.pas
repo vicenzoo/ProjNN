@@ -31,13 +31,10 @@ type
     procedure ListView1Click(Sender: TObject);
     procedure Panel1DblClick(Sender: TObject);
     procedure Image3Click(Sender: TObject);
-    procedure Image2Click(Sender: TObject);
     procedure MediaPlayer1Click(Sender: TObject; Button: TMPBtnType;
       var DoDefault: Boolean);
   private
     function MSecToTime(const intTime: integer): string;
-    procedure WMSysCommand(var Msg: TWMSysCommand);
-      message WM_SYSCOMMAND;
     { Private declarations }
   public
     { Public declarations }
@@ -57,30 +54,8 @@ uses PrincNN;
 
 procedure TFVideo.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  Image2Click(Sender);
   Action := caFree;
   ProjNONS.RzBitBtn1.Enabled := True;
-end;
-
-procedure TFVideo.WMSysCommand(var Msg: TWMSysCommand);
-begin
-  case Msg.CmdType of
-    SC_MAXIMIZE:
-    begin
-    ShowWindow(FVideo.Handle, SW_MAXIMIZE) ;
-    ProjNONS.SplitView1.Visible := false;
-    ProjNONS.SplitView2.Visible := false;
-    exit;
-    end;
-    SC_RESTORE:
-    begin
-    ShowWindow(FVideo.Handle, SW_RESTORE);
-    ProjNONS.SplitView1.Visible := true;
-    ProjNONS.SplitView2.Visible := true;
-    exit;
-    end;
-  end;
-  inherited;
 end;
 
 procedure TFVideo.BitBtn1Click(Sender: TObject);
@@ -122,12 +97,6 @@ procedure TFVideo.Image1Click(Sender: TObject);
 begin
   if SplitView1.Opened then SplitView1.Close
   else SplitView1.Open;
-end;
-
-procedure TFVideo.Image2Click(Sender: TObject);
-begin
- ProjNONS.SplitView1.Visible := true;
- ProjNONS.SplitView2.Visible := true;
 end;
 
 procedure TFVideo.Image3Click(Sender: TObject);

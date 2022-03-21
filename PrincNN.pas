@@ -25,14 +25,11 @@ type
     CalendarView1: TCalendarView;
     Memo1: TMemo;
     Label3: TLabel;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
     ImageCollection1: TImageCollection;
     VirtualImageList1: TVirtualImageList;
     ATexto: TAction;
     AHub: TAction;
     ANav: TAction;
-    Label7: TLabel;
     BitBtn1: TBitBtn;
     Label4: TLabel;
     Image1: TImage;
@@ -47,19 +44,21 @@ type
     Label13: TLabel;
     Label2: TLabel;
     AClock: TAction;
-    BitBtn4: TBitBtn;
     OpenDialog1: TOpenDialog;
-    Panel8: TPanel;
-    BitBtn5: TBitBtn;
-    Image4: TImage;
-    Label1: TLabel;
     FileOpenDialog1: TFileOpenDialog;
     AFileDownloader: TAction;
     MainMenu1: TMainMenu;
     ADraw: TAction;
+    Panel1: TPanel;
+    CategoryPanelGroup1: TCategoryPanelGroup;
+    CategoryPanel1: TCategoryPanel;
+    Panel5: TPanel;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
+    Panel3: TPanel;
     Image3: TImage;
-    RzBitBtn1: TRzBitBtn;
     RzLabel1: TRzLabel;
+    RzBitBtn1: TRzBitBtn;
     RzBitBtn2: TRzBitBtn;
     RzBitBtn3: TRzBitBtn;
     RzBitBtn4: TRzBitBtn;
@@ -71,12 +70,20 @@ type
     RzBitBtn10: TRzBitBtn;
     RzBitBtn11: TRzBitBtn;
     RzBitBtn12: TRzBitBtn;
-    Panel1: TPanel;
-    CategoryPanelGroup1: TCategoryPanelGroup;
-    CategoryPanel1: TCategoryPanel;
-    Panel5: TPanel;
-    Label8: TLabel;
-    ComboBox1: TComboBox;
+    Label5: TLabel;
+    FileOpenDialog2: TFileOpenDialog;
+    Panel8: TPanel;
+    BitBtn6: TBitBtn;
+    BitBtn5: TBitBtn;
+    Image4: TImage;
+    Image5: TImage;
+    Panel9: TPanel;
+    BitBtn3: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn4: TBitBtn;
+    Label1: TLabel;
+    Label6: TLabel;
+    Mais: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -103,14 +110,18 @@ type
     procedure CategoryPanel1Click(Sender: TObject);
     procedure CategoryPanel1Collapse(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure MaisClick(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
-    boolicon : Boolean;
+    boolicon,boolicon2 : Boolean;
     procedure listararquivos(diretorio: string; sub: boolean);
     function TemAtributo(Attr, Val: Integer): Boolean;
   public
     { Public declarations }
+    visiblepanels : boolean;
   end;
 
 var
@@ -130,7 +141,7 @@ uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
 procedure TProjNONS.FormCreate(Sender: TObject);
 begin
   cont := 0;
-  boolicon := false;
+  boolicon := false;boolicon2 := false;visiblepanels := false;
   Label2.Caption := FormatDateTime('dddd - mmmm yyyy',Date);
   CalendarView1.Date := date;
   //Ver := Versao(Application.ExeName);
@@ -180,19 +191,15 @@ begin
   begin
    SplitView2.Close;
    Panel4.Visible := false;
-   Label1.Caption := 'Atalho';
-   Panel2.Visible := false;
+   BitBtn1.Caption := '';
    label2.Caption := FormatDateTime('dd / ddd',Date);
-   BitBtn4.Visible := false;
   end
   else
   begin
    SplitView2.Open;
    Panel4.Visible := true;
-   Label1.Caption := 'Atalho Rápido';
-   Panel2.Visible := true;
+   BitBtn1.Caption := 'Verificar Conexão';
    label2.Caption := FormatDateTime('dddd - mmmm yyyy ',Date);
-   BitBtn4.Visible := true;
   end;
 end;
 
@@ -239,7 +246,6 @@ begin
       end
       else
       begin
-       Label7.Caption := 'Anotacao' + calendardata + '.txt';
        calendardata := FormatDateTime('ddmmyyyy',CalendarView1.Date);
        //ShowMessage('diretorio:' + Diretorio+'\'+F.Name );
        //ShowMessage('meu diretorio' +(GetCurrentDir + '\Notes' + '\Anotacao'+(calendardata) + '.txt'));
@@ -339,6 +345,40 @@ begin
  end;
 end;
 
+procedure TProjNONS.BitBtn6Click(Sender: TObject);
+var
+  Bitmap : TBitmap;
+  IconIndex: word;
+  Buffer: array[0..2048] of char;
+  IconHandle: HIcon;
+begin
+ if (boolicon2 = false) then
+ begin
+ boolicon2 := true;
+ FileOpenDialog2.Execute();
+ StrCopy(@Buffer, PChar(FileOpenDialog2.FileName));
+ IconIndex := 0;
+ IconHandle := ExtractAssociatedIcon(HInstance, Buffer, IconIndex);
+ if IconHandle <> 0 then
+ Icon.Handle := IconHandle;
+ Bitmap := TBitmap.Create;
+  try
+    Bitmap.Width := Icon.Width;
+    Bitmap.Height := Icon.Height;
+    Bitmap.Canvas.Draw(0, 0,Icon);
+    BitBtn6.Glyph.Assign(Bitmap);
+  finally
+    Bitmap.Free;
+  end;
+  image5.Visible := true;
+  exit;
+ end
+ else
+ begin
+  ShellExecute(Handle,'open',pchar(FileOpenDialog2.FileName),nil,nil,sw_show)
+ end;
+end;
+
 procedure TProjNONS.Image4Click(Sender: TObject);
 begin
   BitBtn5.Glyph := nil;
@@ -347,6 +387,13 @@ begin
   boolicon := false;
 end;
 
+procedure TProjNONS.Image5Click(Sender: TObject);
+begin
+  BitBtn6.Glyph := nil;
+  VirtualImageList1.GetBitmap(16,BitBtn6.Glyph);
+  Image5.Visible := false;
+  boolicon2 := false;
+end;
 //Actions
 
 //Abre Video - Media Player de vídeos
@@ -429,6 +476,7 @@ begin
  Ftxtaux.Show;
 end;
 
+//Exibe Relogio (Componente Orpheus), Info e Extras
 procedure TProjNONS.AClockExecute(Sender: TObject);
 begin
   BitBtn4.Enabled := False;
@@ -436,6 +484,15 @@ begin
   FClock.Show;
 end;
 
+//Botão Oculto
+procedure TProjNONS.MaisClick(Sender: TObject);
+begin
+  visiblepanels := true;
+  FClock := TFClock.Create(Application);
+  FClock.Show;
+end;
+
+//Baixa Arquivos Gerais da Internet
 procedure TProjNONS.AFileDownloaderExecute(Sender: TObject);
 begin
   RzBitBtn9.Enabled := False;
@@ -443,6 +500,7 @@ begin
   FFiledownload.Show;
 end;
 
+//Desenho
 procedure TProjNONS.ADrawExecute(Sender: TObject);
 begin
   RzBitBtn4.Enabled := False;

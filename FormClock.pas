@@ -30,11 +30,16 @@ type
     Panel2: TPanel;
     Label8: TLabel;
     Image1: TImage;
+    Panel5: TPanel;
+    Label10: TLabel;
+    CheckBox1: TCheckBox;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Timer1Timer(Sender: TObject);
     procedure TabControl1Change(Sender: TObject);
+    procedure CheckBox1Click(Sender: TObject);
   private
+    procedure DENABLEPANELS;
     { Private declarations }
   public
     { Public declarations }
@@ -55,22 +60,36 @@ begin
   ProjNONS.BitBtn4.Enabled := True;
 end;
 
+procedure TFClock.DENABLEPANELS();
+begin
+   Panel3.Visible := false;
+   Panel4.Visible := false;
+   Panel5.Visible := false;
+end;
+
 procedure TFClock.TabControl1Change(Sender: TObject);
 begin
- if TabControl1.TabIndex = 0 then
+ case TabControl1.TabIndex of
+ 0:
  begin
- FClock.Caption := 'Previsão do Tempo';
- Panel4.Visible := true;
- Panel3.Visible := false;
- end
- else
+  FClock.Caption := 'Previsão do Tempo';
+  DENABLEPANELS();
+  Panel4.Visible := true;
+ end;
+ 1:
+ begin
+  FClock.Caption := 'Opções';
+  DENABLEPANELS();
+  Panel5.Visible := true;
+ end;
+ 2:
  begin
   FClock.Caption := 'Sobre';
-  Panel4.Visible := false;
+  DENABLEPANELS();
   Panel3.Visible := true;
  end;
 
-
+ end;
 end;
 
 
@@ -82,6 +101,7 @@ var
   //oJPG : TJPEGImage;
   //oFoto: TStringStream;
 begin
+ if ProjNONS.visiblepanels = true then CheckBox1.Checked := false;
  Label3.Caption := 'Ver.: ' + Versao(Application.ExeName);
 
  inherited;
@@ -128,6 +148,23 @@ begin
  Label5.Caption := 'Umidade: ' + humidity + '%';
 end;
 
+procedure TFClock.CheckBox1Click(Sender: TObject);
+begin
+ if not (CheckBox1.Checked = true) then
+ begin
+  ProjNONS.SplitView1.Visible := false;
+  ProjNONS.SplitView2.Visible := false;
+  ProjNONS.Panel1.Visible := false;
+  ProjNONS.Mais.Visible := true;
+ end
+ else
+ begin
+  ProjNONS.SplitView1.Visible := true;
+  ProjNONS.SplitView2.Visible := true;
+  ProjNONS.Panel1.Visible := true;
+  ProjNONS.Mais.Visible := false;
+ end;
+end;
 
 procedure TFClock.Timer1Timer(Sender: TObject);
 begin
