@@ -28,7 +28,9 @@ object ProjNONS: TProjNONS
     Height = 675
     CloseStyle = svcCompact
     Color = clWhite
+    DoubleBuffered = False
     OpenedWidth = 60
+    ParentBackground = True
     Placement = svpLeft
     TabOrder = 0
     object Panel3: TPanel
@@ -38,13 +40,43 @@ object ProjNONS: TProjNONS
       Height = 675
       Align = alClient
       BevelOuter = bvNone
+      ParentColor = True
       TabOrder = 0
+      object RzLabel1: TRzLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 58
+        Width = 54
+        Height = 17
+        Align = alTop
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'NONS'
+        Color = clWhite
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Segoe UI Semibold'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        BlinkColor = 502520
+        BorderOuter = fsFlatRounded
+        BorderColor = clBlack
+        BorderShadow = clBackground
+        CondenseCaption = ccAtEnd
+        FlatColor = clSilver
+        FlyByColor = 502520
+        HighlightColor = clSilver
+        ExplicitLeft = 6
+        ExplicitTop = 15
+      end
       object Image3: TImage
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 54
-        Height = 39
+        Height = 49
         Align = alTop
         Center = True
         Picture.Data = {
@@ -183,212 +215,180 @@ object ProjNONS: TProjNONS
           800100139FFFFFF380010013800100038001040380010007C0410007C0010007
           C401080FE021000FF001001FF001003FF809207FFE0540FFFF0003FFFFE00FFF
           FFFFFFFF}
-        ExplicitWidth = 62
-      end
-      object RzLabel1: TRzLabel
-        AlignWithMargins = True
-        Left = 3
-        Top = 48
-        Width = 54
-        Height = 17
-        Align = alTop
-        Alignment = taCenter
-        AutoSize = False
-        Caption = 'NONS'
-        Color = clWhite
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -11
-        Font.Name = 'Segoe UI Semibold'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        BlinkColor = 502520
-        BorderOuter = fsFlatRounded
-        BorderColor = clBlack
-        BorderShadow = clBackground
-        CondenseCaption = ccAtEnd
-        FlatColor = clSilver
-        FlyByColor = 502520
-        HighlightColor = clSilver
-        ExplicitWidth = 34
-      end
-      object RzBitBtn1: TRzBitBtn
-        AlignWithMargins = True
-        Left = 3
-        Top = 71
-        Width = 54
-        Height = 33
-        Action = AVideo
-        Align = alTop
-        Caption = 'V'#237'deo'
-        LightTextStyle = True
-        TabOrder = 0
-        Images = VirtualImageList1
-        Layout = blGlyphTop
       end
       object RzBitBtn2: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 110
+        Top = 159
         Width = 54
         Height = 33
         Action = ATexto
         Align = alTop
         Caption = 'Texto'
         LightTextStyle = True
-        TabOrder = 1
+        TabOrder = 0
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 110
       end
       object RzBitBtn3: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 149
+        Top = 198
         Width = 54
         Height = 33
         Action = AHub
         Align = alTop
         Caption = 'Hub'
         LightTextStyle = True
-        TabOrder = 2
+        TabOrder = 1
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 149
       end
       object RzBitBtn4: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 188
+        Top = 237
         Width = 54
         Height = 33
         Action = ADraw
         Align = alTop
         Caption = 'Draw'
         LightTextStyle = True
-        TabOrder = 3
+        TabOrder = 2
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 188
       end
       object RzBitBtn5: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 227
+        Top = 276
         Width = 54
         Height = 33
         Action = ANav
         Align = alTop
         Caption = 'Nav.'
         LightTextStyle = True
-        TabOrder = 4
+        TabOrder = 3
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 227
       end
       object RzBitBtn6: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 266
+        Top = 315
         Width = 54
         Height = 33
         Action = AMusicC
         Align = alTop
         Caption = 'Musica'
         LightTextStyle = True
-        TabOrder = 5
+        TabOrder = 4
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 266
       end
       object RzBitBtn7: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 305
+        Top = 354
         Width = 54
         Height = 33
         Action = AFiletoZip
         Align = alTop
         Caption = 'Comp.'
         LightTextStyle = True
-        TabOrder = 6
+        TabOrder = 5
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 305
       end
       object RzBitBtn8: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 344
+        Top = 393
         Width = 54
         Height = 33
         Action = ALoadPDF
         Align = alTop
         Caption = 'PDF'
         LightTextStyle = True
-        TabOrder = 7
+        TabOrder = 6
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 344
       end
       object RzBitBtn9: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 383
+        Top = 432
         Width = 54
         Height = 33
         Action = AFileDownloader
         Align = alTop
         Caption = 'Down.'
         LightTextStyle = True
-        TabOrder = 8
+        TabOrder = 7
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 383
       end
       object RzBitBtn10: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 422
+        Top = 471
         Width = 54
         Height = 33
         Action = AAlarme
         Align = alTop
         Caption = 'Alarme'
         LightTextStyle = True
-        TabOrder = 9
+        TabOrder = 8
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 422
       end
       object RzBitBtn11: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 461
+        Top = 510
         Width = 54
         Height = 33
         Action = AExplorer
         Align = alTop
         Caption = 'Explorer'
         LightTextStyle = True
-        TabOrder = 10
+        TabOrder = 9
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 461
       end
       object RzBitBtn12: TRzBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 500
+        Top = 549
         Width = 54
         Height = 33
         Action = Atxtaux
         Align = alTop
         Caption = 'Aux. Texto'
         LightTextStyle = True
-        TabOrder = 11
+        TabOrder = 10
         Images = VirtualImageList1
         Layout = blGlyphTop
+        ExplicitTop = 500
       end
       object BitBtn4: TBitBtn
         AlignWithMargins = True
         Left = 3
-        Top = 636
+        Top = 588
         Width = 54
         Height = 36
         Action = AClock
-        Align = alBottom
+        Align = alTop
         Glyph.Data = {
           42040000424D4204000000000000420000002800000010000000100000000100
           20000300000000040000000000000000000000000000000000000000FF0000FF
@@ -425,8 +425,40 @@ object ProjNONS: TProjNONS
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000000000000000
           000000000000}
-        TabOrder = 12
+        TabOrder = 11
         WordWrap = True
+        ExplicitTop = 636
+      end
+      object RzBitBtn0: TRzBitBtn
+        AlignWithMargins = True
+        Left = 3
+        Top = 81
+        Width = 54
+        Height = 33
+        Action = AVideoVLC
+        Align = alTop
+        Caption = 'VLC'
+        LightTextStyle = True
+        TabOrder = 12
+        Images = VirtualImageList1
+        Layout = blGlyphTop
+        ExplicitLeft = 6
+        ExplicitTop = 71
+      end
+      object RzBitBtn1: TRzBitBtn
+        AlignWithMargins = True
+        Left = 3
+        Top = 120
+        Width = 54
+        Height = 33
+        Action = AVideo
+        Align = alTop
+        Caption = 'V'#237'deo'
+        LightTextStyle = True
+        TabOrder = 13
+        Images = VirtualImageList1
+        Layout = blGlyphTop
+        ExplicitTop = 71
       end
     end
   end
@@ -810,23 +842,28 @@ object ProjNONS: TProjNONS
         TodayColor = 445951
       end
       object Memo1: TMemo
-        Left = 0
-        Top = 245
-        Width = 225
+        AlignWithMargins = True
+        Left = 3
+        Top = 248
+        Width = 219
         Height = 89
         Align = alTop
         BorderStyle = bsNone
         TabOrder = 1
+        ExplicitLeft = 0
+        ExplicitTop = 245
+        ExplicitWidth = 225
       end
       object Panel9: TPanel
         Left = 0
-        Top = 334
+        Top = 340
         Width = 225
         Height = 31
         Align = alTop
         BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 2
+        ExplicitTop = 334
         object BitBtn3: TBitBtn
           AlignWithMargins = True
           Left = 3
@@ -1013,6 +1050,10 @@ object ProjNONS: TProjNONS
     object ADraw: TAction
       Caption = 'Draw'
       OnExecute = ADrawExecute
+    end
+    object AVideoVLC: TAction
+      Caption = 'VLC'
+      OnExecute = AVideoVLCExecute
     end
   end
   object ImageCollection1: TImageCollection

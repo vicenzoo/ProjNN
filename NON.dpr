@@ -21,7 +21,8 @@ uses
   FormClock in 'FormClock.pas' {FClock},
   FormFileDownload in 'FormFileDownload.pas' {FFiledownload},
   FormSplash in 'FormSplash.pas' {FSplash},
-  FormPaint in 'FormPaint.pas' {FDraw};
+  FormPaint in 'FormPaint.pas' {FDraw},
+  FormVideoVLC in 'FormVideoVLC.pas' {FVideoVLC};
 
 {$R *.res}
 

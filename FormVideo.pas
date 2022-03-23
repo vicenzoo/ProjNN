@@ -119,8 +119,8 @@ begin
   Label1.Caption := MSecToTime(MediaPlayer1.Length);
   RzLEDDisplay1.Caption := 'Tocando agr: ' +
   ExtractFileName(listView1.Selected.Caption);
+  SplitView1.Close;
  end;
- SplitView1.Close;
 end;
 
 procedure TFVideo.MediaPlayer1Click(Sender: TObject; Button: TMPBtnType;

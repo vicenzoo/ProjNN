@@ -11,7 +11,7 @@ uses
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
   Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel,ShellApi,
   Vcl.CategoryButtons, Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ActnMenus,
-  Vcl.XPStyleActnCtrls, Vcl.Tabs, RzLabel;
+  Vcl.XPStyleActnCtrls, Vcl.Tabs, RzLabel,System.UIConsts;
 
 type
   TProjNONS = class(TForm)
@@ -55,10 +55,20 @@ type
     Panel5: TPanel;
     Label8: TLabel;
     ComboBox1: TComboBox;
+    Label5: TLabel;
+    FileOpenDialog2: TFileOpenDialog;
+    Panel8: TPanel;
+    BitBtn6: TBitBtn;
+    BitBtn5: TBitBtn;
+    Image4: TImage;
+    Image5: TImage;
+    Panel9: TPanel;
+    BitBtn3: TBitBtn;
+    BitBtn2: TBitBtn;
+    Label1: TLabel;
+    Label6: TLabel;
+    Mais: TMenuItem;
     Panel3: TPanel;
-    Image3: TImage;
-    RzLabel1: TRzLabel;
-    RzBitBtn1: TRzBitBtn;
     RzBitBtn2: TRzBitBtn;
     RzBitBtn3: TRzBitBtn;
     RzBitBtn4: TRzBitBtn;
@@ -70,20 +80,12 @@ type
     RzBitBtn10: TRzBitBtn;
     RzBitBtn11: TRzBitBtn;
     RzBitBtn12: TRzBitBtn;
-    Label5: TLabel;
-    FileOpenDialog2: TFileOpenDialog;
-    Panel8: TPanel;
-    BitBtn6: TBitBtn;
-    BitBtn5: TBitBtn;
-    Image4: TImage;
-    Image5: TImage;
-    Panel9: TPanel;
-    BitBtn3: TBitBtn;
-    BitBtn2: TBitBtn;
     BitBtn4: TBitBtn;
-    Label1: TLabel;
-    Label6: TLabel;
-    Mais: TMenuItem;
+    AVideoVLC: TAction;
+    RzBitBtn0: TRzBitBtn;
+    RzBitBtn1: TRzBitBtn;
+    RzLabel1: TRzLabel;
+    Image3: TImage;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -113,6 +115,8 @@ type
     procedure BitBtn6Click(Sender: TObject);
     procedure Image5Click(Sender: TObject);
     procedure MaisClick(Sender: TObject);
+    procedure ToggleSwitch1Click(Sender: TObject);
+    procedure AVideoVLCExecute(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -136,7 +140,7 @@ implementation
 
 uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
   FormAlarme, FormMusica, FormLoadPDFFile, FormExplorer, FormTextaux, FormClock,
-  FormFileDownload, FormPaint;
+  FormFileDownload, FormPaint, FormVideoVLC;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
 begin
@@ -207,6 +211,11 @@ procedure TProjNONS.Timer1Timer(Sender: TObject);
 begin
   Label13.Caption := '';
   Label13.Caption := TimeToStr(time);
+end;
+
+procedure TProjNONS.ToggleSwitch1Click(Sender: TObject);
+begin
+ ControlStyle := ControlStyle - [csOpaque];
 end;
 
 //Verifica se esta conectado;
@@ -402,6 +411,13 @@ begin
  RzBitBtn1.Enabled := False;
  FVideo := TFVideo.Create(Application);
  FVideo.Show;
+end;
+
+procedure TProjNONS.AVideoVLCExecute(Sender: TObject);
+begin
+ RzBitBtn0.Enabled := False;
+ FVideoVLC := TFVideoVLC.Create(Application);
+ FVideoVLC.Show;
 end;
 
 //Abre Texto - Editor de Texto Simples
