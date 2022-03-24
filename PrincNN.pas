@@ -7,15 +7,16 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXCtrls, Vcl.Menus,
   Vcl.StdCtrls, Vcl.Buttons, Vcl.WinXPickers,Winapi.wininet, System.Actions,
   Vcl.ActnList, Vcl.ComCtrls, Vcl.WinXCalendars,FileCtrl, System.ImageList,
-  Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,
+  Vcl.ImgList, Vcl.VirtualImageList, Vcl.BaseImageCollection,System.JSON,
   Vcl.ImageCollection, Vcl.ActnMan, Vcl.ActnColorMaps,Vcl.Themes,
   Vcl.Imaging.pngimage,System.UITypes, RzBorder, RzButton, RzPanel,ShellApi,
   Vcl.CategoryButtons, Vcl.ToolWin, Vcl.ActnCtrls, Vcl.ActnMenus,
-  Vcl.XPStyleActnCtrls, Vcl.Tabs, RzLabel,System.UIConsts;
+  Vcl.XPStyleActnCtrls, Vcl.Tabs, RzLabel,System.UIConsts, REST.Types,
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP;
 
 type
   TProjNONS = class(TForm)
-    SplitView1: TSplitView;
     SplitView2: TSplitView;
     Panel2: TPanel;
     Timer1: TTimer;
@@ -49,12 +50,6 @@ type
     AFileDownloader: TAction;
     MainMenu1: TMainMenu;
     ADraw: TAction;
-    Panel1: TPanel;
-    CategoryPanelGroup1: TCategoryPanelGroup;
-    CategoryPanel1: TCategoryPanel;
-    Panel5: TPanel;
-    Label8: TLabel;
-    ComboBox1: TComboBox;
     Label5: TLabel;
     FileOpenDialog2: TFileOpenDialog;
     Panel8: TPanel;
@@ -68,7 +63,9 @@ type
     Label1: TLabel;
     Label6: TLabel;
     Mais: TMenuItem;
+    AVideoVLC: TAction;
     Panel3: TPanel;
+    Image3: TImage;
     RzBitBtn2: TRzBitBtn;
     RzBitBtn3: TRzBitBtn;
     RzBitBtn4: TRzBitBtn;
@@ -81,11 +78,17 @@ type
     RzBitBtn11: TRzBitBtn;
     RzBitBtn12: TRzBitBtn;
     BitBtn4: TBitBtn;
-    AVideoVLC: TAction;
     RzBitBtn0: TRzBitBtn;
     RzBitBtn1: TRzBitBtn;
-    RzLabel1: TRzLabel;
-    Image3: TImage;
+    SplitView1: TSplitView;
+    Panel1: TPanel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Image2: TImage;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    RESTClient1: TRESTClient;
     procedure FormCreate(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -99,7 +102,6 @@ type
     procedure AFiletoZipExecute(Sender: TObject);
     procedure AHubExecute(Sender: TObject);
     procedure AAlarmeExecute(Sender: TObject);
-    procedure ComboBox1Change(Sender: TObject);
     procedure AMusicCExecute(Sender: TObject);
     procedure ALoadPDFExecute(Sender: TObject);
     procedure AExplorerExecute(Sender: TObject);
@@ -109,14 +111,12 @@ type
     procedure Image4Click(Sender: TObject);
     procedure AFileDownloaderExecute(Sender: TObject);
     procedure ADrawExecute(Sender: TObject);
-    procedure CategoryPanel1Click(Sender: TObject);
-    procedure CategoryPanel1Collapse(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure BitBtn6Click(Sender: TObject);
     procedure Image5Click(Sender: TObject);
     procedure MaisClick(Sender: TObject);
     procedure ToggleSwitch1Click(Sender: TObject);
     procedure AVideoVLCExecute(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
   private
     { Private declarations }
     selDir : string;
@@ -143,6 +143,9 @@ uses Versaoinfo, FormVideo, FormTexto, FormNav, FormFiletoZip, FormHub,
   FormFileDownload, FormPaint, FormVideoVLC;
 
 procedure TProjNONS.FormCreate(Sender: TObject);
+var
+  obj, request1,request2: TJSONObject;
+  location,location2,location3,temperture,humidity: string;
 begin
   cont := 0;
   boolicon := false;boolicon2 := false;visiblepanels := false;
@@ -151,42 +154,52 @@ begin
   //Ver := Versao(Application.ExeName);
   //RzLEDDisplay1.Caption := 'Ver.: ' + ver;
   BitBtn1Click(Sender);
-end;
 
-procedure TProjNONS.FormShow(Sender: TObject);
-var
- styles : string;
-begin
- with ComboBox1 do
- begin
-  Items.BeginUpdate;
-  try
-   Items.Clear;
-   for styles in TStyleManager.StyleNames do
-    Items.Add(styles);
-  finally
-   Items.EndUpdate;
-  end;
+ try
+ //Previsão do tempo
+ inherited;
+ RESTClient1.ResetToDefaults;
+ RESTClient1.Accept := 'application/json, text/plain; q=0.9, text/html;q=0.8,';
+ RESTClient1.AcceptCharset := 'UTF-8, *;q=0.8';
+ RESTClient1.BaseURL := 'http://api.weatherstack.com/current';
+ RESTClient1.HandleRedirects := True;
+ RESTClient1.RaiseExceptionOn500 := False;
+
+ //here is were we pass the access_key and city as parameters
+ RESTRequest1.Resource := Format('?access_key=%s&query=%s', ['136311a9816fd9902afd90d391811f82', 'Erechim']);
+
+ RESTRequest1.Client := RESTClient1;
+ RESTRequest1.Response := RESTResponse1;
+ RESTRequest1.SynchronizedEvents := False;
+
+ RESTResponse1.ContentType := 'application/json';
+ RESTRequest1.Execute;
+
+ //Memo2.Lines.Text := RESTResponse1.Content;
+ obj := RESTResponse1.JSONValue as TJSONObject;
+ request1 := obj.Values['location'] as TJSONObject;
+ location := request1.Values['name'].Value;
+ location2 := request1.Values['country'].Value;
+ location3 := request1.Values['region'].Value;
+ request2 := obj.Values['current'] as TJSONObject;
+ temperture := request2.Values['temperature'].Value;
+ humidity := request2.Values['humidity'].Value;
+
+
+ Label7.Caption := location + ' ' + location2 + ' ' + location3 + ' ' + temperture + '°C';
+ Label8.Caption := 'Umidade: ' + humidity + '%';
+ except
+  Label7.Caption := 'Indisponível';
+  Label8.Caption := 'Indisponível'
  end;
- BitBtn1Click(Sender);
+
+
 end;
 
-//Controle da Janela
-procedure TProjNONS.CategoryPanel1Click(Sender: TObject);
+procedure TProjNONS.Image2Click(Sender: TObject);
 begin
- Panel1.Height := 65;
-end;
-
-procedure TProjNONS.CategoryPanel1Collapse(Sender: TObject);
-begin
- Panel1.Height := 25;
-end;
-
-//Combobox Estilos
-procedure TProjNONS.ComboBox1Change(Sender: TObject);
-begin
- if ComboBox1.ItemIndex=-1 then exit;
- TStyleManager.TrySetStyle(ComboBox1.Items[ComboBox1.ItemIndex]);
+ if SplitView1.Opened = true then SplitView1.Close
+ else SplitView1.Open;
 end;
 
 procedure TProjNONS.Image1Click(Sender: TObject);
@@ -206,6 +219,7 @@ begin
    label2.Caption := FormatDateTime('dddd - mmmm yyyy ',Date);
   end;
 end;
+
 
 procedure TProjNONS.Timer1Timer(Sender: TObject);
 begin

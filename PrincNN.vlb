@@ -88,36 +88,15 @@ Coordinates=788,53,114,36
 [Label13]
 Coordinates=505,10,60,58
 
-[SplitView1]
-Coordinates=10,366,75,58
-
 []
-Coordinates=333,366,53,58
-
-[ComboBox1]
-Coordinates=107,77,101,124
+Coordinates=246,78,55,58
 
 [ADraw]
 Coordinates=167,239,53,36
 
-[CategoryPanelGroup1]
-Coordinates=353,111,142,36
-
-[Panel1]
-Coordinates=246,78,55,58
-
 [MainMenu1]
 Coordinates=405,322,81,36
 
-[Panel5]
-Coordinates=48,77,55,58
-
 [AFileDownloader]
 Coordinates=533,197,113,36
-
-[Label8]
-Coordinates=126,1,53,58
-
-[CategoryPanel1]
-Coordinates=0,0,107,58
 
